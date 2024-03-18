@@ -1,0 +1,257 @@
+bugging:
+- namespace: checkov.ckv_aws_166
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_166
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+- namespace: checkov.ckv_aws_165
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_165
+  vulnerabilityCategory: Missing Backup, Availability or Disaster Recovery Strategy
+- namespace: checkov.ckv_aws_46
+  priority: P0
+  supportPage: https://sfdc.co/CKV_AWS_46
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.ckv_aws_33
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_33
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+- namespace: checkov.ckv_aws_62
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_62
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+- namespace: checkov.ckv_aws_63
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_63
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+- namespace: checkov.ckv_aws_140
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_140
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+- namespace: checkov.ckv_aws_57
+  priority: P0
+  supportPage: https://sfdc.co/CKV_AWS_57
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+- namespace: checkov.ckv_aws_70
+  priority: P0
+  supportPage: https://sfdc.co/CKV_AWS_70
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+- namespace: checkov.ckv_aws_17
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_17
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_130
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_130
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_72
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_72
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+- namespace: checkov.ckv_aws_13
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_13
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+- namespace: checkov.ckv_aws_152
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_152
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv2_aws_12
+  priority: P2
+  supportPage: https://sfdc.co/CKV2_AWS_12
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_19
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_19
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+- namespace: checkov.ckv_aws_39
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_39
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: policy.mandatory.release.helm.syssec.duplicatehostpath
+  priority: P2
+  supportPage: https://sfdc.co/K8S0025duplicateHostPath
+  vulnerabilityCategory: Insecure OS/Firmware
+- namespace: checkov.ckv_aws_32
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_32
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_41
+  priority: P0
+  supportPage: https://sfdc.co/CKV_AWS_41
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.ckv_aws_277
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_277
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv2_aws_2
+  priority: P2
+  supportPage: https://sfdc.co/CKV2_AWS_2
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+- namespace: checkov.ckv_aws_81
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_81
+  vulnerabilityCategory: Insecure Data Transport
+- namespace: checkov.ckv_aws_61
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_61
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+- namespace: policy.mandatory.release.docker.syssec.copy
+  priority: P2
+  supportPage: https://sfdc.co/df0002
+  vulnerabilityCategory: Insecure OS/Firmware
+- namespace: checkov.ckv_aws_103
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_103
+  vulnerabilityCategory: Insecure Data Transport
+- namespace: checkov.ckv_aws_55
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_55
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_88
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_88
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_56
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_56
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+- namespace: checkov.ckv_aws_20
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_20
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+- namespace: checkov.ckv_aws_129
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_129
+  vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
+- namespace: checkov.ckv_aws_53
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_53
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_58
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_58
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+- namespace: checkov.ckv_aws_37
+  priority: P3
+  supportPage: https://sfdc.co/CKV_AWS_37
+  vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
+- namespace: checkov.ckv_aws_49
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_49
+  vulnerabilityCategory: Improper/Broken Authentication
+- namespace: checkov.ckv_aws_24
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_24
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_59
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_59
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_166
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_166
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+- namespace: policy.mandatory.release.docker.syssec.env_proxy
+  priority: P2
+  supportPage: https://sfdc.co/df0004
+  vulnerabilityCategory: Insecure OS/Firmware
+- namespace: policy.mandatory.release.helm.syssec.emptydirsizelimit
+  priority: P1
+  supportPage: https://sfdc.co/k8s0005
+  vulnerabilityCategory: Denial of Service
+- namespace: policy.mandatory.release.helm.syssec.fsgroup
+  priority: P1
+  supportPage: https://sfdc.co/k8s0006
+  vulnerabilityCategory: Improper/Broken Authorization
+- namespace: policy.mandatory.release.helm.syssec.privilegeescalation
+  priority: P1
+  supportPage: https://sfdc.co/k8s0014
+  vulnerabilityCategory: Improper/Broken Authorization
+- namespace: policy.mandatory.release.helm.syssec.resourcelimits
+  priority: P1
+  supportPage: https://sfdc.co/k8s0017
+  vulnerabilityCategory: Denial of Service
+- namespace: policy.mandatory.release.helm.syssec.resourcelimits
+  priority: P1
+  supportPage: https://sfdc.co/k8s0018
+  vulnerabilityCategory: Denial of Service
+- namespace: policy.mandatory.release.helm.syssec.runasnonroot
+  priority: P1
+  supportPage: https://sfdc.co/k8s0019
+  vulnerabilityCategory: Improper/Broken Authorization
+- namespace: policy.mandatory.release.helm.syssec.runasuser
+  priority: P1
+  supportPage: https://sfdc.co/k8s0020
+  vulnerabilityCategory: Improper/Broken Authorization
+- namespace: policy.mandatory.release.docker.syssec.add_run_http
+  priority: P2
+  supportPage: https://sfdc.co/df0001
+  vulnerabilityCategory: Insecure OS/Firmware
+- namespace: checkov.sfdc_ckv_tf_0071
+  priority: P2
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0071
+  vulnerabilityCategory: Insecure Network Configuration
+- namespace: checkov.sfdc_ckv_tf_0076
+  priority: P0
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0076
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.sfdc_ckv_tf_0077
+  priority: P0
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0077
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.sfdc_ckv_tf_0078
+  priority: P0
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0078
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.sfdc_ckv_tf_0072
+  priority: P0
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0072
+  vulnerabilityCategory: Insecure Network Configuration
+- namespace: checkov.sfdc_ckv_tf_0074
+  priority: P0
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0074
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.sfdc_ckv_tf_0073
+  priority: P3
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0073
+  vulnerabilityCategory: Insecure Network Configuration
+- namespace: checkov.sfdc_ckv_tf_0075
+  priority: P0
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0075
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.ckv_aws_54
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_54
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+- namespace: policy.mandatory.release.helm.fkp.hpa
+  priority: P2
+  supportPage: https://sfdc.co/s0Z2H
+  vulnerabilityCategory: K8s API Deprecation
+- namespace: checkov.ckv2_aws_6
+  priority: P2
+  supportPage: https://sfdc.co/CKV2_AWS_6
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_87
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_87
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_89
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_89
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_303
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_303
+  vulnerabilityCategory: Sensitive Data Exposure
+- namespace: checkov.ckv_aws_40
+  priority: P1
+  supportPage: https://sfdc.co/CKV_AWS_40
+  vulnerabilityCategory: Improper/Broken Authorization
+- namespace: checkov.ckv_aws_301
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_301
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+- namespace: checkov.ckv_aws_69
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_69
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure

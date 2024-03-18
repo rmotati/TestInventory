@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+    <link rel="stylesheet" href="inventory.css"> 
+</head>
+<body>
+    <ul id="list"></ul>
+
+    <div class="container">
+        <div class="sidecar">
+            <div class="side-tabs">
+                <div class="side-tab active" data-table="bugging" onclick="fetchyamldata(this,'bugging.yaml')">Bugging</div>
+                <div class="side-tab" data-table="enforce" onclick="fetchyamldata(this,'policies.yaml')">Enforce</div>
+                <div class="side-tab" data-table="unenforce" onclick="fetchyamldata(this,'policies.yaml')">Un-Enforce</div>
+            </div>
+        </div>
+        <div id="main-content">
+            <div class="dashboard-heading">
+                <h1>Inventory Dashboard</h1>
+            </div>
+            <div class="tabs">
+                <div class="tab active" data-table="checkov">Checkov</div>
+                <div class="tab" data-table="docker">Docker</div>
+                <div class="tab" data-table="helm">Helm</div>
+            </div>
+            <div id="dataTable"></div>
+        </div>
+        <div id="action-buttons">
+            <img src="git-icon.png" alt="Git" id="git-icon">
+            <img src="slack-icon.png" alt="Slack" id="slack-icon">
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script> 
+    <script src="Inventory.js"></script> 
+</body>
+</html>

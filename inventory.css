@@ -1,0 +1,102 @@
+/* Updated CSS */
+/* CSS styles for inventory Dashboard */
+
+/* CSS styles for table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto; /* Allow each column to adjust its width */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping in table cells */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+    position: relative; /* Positioning context for absolute positioning */
+}
+
+/* CSS for sidecar */
+.sidecar {
+    width: 200px; /* Set width for sidecar */
+    overflow-y: auto; /* Add vertical scrollbar */
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.side-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-tab {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+}
+
+.side-tab.active {
+    background-color: #ccc;
+}
+
+#main-content {
+    flex: 1; /* Take up remaining space */
+    padding: 20px; /* Add padding */
+    overflow-y: auto; /* Add scrollbar for main content */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-right: 5px;
+}
+
+.tab.active {
+    background-color: #ccc;
+}
+
+#dataTable {
+    text-align: left;
+}
+
+/* Centering the dashboard heading */
+.dashboard-heading {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#action-buttons {
+    position: absolute;
+    top: 40px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    align-items: center; /* Center icons vertically */
+}
+
+/* CSS for action buttons */
+#action-buttons img {
+    width: 70px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
