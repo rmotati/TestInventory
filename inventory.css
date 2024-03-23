@@ -89,7 +89,7 @@ th {
 
 #action-buttons {
     position: absolute;
-    top: 40px; /* Adjust as needed */
+    top: 20px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
     display: flex;
     align-items: center; /* Center icons vertically */
@@ -97,6 +97,6 @@ th {
 
 /* CSS for action buttons */
 #action-buttons img {
-    width: 70px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 40px; /* Adjust the width as needed */
+    height: 30px; /* Maintain aspect ratio */
 }
