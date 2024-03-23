@@ -6,16 +6,45 @@ _th_ = document.createElement('th'),
 _td_ = document.createElement('td');
 const dataTable = document.getElementById('dataTable');
 dataTable.innerHTML = '';
-fetchyamldata({},'bugging.yaml')
+var data;
+// var tableName = "checkov"
+fetchyamldata('bugging.yaml')
 
-function fetchyamldata(e,policystatus) {
+
+function getDatafromtabs(tableName) {
+    var sidetabname = document.querySelector('.side-tab.active').getAttribute('data-table');
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {        
+            tabs.forEach(tab => tab.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    if(sidetabname === 'bugging') {
+        renderTableForBugging(data, tableName); 
+    }
+    else if( sidetabname === 'enforce')  {
+        renderEnforceTable(data.enforced,tableName)
+    }
+    else {
+        renderEnforceTable(data.unenforced,tableName)
+    }
+    
+}
+
+function fetchyamldata(policystatus) {
     dataTable.innerHTML = '';
+    document.querySelectorAll('.tab')[0].classList.add('active')
+    document.querySelectorAll('.tab')[1].classList.remove('active')
+    document.querySelectorAll('.tab')[2].classList.remove('active')
 
-
-    if (document.querySelector('.side-tab.active') !== null) {
-        document.querySelector('.side-tab.active').classList.remove('active');
-      }
-      e.className = "side-tab active";
+      const tabs = document.querySelectorAll('.side-tab');
+      tabs.forEach(tab => {
+          tab.addEventListener('click', function () {        
+              tabs.forEach(tab => tab.classList.remove('active'));
+              this.classList.add('active');
+          });
+        })
     if (policystatus) {
 
 
@@ -23,24 +52,8 @@ function fetchyamldata(e,policystatus) {
         fetch(policystatus)
             .then(response => response.text())
             .then(text => {
-                const data = jsyaml.load(text);
-                const tabs = document.querySelectorAll('.tab');
-                if (policystatus === "policies.yaml") {
-                    dataTable.appendChild(buildHtmlTable(data.enforced));
-
-                }
-                else {
-                    var tableName = "checkov"
-                    tabs.forEach(tab => {
-                        tab.addEventListener('click', function () {
-                             tableName = this.getAttribute('data-table')
-                        
-                            tabs.forEach(tab => tab.classList.remove('active'));
-                            this.classList.add('active');
-                        });
-                    });
-                    renderTable(data, tableName); // Initially render Checkov tab
-                }
+              data = jsyaml.load(text);
+                    getDatafromtabs("checkov")
                
             })
             .catch(error => console.error('Error loading YAML file:', error));
@@ -48,11 +61,12 @@ function fetchyamldata(e,policystatus) {
 }
 
 // Function to render the table based on selected category
-function renderTable(data, tableName) {
-    console.log(data);
+function renderTableForBugging(data, tableName) {
+    dataTable.innerHTML = "";
     if (tableName !== 'checkov' && tableName !== 'docker' && tableName !== 'helm') return; // Only render for specified tabs
     const filteredData = data.bugging.filter(item => item.namespace.includes(tableName));
     const table = document.createElement('table');
+    table.innerHTML = ""
     const headerRow = table.insertRow();
     headerRow.innerHTML = `
         <th>Serial</th>
@@ -75,70 +89,46 @@ function renderTable(data, tableName) {
     dataTable.appendChild(table);
 }
 
-    // Builds the HTML Table out of myList json data from Ivy restful service.
-    function buildHtmlTable(arr) {
-        var table = _table_.cloneNode(false),
-            columns = addAllColumnHeaders(arr, table);
-        for (var i = 0, maxi = arr.length; i < maxi; ++i) {
-            var tr = _tr_.cloneNode(false);
-            for (var j = 0, maxj = columns.length; j < maxj; ++j) {
-                var td = _td_.cloneNode(false);
-                if (typeof (arr[i][columns[j]]) == "string") {
-                    var cellValue = arr[i][columns[j]];
-                    td.appendChild(document.createTextNode(cellValue));
 
-                }
-                else if (typeof (arr[i][columns[j]]) == "object") {
-                    var names = arr[i][columns[j]].map(function (item) {
-                        return item['service'];
-                    });
-
-                    const listContainer = document.createElement('ul');
-                    listContainer.innerHTML = '';
-                    for (let i = 0; i < names.length; i++) {
-                        const listItem = document.createElement('li');
-
-                        listItem.textContent = names[i];
-                        listContainer.appendChild(listItem);
-                    }
-                    var cellValue = names
-                    console.log(listContainer)
-                    td.appendChild(listContainer);
-
-                }
-                else {
-                    var cellValue = ""
-                    td.appendChild(document.createTextNode(cellValue));
-
-                }
-                tr.appendChild(td);
-            }
-            table.appendChild(tr);
-        }
-        return table;
+function renderEnforceTable(data, tableName) {
+    dataTable.innerHTML = "";
+    if(tableName === "checkov") {
+        var filteredData = data.filter(item => item.namespace.includes(tableName));
+    }
+    else {
+        var filteredData = data.filter(item => item.namespace.includes(`release.${tableName}`));
     }
 
-    // Adds a header row to the table and returns the set of columns.
-    // Need to do union of keys from all records as some records may not contain
-    // all records
-    function addAllColumnHeaders(arr, table) {
-        var columnSet = [],
-            tr = _tr_.cloneNode(false);
-        for (var i = 0, l = arr.length; i < l; i++) {
-            for (var key in arr[i]) {
-                if (arr[i].hasOwnProperty(key) && columnSet.indexOf(key) === -1) {
+    const table = document.createElement('table');
+    const headerRow = table.insertRow();
+    headerRow.innerHTML = `
+        <th>Serial</th>
+        <th>Namespace</th>
+        <th>Exceptions</th>
 
-                    console.log("key", key)
-                    columnSet.push(key);
-                    var th = _th_.cloneNode(false);
-                    th.appendChild(document.createTextNode(key));
-                    tr.appendChild(th);
-                }
-            }
+    `;
+    filteredData.forEach((item, index) => {
+        var exceptions;
+        if(item.exceptions) {
+            exceptions = item.exceptions.map(function (item) {
+                return item['service'];
+            });
         }
-        table.appendChild(tr);
-        return columnSet;
-    }
+        else {
+            exceptions = "";
+        }
+      
+        const row = table.insertRow();
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${item.namespace}</td>
+            <td>${exceptions}</td>
+        `;
+    });
+
+    dataTable.appendChild(table);
+}
+  
 // Function to handle clicking on Git icon
 document.getElementById('git-icon').addEventListener('click', function () {
     window.open('https://git.soma.salesforce.com/opa/falcon-policies', '_blank');
