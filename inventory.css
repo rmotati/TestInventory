@@ -29,7 +29,7 @@ th {
 /* CSS for sidecar */
 .sidecar {
     width: 200px; /* Set width for sidecar */
-    overflow-y: auto; /* Add vertical scrollbar */
+   
     padding: 20px;
     border-right: 1px solid #ccc;
 }
@@ -41,14 +41,15 @@ th {
 
 .side-tab {
     cursor: pointer;
-    padding: 10px;
+    /* padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    background-color: #f2f2f2;
+    background-color: #f2f2f2; */
 }
 
 .side-tab.active {
-    background-color: #ccc;
+    background-color: #000000;
+    color: white;
 }
 
 #main-content {
@@ -100,3 +101,49 @@ th {
     width: 40px; /* Adjust the width as needed */
     height: 30px; /* Maintain aspect ratio */
 }
+
+
+  
+  /* Style the sidenav links and the dropdown button */
+   .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background-color: #455a64;
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .sidenav a {
+    color: #000000;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #90a4ae;
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+ 
+
+  .dropdown-item {
+    margin: 10px;
+  }
+ 
+  
+ 
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #e8f6f5;
+    width: 156px
+  }
