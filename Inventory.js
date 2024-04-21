@@ -12,18 +12,18 @@ fetchyamldata('bugging.yaml')
 
 
 function getDatafromtabs(tableName) {
-    var sidetabname = document.querySelector('.side-tab.active').getAttribute('data-table');
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
+    var tabName = document.querySelector('.tab.active').getAttribute('data-table');
+    const sideTabs = document.querySelectorAll('.side-tab');
+    sideTabs.forEach(tab => {
         tab.addEventListener('click', function () {        
-            tabs.forEach(tab => tab.classList.remove('active'));
+            sideTabs.forEach(tab => tab.classList.remove('active'));
             this.classList.add('active');
         });
     });
-    if(sidetabname === 'bugging') {
+    if(tabName === 'bugging') {
         renderTableForBugging(data, tableName); 
     }
-    else if( sidetabname === 'enforce')  {
+    else if( tabName === 'enforce')  {
         renderEnforceTable(data.enforced,tableName)
     }
     else {
@@ -34,11 +34,11 @@ function getDatafromtabs(tableName) {
 
 function fetchyamldata(policystatus) {
     dataTable.innerHTML = '';
-    document.querySelectorAll('.tab')[0].classList.add('active')
-    document.querySelectorAll('.tab')[1].classList.remove('active')
-    document.querySelectorAll('.tab')[2].classList.remove('active')
+    document.querySelectorAll('.side-tab')[0].classList.add('active')
+    document.querySelectorAll('.side-tab')[1].classList.remove('active')
+    document.querySelectorAll('.side-tab')[2].classList.remove('active')
 
-      const tabs = document.querySelectorAll('.side-tab');
+      const tabs = document.querySelectorAll('.tab');
       tabs.forEach(tab => {
           tab.addEventListener('click', function () {        
               tabs.forEach(tab => tab.classList.remove('active'));
@@ -128,13 +128,20 @@ function renderEnforceTable(data, tableName) {
 
     dataTable.appendChild(table);
 }
-  
-// Function to handle clicking on Git icon
-document.getElementById('git-icon').addEventListener('click', function () {
-    window.open('https://git.soma.salesforce.com/opa/falcon-policies', '_blank');
-});
 
-// Function to handle clicking on Slack icon
-document.getElementById('slack-icon').addEventListener('click', function () {
-    window.open('https://salesforce-internal.slack.com/archives/C0299NZBQKF', '_blank');
-});
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.childNodes[1].classList.toggle("fa-caret-down")
+    this.childNodes[1].classList.toggle("fa-caret-right")
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
