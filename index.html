@@ -5,35 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Dashboard</title>
     <link rel="stylesheet" href="inventory.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="action-buttons">
-        <img src="git-icon.png" alt="Git" id="git-icon">
-        <img src="slack-icon.png" alt="Slack" id="slack-icon">
-    </div>
+   
     <div class="container">
         <div class="sidecar">
+            <div class="sidenav">
+
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">CI Guardrails 
+                        <i class="fa fa-caret-right"></i>
+                      </button>
+                      <div class="dropdown-container">
+                        <a href="#" class="side-tab active" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</a>
+                        <a href="#" class="side-tab" data-table="docker" onclick="getDatafromtabs('docker')">Dockerfile</a>
+                        <a href="#" class="side-tab" data-table="helm" onclick="getDatafromtabs('helm')">Helm</a> 
+                      </div>
+                </div>
+           
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">3PP Guardrails 
+                        <i class="fa fa-caret-right"></i>
+                      </button>
+                      <div class="dropdown-container">
+                        <a href="#">Intake</a>
+                        <a href="#">CI Build</a>
+                      </div>
+                </div>
+            
+                <div class="dropdown-item">
+                    <button class="dropdown-btn">MultiSubstrate Guardrails 
+                        <i class="fa fa-caret-right"></i>
+                      </button>
+                      <div class="dropdown-container">
+                        <a href="#">Hardcoded</a>
+                      </div>
+                </div>
+           
+            </div> 
+
+<!-- 
             <div class="side-tabs">
-                <div class="side-tab active" data-table="bugging" onclick="fetchyamldata('bugging.yaml')">Bugging</div>
-                <div class="side-tab" data-table="enforce" onclick="fetchyamldata('policies.yaml')">Enforce</div>
-                <div class="side-tab" data-table="unenforce" onclick="fetchyamldata('policies.yaml')">Un-Enforce</div>
-            </div>
+                <div class="side-tab active" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</div>
+                <div class="side-tab" data-table="docker" onclick="getDatafromtabs('docker')">Dockerfile</div>
+                <div class="side-tab" data-table="helm" onclick="getDatafromtabs('helm')">Helm</div> 
+            </div> -->
+           
         </div>
         <div id="main-content">
+            
             <div class="dashboard-heading">
                 <h1>Inventory Dashboard</h1>
             </div>
             <div class="tabs">
-                <div class="tab active" data-table="checkov" onclick="getDatafromtabs('checkov')">Checkov</div>
-                <div class="tab" data-table="docker" onclick="getDatafromtabs('docker')">Docker</div>
-                <div class="tab" data-table="helm" onclick="getDatafromtabs('helm')">Helm</div>
+                <div class="tab active" data-table="bugging" onclick="fetchyamldata('bugging.yaml')">Bugging Enabled</div>
+                <div class="tab" data-table="enforce" onclick="fetchyamldata('policies.yaml')">Enforced</div>
+                <div class="tab" data-table="unenforce" onclick="fetchyamldata('policies.yaml')">Incubating</div>
             </div>
             <div id="dataTable"></div>
         </div>
        
 
     </div>
-
+    <div id="action-buttons">
+        <img src="git-icon.png" href="https://git.soma.salesforce.com/opa/falcon-policies"  alt="Git" id="git-icon">
+        <img src="slack-icon.png" href="https://salesforce-internal.slack.com/archives/C0299NZBQKF"  alt="Slack" id="slack-icon">
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script> 
     <script src="Inventory.js"></script> 
 </body>
