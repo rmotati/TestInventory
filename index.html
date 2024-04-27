@@ -44,13 +44,6 @@
                 </div>
            
             </div> 
-
-<!-- 
-            <div class="side-tabs">
-                <div class="side-tab active" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</div>
-                <div class="side-tab" data-table="docker" onclick="getDatafromtabs('docker')">Dockerfile</div>
-                <div class="side-tab" data-table="helm" onclick="getDatafromtabs('helm')">Helm</div> 
-            </div> -->
            
         </div>
         <div id="main-content">
@@ -68,7 +61,10 @@
        
 
     </div>
+
     <div id="action-buttons">
+        <div> <input class="search" type="text" id="searchPolicy" placeholder="Search for policy"> </div>
+
         <img src="git-icon.png" href="https://git.soma.salesforce.com/opa/falcon-policies"  alt="Git" id="git-icon">
         <img src="slack-icon.png" href="https://salesforce-internal.slack.com/archives/C0299NZBQKF"  alt="Slack" id="slack-icon">
     </div>
