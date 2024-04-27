@@ -7,11 +7,14 @@ _td_ = document.createElement('td');
 const dataTable = document.getElementById('dataTable');
 dataTable.innerHTML = '';
 var data;
+var filteredData;
+var searchData;
 // var tableName = "checkov"
 fetchyamldata('bugging.yaml')
 
 
 function getDatafromtabs(tableName) {
+    const searchInput = document.getElementById('searchPolicy').value = "";
     var tabName = document.querySelector('.tab.active').getAttribute('data-table');
     const sideTabs = document.querySelectorAll('.side-tab');
     sideTabs.forEach(tab => {
@@ -21,7 +24,7 @@ function getDatafromtabs(tableName) {
         });
     });
     if(tabName === 'bugging') {
-        renderTableForBugging(data, tableName); 
+        renderTableForBugging(data.bugging, tableName); 
     }
     else if( tabName === 'enforce')  {
         renderEnforceTable(data.enforced,tableName)
@@ -64,7 +67,7 @@ function fetchyamldata(policystatus) {
 function renderTableForBugging(data, tableName) {
     dataTable.innerHTML = "";
     if (tableName !== 'checkov' && tableName !== 'docker' && tableName !== 'helm') return; // Only render for specified tabs
-    const filteredData = data.bugging.filter(item => item.namespace.includes(tableName));
+     filteredData = data.filter(item => item.namespace.includes(tableName));
     const table = document.createElement('table');
     table.innerHTML = ""
     const headerRow = table.insertRow();
@@ -93,10 +96,12 @@ function renderTableForBugging(data, tableName) {
 function renderEnforceTable(data, tableName) {
     dataTable.innerHTML = "";
     if(tableName === "checkov") {
-        var filteredData = data.filter(item => item.namespace.includes(tableName));
+         filteredData = data.filter(item => item.namespace.includes(tableName));
+         searchData = data.filter(item => item.namespace.includes(tableName));
+
     }
     else {
-        var filteredData = data.filter(item => item.namespace.includes(`release.${tableName}`));
+         filteredData = data.filter(item => item.namespace.includes(`release.${tableName}`));
     }
 
     const table = document.createElement('table');
@@ -127,7 +132,42 @@ function renderEnforceTable(data, tableName) {
     });
 
     dataTable.appendChild(table);
+
+   
 }
+
+
+const searchInput = document.getElementById('searchPolicy');
+searchInput.addEventListener('input',function() {
+
+    var tabName = document.querySelector('.tab.active').getAttribute('data-table');
+    var sideTabName = document.querySelector('.side-tab.active').getAttribute('data-table');
+    const searchText = this.value.toLowerCase();
+
+    if(tabName === 'bugging') {
+        var buggingData =  data.bugging.filter(item => item.namespace.includes(sideTabName)).filter(item => item.namespace.includes(sideTabName))
+        var filteredData = buggingData.filter(item => {
+            return Object.values(item).some(val => String(val).toLowerCase().includes(searchText))
+        })
+        renderTableForBugging(filteredData,sideTabName)
+    }
+    else if( tabName === 'enforce')  {
+        var enforcedData = data.enforced.filter(item => item.namespace.includes(sideTabName)).filter(item => item.namespace.includes(sideTabName));
+        var filteredData =  enforcedData.filter(item => {
+            return Object.values(item).some(val => String(val).toLowerCase().includes(searchText))
+        })
+        renderEnforceTable(filteredData,sideTabName)
+    }
+    else {
+        var unEnforcedData = data.unenforced.filter(item => item.namespace.includes(sideTabName)).filter(item => item.namespace.includes(sideTabName));
+        var filteredData =  unEnforcedData.filter(item => {
+            return Object.values(item).some(val => String(val).toLowerCase().includes(searchText))
+        })
+        renderEnforceTable(filteredData,sideTabName)
+    }
+
+   
+})
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
