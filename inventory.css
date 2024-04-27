@@ -26,6 +26,10 @@ th {
     position: relative; /* Positioning context for absolute positioning */
 }
 
+.search {
+    height: 30px;
+}
+
 /* CSS for sidecar */
 .sidecar {
     width: 200px; /* Set width for sidecar */
@@ -147,3 +151,6 @@ th {
     background-color: #e8f6f5;
     width: 156px
   }
+
+  
+ 
