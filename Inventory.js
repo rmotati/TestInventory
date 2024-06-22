@@ -13,9 +13,9 @@ var searchData;
 fetchyamldata('bugging.yaml')
 
 
-function getDatafromtabs(tableName) {
+function getDatafromtabs(sideTabName) {
     const searchInput = document.getElementById('searchPolicy').value = "";
-    var tabName = document.querySelector('.tab.active').getAttribute('data-table');
+    var mainTabName = document.querySelector('.tab.active').getAttribute('data-table');
     const sideTabs = document.querySelectorAll('.side-tab');
     sideTabs.forEach(tab => {
         tab.addEventListener('click', function () {        
@@ -23,14 +23,14 @@ function getDatafromtabs(tableName) {
             this.classList.add('active');
         });
     });
-    if(tabName === 'bugging') {
-        renderTableForBugging(data.bugging, tableName); 
+    if(mainTabName === 'bugging') {
+        renderTableForBugging(data.bugging, sideTabName); 
     }
-    else if( tabName === 'enforce')  {
-        renderEnforceTable(data.enforced,tableName)
+    else if( mainTabName === 'enforce')  {
+        renderEnforceTable(data.enforced,sideTabName)
     }
     else {
-        renderEnforceTable(data.unenforced,tableName)
+        renderEnforceTable(data.unenforced,sideTabName)
     }
     
 }
@@ -64,10 +64,10 @@ function fetchyamldata(policystatus) {
 }
 
 // Function to render the table based on selected category
-function renderTableForBugging(data, tableName) {
+function renderTableForBugging(data, sideTabName) {
     dataTable.innerHTML = "";
-    if (tableName !== 'checkov' && tableName !== 'docker' && tableName !== 'helm') return; // Only render for specified tabs
-     filteredData = data.filter(item => item.namespace.includes(tableName));
+    if (sideTabName !== 'checkov' && sideTabName !== 'docker' && sideTabName !== 'helm') return; // Only render for specified tabs
+     filteredData = data.filter(item => item.namespace.includes(sideTabName));
     const table = document.createElement('table');
     table.innerHTML = ""
     const headerRow = table.insertRow();
@@ -93,15 +93,15 @@ function renderTableForBugging(data, tableName) {
 }
 
 
-function renderEnforceTable(data, tableName) {
+function renderEnforceTable(data, sideTabName) {
     dataTable.innerHTML = "";
-    if(tableName === "checkov") {
-         filteredData = data.filter(item => item.namespace.includes(tableName));
-         searchData = data.filter(item => item.namespace.includes(tableName));
+    if(sideTabName === "checkov") {
+         filteredData = data.filter(item => item.namespace.includes(sideTabName));
+         searchData = data.filter(item => item.namespace.includes(sideTabName));
 
     }
     else {
-         filteredData = data.filter(item => item.namespace.includes(`release.${tableName}`));
+         filteredData = data.filter(item => item.namespace.includes(`release.${sideTabName}`));
     }
 
     const table = document.createElement('table');
@@ -143,6 +143,7 @@ searchInput.addEventListener('input',function() {
     var tabName = document.querySelector('.tab.active').getAttribute('data-table');
     var sideTabName = document.querySelector('.side-tab.active').getAttribute('data-table');
     const searchText = this.value.toLowerCase();
+    
 
     if(tabName === 'bugging') {
         var buggingData =  data.bugging.filter(item => item.namespace.includes(sideTabName)).filter(item => item.namespace.includes(sideTabName))
