@@ -8,6 +8,11 @@ table {
     table-layout: auto; /* Allow each column to adjust its width */
 }
 
+body {
+    background-color: mintcream;
+}
+
+
 th, td {
     border: 1px solid black;
     padding: 8px;
@@ -18,7 +23,7 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
 }
 
 .container {
@@ -31,11 +36,12 @@ th {
 }
 
 /* CSS for sidecar */
-.sidecar {
+.sidebar {
     width: 200px; /* Set width for sidecar */
-   
+   /* background-color: ghostwhite; */
     padding: 20px;
     border-right: 1px solid #ccc;
+    max-height:100
 }
 
 .side-tabs {
@@ -52,14 +58,14 @@ th {
 }
 
 .side-tab.active {
-    background-color: #000000;
+    background-color: #666966;
     color: white;
 }
 
 #main-content {
     flex: 1; /* Take up remaining space */
     padding: 20px; /* Add padding */
-    overflow-y: auto; /* Add scrollbar for main content */
+    overflow: auto;
 }
 
 .tabs {
@@ -128,7 +134,7 @@ th {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;
-    background-color: #90a4ae;
+    background-color: #eeefef;
     display: block;
     border: none;
     width: 100%;
