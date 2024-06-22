@@ -37,9 +37,9 @@ function getDatafromtabs(tableName) {
 
 function fetchyamldata(policystatus) {
     dataTable.innerHTML = '';
-    document.querySelectorAll('.side-tab')[0].classList.add('active')
-    document.querySelectorAll('.side-tab')[1].classList.remove('active')
-    document.querySelectorAll('.side-tab')[2].classList.remove('active')
+    // document.querySelectorAll('.side-tab')[0].classList.add('active')
+    // document.querySelectorAll('.side-tab')[1].classList.remove('active')
+    // document.querySelectorAll('.side-tab')[2].classList.remove('active')
 
       const tabs = document.querySelectorAll('.tab');
       tabs.forEach(tab => {
@@ -50,13 +50,13 @@ function fetchyamldata(policystatus) {
         })
     if (policystatus) {
 
-
+        var tabName = document.querySelector('.side-tab.active').getAttribute('data-table');
         // Fetch and process the YAML data
         fetch(policystatus)
             .then(response => response.text())
             .then(text => {
               data = jsyaml.load(text);
-                    getDatafromtabs("checkov")
+                    getDatafromtabs(tabName)
                
             })
             .catch(error => console.error('Error loading YAML file:', error));
