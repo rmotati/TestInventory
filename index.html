@@ -52,11 +52,12 @@
                 <h1>Inventory Dashboard</h1>
             </div>
             <div class="tabs">
-                <div class="tab active" data-table="bugging" onclick="fetchyamldata('bugging.yaml')">Bugging Enabled</div>
-                <div class="tab" data-table="enforce" onclick="fetchyamldata('policies.yaml')">Enforced</div>
-                <div class="tab" data-table="unenforce" onclick="fetchyamldata('policies.yaml')">Incubating</div>
+                <div class="tab" data-table="unenforce" onclick="getIncubatingData()">Incubating</div>
+                <div class="tab" data-table="bugging" onclick="fetchyamldata('bugging.yaml')">Bugging Enabled</div>
+                <div class="tab active" data-table="enforce" onclick="fetchyamldata('policies.yaml')">Enforced</div>
             </div>
             <div id="dataTable"></div>
+
         </div>
        
 
