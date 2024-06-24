@@ -10,7 +10,7 @@ var data;
 var filteredData;
 var searchData;
 // var tableName = "checkov"
-fetchyamldata('bugging.yaml')
+fetchyamldata('policies.yaml')
 
 
 function getDatafromtabs(sideTabName) {
@@ -29,10 +29,6 @@ function getDatafromtabs(sideTabName) {
     else if( mainTabName === 'enforce')  {
         renderEnforceTable(data.enforced,sideTabName)
     }
-    else {
-        renderEnforceTable(data.unenforced,sideTabName)
-    }
-    
 }
 
 function fetchyamldata(policystatus) {
@@ -136,6 +132,10 @@ function renderEnforceTable(data, sideTabName) {
    
 }
 
+function getIncubatingData() {
+    dataTable.innerHTML = "<h3 class='work-progress'>Work in progress</h3>";
+}
+
 
 const searchInput = document.getElementById('searchPolicy');
 searchInput.addEventListener('input',function() {
@@ -143,7 +143,6 @@ searchInput.addEventListener('input',function() {
     var tabName = document.querySelector('.tab.active').getAttribute('data-table');
     var sideTabName = document.querySelector('.side-tab.active').getAttribute('data-table');
     const searchText = this.value.toLowerCase();
-    
 
     if(tabName === 'bugging') {
         var buggingData =  data.bugging.filter(item => item.namespace.includes(sideTabName)).filter(item => item.namespace.includes(sideTabName))
