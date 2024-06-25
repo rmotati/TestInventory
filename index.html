@@ -15,7 +15,7 @@
 
                 <div class="dropdown-item">
                     <button class="dropdown-btn">CI Guardrails 
-                        <i class="fa fa-caret-right"></i>
+                        <i class="fa fa-caret-down"></i>
                       </button>
                       <div class="dropdown-container">
                         <a href="#" class="side-tab active" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</a>
@@ -24,21 +24,21 @@
                       </div>
                 </div>
            
-                <div class="dropdown-item">
-                    <button class="dropdown-btn">3PP Guardrails 
+                <div class="pp-dropdown-item">
+                    <button class="pp-dropdown-btn">3PP Guardrails 
                         <i class="fa fa-caret-right"></i>
                       </button>
-                      <div class="dropdown-container">
+                      <div class="pp-dropdown-container">
                         <a href="#">Intake</a>
                         <a href="#">CI Build</a>
                       </div>
                 </div>
             
-                <div class="dropdown-item">
-                    <button class="dropdown-btn">MultiSubstrate Guardrails 
+                <div class="pp-dropdown-item">
+                    <button class="pp-dropdown-btn">MultiSubstrate Guardrails 
                         <i class="fa fa-caret-right"></i>
                       </button>
-                      <div class="dropdown-container">
+                      <div class="pp-dropdown-container">
                         <a href="#">Hardcoded</a>
                       </div>
                 </div>
@@ -56,6 +56,8 @@
                 <div class="tab" data-table="bugging" onclick="fetchyamldata('bugging.yaml')">Bugging Enabled</div>
                 <div class="tab active" data-table="enforce" onclick="fetchyamldata('policies.yaml')">Enforced</div>
             </div>
+            <h3 id="policiesCount"></h3>
+
             <div id="dataTable"></div>
 
         </div>
