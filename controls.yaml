@@ -12,11 +12,31 @@ policies:
   supportPage: https://sfdc.co/CKV_AWS_63
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   levelOfEffort: Medium
-
 - names:
   - checkov.ckv_aws_56
   namespace: checkov.ckv_aws_56
   priority: P2
   supportPage: https://sfdc.co/CKV_AWS_56
+  vulnerabilityCategory: Security Encryption
+  levelOfEffort: Low
+- names:
+  - checkov.ckv_aws_13
+  namespace: checkov.ckv_aws_13
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_13
+  vulnerabilityCategory: Security Encryption
+  levelOfEffort: Low
+- names:
+  - checkov.ckv_aws_152
+  namespace: checkov.ckv_aws_152
+  priority: P2
+  supportPage: https://sfdc.co/CKV_AWS_152
+  vulnerabilityCategory: Security Encryption
+  levelOfEffort: Low
+- names:
+  - checkov.ckv2_aws_12
+  namespace: checkov.ckv2_aws_12
+  priority: P2
+  supportPage: https://sfdc.co/CKV2_AWS_12
   vulnerabilityCategory: Security Encryption
   levelOfEffort: Low
