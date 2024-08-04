@@ -73,7 +73,7 @@ function getIncuBatingData() {
     .querySelector(".side-tab.active")
     .getAttribute("data-table");
 
-  getDatafromtabs(tabName);
+  getDatafromtabs(tabName,mainTab="incubating");
 }
 
 function fetchyamldata(policystatus) {
@@ -103,11 +103,15 @@ function fetchyamldata(policystatus) {
       .catch((error) => console.error("Error loading YAML file:", error));
   }
 }
-function getDatafromtabs(sideTabName) {
+function getDatafromtabs(sideTabName,mainTab) {
   const searchInput = (document.getElementById("searchPolicy").value = "");
   var mainTabName = document
-    .querySelector(".tab.active")
-    .getAttribute("data-table");
+  .querySelector(".tab.active")
+  .getAttribute("data-table");
+  if(mainTab === 'incubating') {
+    mainTabName = "incubating"
+  }
+
   const sideTabs = document.querySelectorAll(".side-tab");
   sideTabs.forEach((tab) => {
     tab.addEventListener("click", function () {
@@ -129,6 +133,7 @@ function getDatafromtabs(sideTabName) {
     renderTableForBugging(incubatingData, sideTabName);
   }
 
+//   renderTableForBugging(incubatingData, sideTabName);
 }
 
 function prepareFinalData(finalData) {
@@ -185,7 +190,7 @@ function renderTableForBugging(data, sideTabName) {
             <td>${item.levelOfEffort}</td>
              <td>${item.category}</td>
             <td>${item.resource}</td>
-            <td>${item.standardMapping}</td>
+            <td>${item.standardMapping} || ''</td>
             <td>${item.supportPage}</td>
             <td>${item.vulnerabilityCategory}</td>
             <td>${item.tags}</td>
