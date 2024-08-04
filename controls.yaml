@@ -1,42 +1,5226 @@
 policies:
 - names:
   - policy.mandatory.release.spinnaker_application.sfcd.rbac
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
   tags:
   - nist.800.53.r4.ac.1
   - nist.800.53.r4.ac.2.7
   - nist.800.53.r4.ac.3.7
 - names:
-  - checkov.ckv_aws_63
-  namespace: checkov.ckv_aws_63
-  priority: P1
-  supportPage: https://sfdc.co/CKV_AWS_63
-  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
-  levelOfEffort: Medium
+  - policy.mandatory.release.helm.mesh.securitycontext
+  id: OPA-MESH-001
+  priority: TBD
+  description: Service Mesh validation failed for %s. SecurityContext for mesh requires runAsNonRoot=true and runAsUser!=1337
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/OPA-MESH-001
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags:
+  - nist.800.53.r4.ac.1
+  - nist.800.53.r4.ac.3
+  - nist.800.53.r4.ac.3.3
+  - nist.800.53.r4.ac.3.5
+  - nist.800.53.r4.ac.14
+  - nist.800.53.r4.ac.16
+  - nist.800.53.r4.ca.3
+  - nist.800.53.r4.ca.9
+  - nist.800.53.r4.ia.9
+  - nist.800.53.r4.ia.11
+  - nist.800.53.r4.sc.17
+  - nist.800.53.r4.sc.20
+  - nist.800.53.r4.sc.22
+  - nist.800.53.r4.sc.23
 - names:
-  - checkov.ckv_aws_56
-  namespace: checkov.ckv_aws_56
+  - policy.mandatory.release.helm.sa.anyresourcecreate
+  id: TBD
+  priority: P1
+  description: Authz RBAC does not follow least privilege - create.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags:
+  - nist.800.53.r4.ac.2.11
+  - nist.800.53.r4.cm.3
+  - nist.800.53.r4.cm.3.1
+  - nist.800.53.r4.cm.5.1
+  - nist.800.53.r4.cm.5.5
+  - nist.800.53.r4.cm.6.1
+- names:
+  - policy.mandatory.release.helm.soter.serviceports
+  id: TBD
+  priority: TBD
+  description: Helm chart LoadBalancer spec exposed on following ports (SA pre-approved ports) 80,443,8443,9443,587. This is to mitigate EKS instantiating a new Load Balancer security threat as the service may be opened up to the internet on arbitrary ports
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags:
+  - nist.800.53.r4.ac.2.11
+  - nist.800.53.r4.ac.3.3
+- names:
+  - policy.mandatory.release.helm.soter.main
+  id: TBD
+  priority: TBD
+  description: Check if helm chart for Kubernetes Service deployment does not have loadBalancerSourceRanges defined in the spec. This is to mitigate the Kubernetes Service with type LoadBalancer, EKS instantiates a new Load Balancer in AWS, allowing all the IPs (0.0.0.0/0) to access the Load Balancers, which would allow all the intra-FD traffic through the ILB
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags:
+  - nist.800.53.r4.ac.6.3
+- names:
+  - policy.mandatory.release.helm.sa.runasuser
+  id: TBD
+  priority: P1
+  description: Container has a low UID user. Running as a low UID may conflict with the hosts user table.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags:
+  - nist.800.53.r4.ac.6.10
+  - nist.800.53.r4.ia.2.3
+- names:
+  - policy.mandatory.release.helm.sa.abac
+  id: TBD
+  priority: P1
+  description: Do not enable (legacy) Attribute-Based Access Control (ABAC) for any reason.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags:
+  - nist.800.53.r4.ac.16
+  - nist.800.53.r4.sc.16
+- names:
+  - policy.mandatory.release.spinnaker_pipeline.sfcd.ec2
+  id: TBD
+  priority: TBD
+  description: TBD 
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags:
+  - nist.800.53.r4.cm.2
+- names:
+  - policy.mandatory.release.spinnaker_pipeline.sfcd.eks
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags:
+  - nist.800.53.r4.cm.2
+- names:
+  - policy.mandatory.release.spinnaker_pipeline.sfcd.general
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags:
+  - nist.800.53.r4.cm.2
+- names:
+  - policy.mandatory.release.helm.firefly.main
+  id: TBD
+  priority: TBD
+  description: The policy checks for value ""input.firefly.pass"" and if its set to false it will fail for positive/negative testing for firefly purposes, the policy will pass all the time
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: Other
+  tags:
+  - nist.800.53.r4.cm.2
+
+- names:
+  - checkov.ckv_aws_5
+  id: CKV_AWS_5
+  description: Ensure all data stored in the Elasticsearch is securely encrypted at rest
   priority: P2
-  supportPage: https://sfdc.co/CKV_AWS_56
-  vulnerabilityCategory: Security Encryption
   levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_elasticsearch_domain
+  standardMapping: SFSS-021(3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_5
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_6
+  id: CKV_AWS_6
+  description: AWS Elasticsearch does not have node-to-node encryption enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: AWS::Elasticsearch::Domain
+  standardMapping: SFSS-025 - 4.3
+  supportPage: https://sfdc.co/CKV_AWS_6
+  vulnerabilityCategory: Insecure Data Transport
+  tags: []
 - names:
   - checkov.ckv_aws_13
-  namespace: checkov.ckv_aws_13
-  priority: P2
+  id: CKV_AWS_13
+  description: Ensure IAM password policy prevents password reuse
+  priority: P1
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping: TBD
   supportPage: https://sfdc.co/CKV_AWS_13
-  vulnerabilityCategory: Security Encryption
-  levelOfEffort: Low
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
 - names:
-  - checkov.ckv_aws_152
-  namespace: checkov.ckv_aws_152
+  - checkov.ckv_aws_17
+  id: CKV_AWS_17
+  description: Ensure all data stored in RDS is not publicly accessible
+  priority: P0
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_db_instance, aws_rds_cluster_instance
+  standardMapping: SFSS-021(11.5)
+  supportPage: https://sfdc.co/CKV_AWS_17
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_19
+  id: CKV_AWS_19
+  description: Ensure all data stored in the S3 bucket is securely encrypted at rest
   priority: P2
-  supportPage: https://sfdc.co/CKV_AWS_152
-  vulnerabilityCategory: Security Encryption
   levelOfEffort: Low
+  category: LOGGING
+  resource: aws_s3_bucket
+  standardMapping: sfss-021 (3.2)
+  supportPage: https://sfdc.co/CKV_AWS_19
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_20
+  id: CKV_AWS_20
+  description: S3 Bucket has an ACL defined which allows public READ access.
+  priority: P1
+  levelOfEffort: High
+  category: LOGGING
+  resource: aws_s3_bucket
+  standardMapping: SFSS-021 (3.4,3.8)
+  supportPage: https://sfdc.co/CKV_AWS_20
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+  tags: []
+- names:
+  - checkov.ckv_aws_24
+  id: CKV_AWS_24
+  description: Ensure no security groups allow ingress from 0.0.0.0:0 to port 22
+  priority: P2
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_security_group, aws_security_group_rule
+  standardMapping: SFSS-021 (11.5)
+  supportPage: https://sfdc.co/CKV_AWS_24
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_27
+  id: CKV_AWS_27
+  description: Ensure all data stored in the SQS queue is encrypted
+  priority: P1
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_sqs_queue
+  standardMapping: SFSS-019 6.1
+  supportPage: https://sfdc.co/CKV_AWS_27
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_32
+  id: CKV_AWS_32
+  description: Ensure AWS ECR repository is not exposed to public
+  priority: P2
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_ecr_repository_policy
+  standardMapping: SFSS-021 1.1.10, 11.8
+  supportPage: https://sfdc.co/CKV_AWS_32
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_33
+  id: CKV_AWS_33
+  description: Ensure KMS key policy does not contain wildcard (*) principal
+  priority: P1
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_kms_key
+  standardMapping: SFSS-021 1.3
+  supportPage: https://sfdc.co/CKV_AWS_33
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_35
+  id: CKV_AWS_35
+  description: Ensure CloudTrail logs are encrypted at rest using KMS CMKs
+  priority: P1
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_cloudtrail
+  standardMapping: SFSS-021(5.1, 1.2.2)
+  supportPage: https://sfdc.co/CKV_AWS_35
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_41
+  id: CKV_AWS_41
+  description: Ensure no hard coded AWS access key and secret key exists in provider
+  priority: P0
+  levelOfEffort: High
+  category: SECRETS
+  resource: aws
+  standardMapping: SFSS-021 3.6, 14.4
+  supportPage: https://sfdc.co/CKV_AWS_41
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.ckv_aws_43
+  id: CKV_AWS_43
+  description: Ensure Kinesis Stream is securely encrypted
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_kinesis_stream
+  standardMapping: SFSS-019 6.1
+  supportPage: https://sfdc.co/CKV_AWS_43
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_46
+  id: CKV_AWS_46
+  description: Ensure no hard-coded secrets exist in EC2 user data
+  priority: P0
+  levelOfEffort: High
+  category: SECRETS
+  resource: aws_instance
+  standardMapping: SFSS-021 3.6, 14.5
+  supportPage: https://sfdc.co/CKV_AWS_46
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.ckv_aws_49
+  id: CKV_AWS_49
+  description: Ensure no IAM policies documents allow "*" as a statement's actions
+  priority: P2
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_policy_document
+  standardMapping: SFSS-003 (2.3)
+  supportPage: https://sfdc.co/CKV_AWS_49
+  vulnerabilityCategory: Improper/Broken Authentication
+  tags: []
+- names:
+  - checkov.ckv_aws_53
+  id: CKV_AWS_53
+  description: Ensure S3 bucket has block public ACLS enabled
+  priority: P2
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket_public_access_block
+  standardMapping: SFSS-021 (3.3)
+  supportPage: https://sfdc.co/CKV_AWS_53
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_54
+  id: CKV_AWS_54
+  description: Ensure S3 bucket has block public policy enabled
+  priority: P2
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket_public_access_block
+  standardMapping: SFSS-021 (3.4,11.5)
+  supportPage: https://sfdc.co/CKV_AWS_54
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_55
+  id: CKV_AWS_55
+  description: Ensure S3 bucket has ignore public ACLs enabled
+  priority: P2
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket_public_access_block
+  standardMapping: SFSS-021(3.4)
+  supportPage: https://sfdc.co/CKV_AWS_55
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_56
+  id: CKV_AWS_56
+  description: Ensure S3 bucket has 'restrict_public_bucket' enabled
+  priority: P1
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket_public_access_block
+  standardMapping: SFSS-021(3.4)
+  supportPage: https://sfdc.co/CKV_AWS_56
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+  tags: []
+- names:
+  - checkov.ckv_aws_57
+  id: CKV_AWS_57
+  description: S3 Bucket has an ACL defined which allows public WRITE access.
+  priority: P1
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket
+  standardMapping: SFSS-021(3.4,3.8)
+  supportPage: https://sfdc.co/CKV_AWS_57
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+  tags: []
+- names:
+  - checkov.ckv_aws_58
+  id: CKV_AWS_58
+  description: Ensure EKS Cluster has Secrets Encryption Enabled
+  priority: P2
+  levelOfEffort: Low
+  category: KUBERNETES
+  resource: aws_eks_cluster
+  standardMapping: 
+  supportPage: https://sfdc.co/CKV_AWS_58
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_59
+  id: CKV_AWS_59
+  description: Ensure API gateway methods are not publicly accessible
+  priority: P2
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_api_gateway_method
+  standardMapping: SFSS-21(1.1.10, 11.8)
+  supportPage: https://sfdc.co/CKV_AWS_59
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_60
+  id: CKV_AWS_60
+  description: Ensure IAM role allows only specific services or principals to assume it
+  priority: P0
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_role
+  standardMapping: SFSS-003 2.3
+  supportPage: https://sfdc.co/CKV_AWS_60
+  vulnerabilityCategory: Improper/Broken Authentication
+  tags: []
+- names:
+  - checkov.ckv_aws_61
+  id: CKV_AWS_61
+  description: Ensure IAM role allows only specific principals in account to assume it
+  priority: P1
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_role
+  standardMapping: SFSS-021 1.1.5
+  supportPage: https://sfdc.co/CKV_AWS_61
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_62
+  id: CKV_AWS_62
+  description: Ensure IAM policies that allow full "*-*" administrative privileges are not created
+  priority: P1
+  levelOfEffort: Critical
+  category: IAM
+  resource: aws_iam_group_policy, aws_iam_policy, aws_iam_role_policy, aws_iam_user_policy, aws_ssoadmin_permission_set_inline_policy
+  standardMapping: SFSS-021 1.1.5
+  supportPage: https://sfdc.co/CKV_AWS_62
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_63
+  id: CKV_AWS_63
+  description: Ensure no IAM policies documents allow "*" as a statement's actions
+  priority: P1
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_group_policy, aws_iam_policy, aws_iam_role_policy, aws_iam_user_policy, aws_ssoadmin_permission_set_inline_policy
+  standardMapping: SFSS-021 1.1.5
+  supportPage: https://sfdc.co/CKV_AWS_63
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_64
+  id: CKV_AWS_64
+  description: Ensure all data stored in the Redshift cluster is securely encrypted at rest
+  priority: P1
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_redshift_cluster
+  standardMapping: SFSS-021 (3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_64
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_69
+  id: CKV_AWS_69
+  description: Ensure AWS MQ is not publicly accessible
+  priority: P2
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_mq_broker
+  standardMapping: SFSS-021 (11.5)
+  supportPage: https://sfdc.co/CKV_AWS_69
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_70
+  id: CKV_AWS_70
+  description: Ensure S3 bucket does not allow an action with any Principal
+  priority: P1
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_s3_bucket, aws_s3_bucket_policy
+  standardMapping: SFSS-021 (1.3,3.4)
+  supportPage: https://sfdc.co/CKV_AWS_70
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+  tags: []
+- names:
+  - checkov.ckv_aws_72
+  id: CKV_AWS_72
+  description: Ensure SQS policy does not allow ALL (*) actions.
+  priority: P1
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_sqs_queue_policy
+  standardMapping: SFSS-021(1.3)
+  supportPage: https://sfdc.co/CKV_AWS_72
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_81
+  id: CKV_AWS_81
+  description: Ensure MSK Cluster encryption in rest and transit is enabled
+  priority: P1
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_msk_cluster
+  standardMapping: SFSS-021(3.3)
+  supportPage: https://sfdc.co/CKV_AWS_81
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_83
+  id: CKV_AWS_83
+  description: AWS Elasticsearch domains do not have EnforceHTTPS enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_elasticsearch_domain
+  standardMapping: SFSS-025(4.3)
+  supportPage: https://sfdc.co/CKV_AWS_83
+  vulnerabilityCategory: Insecure Data Transport
+  tags: []
+- names:
+  - checkov.ckv_aws_87
+  id: CKV_AWS_87
+  description: Ensure Amazon Redshift clusters are not publicly accessible
+  priority: P2
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_redshift_cluster
+  standardMapping: SFSS-021(11.5)
+  supportPage: https://sfdc.co/CKV_AWS_87
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_88
+  id: CKV_AWS_88
+  description: EC2 instance should not have public IP
+  priority: P1
+  levelOfEffort: High
+  category: NETWORKING
+  resource: aws_instance, aws_launch_template
+  standardMapping: SFSS-021(11.4, 11.5)
+  supportPage: https://sfdc.co/CKV_AWS_88
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_89
+  id: CKV_AWS_89
+  description: Ensure DMS replication instance is not publicly accessible
+  priority: P2
+  levelOfEffort: High
+  category: NETWORKING
+  resource: aws_dms_replication_instance
+  standardMapping: SFSS-021(11.5)
+  supportPage: https://sfdc.co/CKV_AWS_89
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_103
+  id: CKV_AWS_103
+  description: Ensure that load balancer is using TLS 1.2
+  priority: P1
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_alb_listener, aws_lb_listener
+  standardMapping: SFSS-151(1.1)
+  supportPage: https://sfdc.co/CKV_AWS_103
+  vulnerabilityCategory: Insecure Data Transport
+  tags: []
+- names:
+  - checkov.ckv_aws_129
+  id: CKV_AWS_129
+  description: Ensure that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled
+  priority: P2
+  levelOfEffort: Low 
+  category: LOGGING
+  resource: aws_db_instance
+  standardMapping: SFSS-021(5.4.2)
+  supportPage: https://sfdc.co/CKV_AWS_129
+  vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
+  tags: []
+- names:
+  - checkov.ckv_aws_133
+  id: CKV_AWS_133
+  description: Ensure that RDS instances has backup policy
+  priority: P2
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_db_instance, aws_rds_cluster
+  standardMapping: 
+  supportPage: https://sfdc.co/CKV_AWS_133
+  vulnerabilityCategory: Missing Backup, Availability, or Disaster Recovery Strategy
+  tags: []
+- names:
+  - checkov.ckv_aws_140
+  id: CKV_AWS_140
+  description: Ensure that RDS global clusters are encrypted
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_rds_global_cluster
+  standardMapping: SFSS-021(3.2)
+  supportPage: https://sfdc.co/CKV_AWS_140
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_142
+  id: CKV_AWS_142
+  description: Ensure that Redshift cluster is encrypted by KMS
+  priority: P1
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_redshift_cluster
+  standardMapping: SFSS-074(6.3)
+  supportPage: https://sfdc.co/CKV_AWS_142
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_146
+  id: CKV_AWS_146
+  description: Ensure that RDS database cluster snapshot is encrypted
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_db_cluster_snapshot
+  standardMapping: SFSS-021(3.2)
+  supportPage: https://sfdc.co/CKV_AWS_146
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_165
+  id: CKV_AWS_165
+  description: Ensure Dynamodb point in time recovery (backup) is enabled for global tables
+  priority: P2
+  levelOfEffort: Medium
+  category: BACKUP_AND_RECOVERY
+  resource: aws_dynamodb_global_table
+  standardMapping: SFSS-021(4.1)
+  supportPage: https://sfdc.co/CKV_AWS_165
+  vulnerabilityCategory: Missing Backup, Availability or Disaster Recovery Strategy
+  tags: []
+- names:
+  - checkov.ckv_aws_166
+  id: CKV_AWS_166
+  description: Ensure Backup Vault is encrypted at rest using KMS CMK
+  priority: P2
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_backup_vault
+  standardMapping: SFSS-021(3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_166
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_169
+  id: CKV_AWS_169
+  description: SNS queue policy is public and access is not restricted to specific services or principals
+  priority: P2
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_sns_topic_policy
+  standardMapping: SFSS-021 (11.5)
+  supportPage: https://sfdc.co/CKV_AWS_169
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_177
+  id: CKV_AWS_177
+  description: Ensure Kinesis Video Stream is encrypted by KMS using a customer managed Key (CMK)
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_kinesis_video_stream
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_177
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_185
+  id: CKV_AWS_185
+  description: Ensure Kinesis Stream is encrypted by KMS using a customer managed Key (CMK)
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_kinesis_stream
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_185
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_186
+  id: CKV_AWS_186
+  description: AWS S3 Bucket Encryption with AWS KMS Customer managed Customer Master Key
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_s3_bucket_object
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_186
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_228
+  id: CKV_AWS_228
+  description: Verify Elasticsearch domain is using an up to date TLS policy
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_elasticsearch_domain, aws_opensearch_domain
+  standardMapping: SFSS-151 - All
+  supportPage: https://sfdc.co/CKV_AWS_228
+  vulnerabilityCategory: Insecure Data Transport
+  tags: []
+- names:
+  - checkov.ckv_aws_241
+  id: CKV_AWS_241
+  description: Ensure that Kinesis Firehose Delivery Streams are encrypted with CMK
+  priority: P3
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_kinesis_firehose_delivery_stream
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_241
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_246
+  id: CKV_AWS_246
+  description: Ensure RDS Cluster activity streams are encrypted using KMS CMKs
+  priority: P3
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_rds_cluster_activity_stream
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_246
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_247
+  id: CKV_AWS_247
+  description: Ensure all data stored in the Elasticsearch is encrypted with a CMK
+  priority: P1
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_elasticsearch_domain, aws_opensearch_domain
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_247
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_277
+  id: CKV_AWS_277
+  description: Ensure no security groups allow ingress from 0.0.0.0:0 to port -1        
+  priority: P2
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_security_group
+  standardMapping: SFSS-021 11.3
+  supportPage: https://sfdc.co/CKV_AWS_277
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_301
+  id: CKV_AWS_301
+  description: Ensure that AWS Lambda function is not publicly accessible
+  priority: P2
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lambda_permission
+  standardMapping: SFSS-021 (11.5)
+  supportPage: https://sfdc.co/CKV_AWS_301
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_303
+  id: CKV_AWS_303
+  description: Ensure SSM documents are not Public
+  priority: P2 (Variance)
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_ssm_document
+  standardMapping: SFSS-019 (6.1)
+  supportPage: https://sfdc.co/CKV_AWS_303
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0071
+  id: SFDC_CKV_TF_0071
+  description: Ensure more restrictive policies on VPC Endpoints
+  priority: P2
+  levelOfEffort: High
+  category: IAM
+  resource: aws_vpc_endpoint_policy
+  standardMapping: SFSS-003 (2.3)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0071
+  vulnerabilityCategory: Insecure Network Configuration
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0072
+  id: SFDC_CKV_TF_0072
+  description: S3 WRITE_ACP ACLs
+  priority: P0
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_s3_bucket_acl
+  standardMapping: SFSS-003 (2.3)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0072
+  vulnerabilityCategory: Insecure Network Configuration
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0073
+  id: SFDC_CKV_TF_0073
+  description: S3 READ_ACP ACLs
+  priority: P3
+  levelOfEffort: High
+  category: IAM
+  resource: aws_s3_bucket_acl
+  standardMapping: SFSS-003 (2.3)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0073
+  vulnerabilityCategory: Insecure Network Configuration
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0074
+  id: SFDC_CKV_TF_0074
+  description: S3 Write ACLs
+  priority: P0
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_s3_bucket_acl
+  standardMapping: SFSS-003 (2.7)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0074
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0075
+  id: SFDC_CKV_TF_0075
+  description: S3 Read ACLs
+  priority: P0
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_s3_bucket_acl
+  standardMapping: SFSS-021 (1.3)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0075
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0076
+  id: SFDC_CKV_TF_0076
+  description: S3 bucket policies do not allow S3:Get* action with any Principal (all (*) principals)
+  priority: P0
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_s3_bucket
+  standardMapping: SFSS-021 (3.3)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0076
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0077
+  id: SFDC_CKV_TF_0077
+  description: Ensure S3 bucket policies do not allow S3:Delete* action with any Principal (all (*) principals)
+  priority: P0
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_s3_bucket
+  standardMapping: SFSS-003 (2.7)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0077
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0078
+  id: SFDC_CKV_TF_0078
+  description: S3 bucket policies do not allow S3:* action with any Principal (all (*) principals)
+  priority: P0
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_s3_bucket
+  standardMapping: SFSS-003 (2.7)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0078
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0081
+  id: SFDC_CKV_TF_0081
+  description: Ensure EMR cluster encryption in transit should be enabled
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_emr_security_configuration
+  standardMapping: SFSS-021 11.1
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0081
+  vulnerabilityCategory: Insecure Data Transport
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0085
+  id: SFDC_CKV_TF_0085
+  description: Ensure AWS Lambda functions are not exposed to the public internet
+  priority: P0
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lambda_permission
+  standardMapping: SFSS-021 1.1.5
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0085
+  vulnerabilityCategory: Improper/Broken Authorization
+  tags: []
+- names:
+  - checkov.ckv2_aws_2
+  id: CKV2_AWS_2
+  description: Ensure that only encrypted EBS volumes are attached to EC2 instances
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_volume_attachment
+  standardMapping: sfss-19 (6.1)
+  supportPage: https://sfdc.co/CKV2_AWS_2
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+  tags: []
+- names:
+  - checkov.ckv2_aws_11
+  id: CKV2_AWS_11
+  description: Ensure VPC flow logging is enabled in all VPCs
+  priority: P2
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_vpc
+  standardMapping: SFSS-021 (5.4.5, 5.8)
+  supportPage: https://sfdc.co/CKV2_AWS_11
+  vulnerabilityCategory: Insufficient Logging, Monitoring or Alerting
+  tags: []
 - names:
   - checkov.ckv2_aws_12
-  namespace: checkov.ckv2_aws_12
+  id: CKV2_AWS_12
+  description: Ensure the default security group of every VPC restricts all traffic
   priority: P2
-  supportPage: https://sfdc.co/CKV2_AWS_12
-  vulnerabilityCategory: Security Encryption
   levelOfEffort: Low
+  category: LOGGING
+  resource: aws_vpc
+  standardMapping: SFSS-021 (11.5)
+  supportPage: https://sfdc.co/CKV2_AWS_12
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv2_aws_30
+  id: CKV2_AWS_30
+  description: Ensure Postgres RDS as aws_rds_cluster has Query Logging enabled
+  priority: P1
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_rds_cluster
+  standardMapping: SFSS-151 (1.1)
+  supportPage: https://sfdc.co/CKV2_AWS_30
+  vulnerabilityCategory: Insufficient Logging, Monitoring or Alerting
+  tags: []
+- names:
+  - checkov.ckv2_aws_51
+  id: CKV2_AWS_51
+  description: Ensure AWS API Gateway endpoints uses client certificate authentication"
+  priority: P1
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_api_gateway_stage
+  standardMapping: SFSS-003 2.3
+  supportPage: https://sfdc.co/CKV2_AWS_51
+  vulnerabilityCategory: Improper/Broken Authorization
+  tags: []
+- names:
+  - checkov.ckv2_aws_1
+  id: CKV2_AWS_1
+  description: Ensure that all NACL are attached to subnets
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_network_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_3
+  id: CKV2_AWS_3
+  description: Ensure GuardDuty is enabled to specific org/region
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_guardduty_detector
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_4
+  id: CKV2_AWS_4
+  description: Ensure API Gateway stage have logging level defined as appropriate
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_api_gateway_stage
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_5
+  id: CKV2_AWS_5
+  description: Ensure that Security Groups are attached to another resource
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_security_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_6
+  id: CKV2_AWS_6
+  description: Ensure that S3 bucket has a Public Access block
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_s3_bucket
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+
+- names:
+  - checkov.ckv2_aws_7
+  id: CKV2_AWS_7
+  description: Ensure that Amazon EMR clusters' security groups are not open to the world
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_emr_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_8
+  id: CKV2_AWS_8
+  description: Ensure that RDS clusters has backup plan of AWS Backup
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_rds_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_9
+  id: CKV2_AWS_9
+  description: Ensure that EBS are added in the backup plans of AWS Backup
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_backup_selection
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_10
+  id: CKV2_AWS_10
+  description: Ensure CloudTrail trails are integrated with CloudWatch Logs
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_cloudtrail
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_14
+  id: CKV2_AWS_14
+  description: Ensure that IAM groups includes at least one IAM user
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_iam_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_15
+  id: CKV2_AWS_15
+  description: Ensure that auto Scaling groups that are associated with a load balancer are using Elastic Load Balancing health checks.
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_autoscaling_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_16
+  id: CKV2_AWS_16
+  description: Ensure that Auto Scaling is enabled on your DynamoDB tables
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_dynamodb_table
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_18
+  id: CKV2_AWS_18
+  description: Ensure that Elastic File System (Amazon EFS) file systems are added in the backup plans of AWS Backup
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_backup_selection
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_19
+  id: CKV2_AWS_19
+  description: Ensure that all EIP addresses allocated to a VPC are attached to EC2 instances
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_eip
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_20
+  id: CKV2_AWS_20
+  description: Ensure that ALB redirects HTTP requests into HTTPS ones
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_lb, aws_alb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_21
+  id: CKV2_AWS_21
+  description: Ensure that all IAM users are members of at least one IAM group.
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_iam_group_membership
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_22
+  id: CKV2_AWS_22
+  description: Ensure an IAM User does not have access to the console
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_user
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_23
+  id: CKV2_AWS_23
+  description: Route53 A Record has Attached Resource
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_route53_record
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_27
+  id: CKV2_AWS_27
+  description: Ensure Postgres RDS as aws_rds_cluster has Query Logging enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_rds_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_28
+  id: CKV2_AWS_28
+  description: Ensure public facing ALB are protected by WAF
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_lb, aws_alb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_29
+  id: CKV2_AWS_29
+  description: Ensure public API gateway are protected by WAF
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_api_gateway_rest_api
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_31
+  id: CKV2_AWS_31
+  description: Ensure WAF2 has a Logging Configuration
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_wafv2_web_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_32
+  id: CKV2_AWS_32
+  description: Ensure CloudFront distribution has a response headers policy attached
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_cloudfront_distribution
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_33
+  id: CKV2_AWS_33
+  description: Ensure AppSync is protected by WAF
+  priority: TBD
+  levelOfEffort: Low
+  category: APPLICATION_SECURITY
+  resource: aws_appsync_graphql_api
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_34
+  id: CKV2_AWS_34
+  description: AWS Systems Manager (SSM) parameters that store sensitive data, for example, passwords, database strings, and permit codes are encrypted so as to meet security and compliance prerequisites. An encrypted SSM parameter is any sensitive information that should be kept and referenced in a protected way.
+  priority: TBD
+  levelOfEffort: Low
+  category: Encryption
+  resource: aws_ssm_parameter
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_35
+  id: CKV2_AWS_35
+  description: This policy identifies Route Tables which have NAT instances for the default route instead of NAT gateways. It is recommended to use NAT gateways as the AWS managed NAT Gateway provides a scalable and resilient method for allowing outbound internet traffic from your private VPC subnets.
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_route_table
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_37
+  id: CKV2_AWS_37
+  description: Ensure CodeCommit associates an approval rule
+  priority: TBD
+  levelOfEffort: Low
+  category: AGENERAL_SECURITYWS
+  resource: aws_codecommit_repository
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_38
+  id: CKV2_AWS_38
+  description: Ensure Domain Name System Security Extensions (DNSSEC) signing is enabled for Amazon Route 53 public hosted zones
+  priority: TBD
+  levelOfEffort: High
+  category: NETWORKING
+  resource: aws_route53_zone
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_39
+  id: CKV2_AWS_39
+  description: Ensure Domain Name System (DNS) query logging is enabled for Amazon Route 53 hosted zones
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_route53_zone
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_40
+  id: CKV2_AWS_40
+  description: Ensure AWS IAM policy does not allow full IAM privileges
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_policy, aws_iam_role_policy, aws_iam_group_policy, aws_iam_user_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_41
+  id: CKV2_AWS_41
+  description: Ensure an IAM role is attached to EC2 instance
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_42
+  id: CKV2_AWS_42
+  description: Ensure AWS CloudFront distribution uses custom SSL certificate
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_cloudfront_distribution
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_43
+  id: CKV2_AWS_43
+  description: Ensure S3 Bucket does not allow access to all Authenticated users
+  priority: TBD
+  levelOfEffort: High
+  category: IAM
+  resource: aws_s3_bucket_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_44
+  id: CKV2_AWS_44
+  description: Ensure AWS route table with VPC peering does not contain routes overly permissive to all traffic
+  priority: TBD
+  levelOfEffort: High
+  category: NETWORKING
+  resource: aws_route_table
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv2_aws_43
+  id: CKV2_AWS_43
+  description: Ensure S3 Bucket does not allow access to all Authenticated users
+  priority: TBD
+  levelOfEffort: High
+  category: IAM
+  resource: aws_s3_bucket_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_1
+  id: CKV_AWS_1
+  description: Ensure IAM policies that allow full \"*-*\" administrative privileges are not created
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: serverless_aws
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_2
+  id: CKV_AWS_2
+  description: Ensure ALB protocol is HTTPS
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_lb_listener
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_3
+  id: CKV_AWS_3
+  description: Ensure all data stored in the EBS is securely encrypted
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_ebs_volume
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_7
+  id: CKV_AWS_7
+  description: Ensure rotation for customer created CMKs is enabled
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_kms_key
+  standardMapping: SFSS-019 6.1
+  supportPage: https://sfdc.co/CKV_AWS_7
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_8
+  id: CKV_AWS_8
+  description: Ensure all data stored in the Launch configuration or instance Elastic Blocks Store 
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_launch_configuration, aws_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_9
+  id: CKV_AWS_9
+  description: Ensure IAM password policy expires passwords within 90 days or less
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_10
+  id: CKV_AWS_10
+  description: Ensure IAM password policy requires minimum length of 14 or greater 
+  priority: P1
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping: SFSS-021 1.1.10, 11.8
+  supportPage: https://sfdc.co/CKV_AWS_10
+  vulnerabilityCategory: Improper/Broken Authentication
+  tags: []
+- names:
+  - checkov.ckv_aws_12
+  id: CKV_AWS_12
+  description: Ensure all data stored in the Launch configuration or instance Elastic Blocks Store 
+  priority: P1
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping:
+  supportPage: https://sfdc.co/CKV_AWS_12
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_11
+  id: CKV_AWS_11
+  description: Ensure IAM password policy requires at least one lowercase letter 
+  priority: P2
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping:
+  supportPage: https://sfdc.co/CKV_AWS_11
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_14
+  id: CKV_AWS_14
+  description: Ensure IAM password policy requires at least one symbol
+  priority: P1
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping:
+  supportPage: https://sfdc.co/CKV_AWS_14
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_15
+  id: CKV_AWS_15
+  description: Ensure IAM password policy requires at least one uppercase letter
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_16
+  id: CKV_AWS_16
+  description: Ensure all data stored in the RDS is securely encrypted at rest
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_db_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_18
+  id: CKV_AWS_18
+  description: Ensure the S3 bucket has access logging enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_s3_bucket
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_22
+  id: CKV_AWS_22
+  description: Ensure SageMaker Notebook is encrypted at rest using KMS CMK
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_sagemaker_notebook_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_22
+  id: CKV_AWS_22
+  description: Ensure SageMaker Notebook is encrypted at rest using KMS CMK
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_sagemaker_notebook_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_21
+  id: CKV_AWS_21
+  description: Ensure all data stored in the S3 bucket have versioning enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: BACKUP_AND_RECOVERY
+  resource: aws_s3_bucket
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_23
+  id: CKV_AWS_23
+  description: Ensure every security groups rule has a description
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_security_group, aws_security_group_rule, aws_db_security_group, aws_elasticache_security_group, aws_redshift_security_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_25
+  id: CKV_AWS_25
+  description: Security group with restricted ingress for RDP
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_security_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_26
+  id: CKV_AWS_26
+  description: Ensure all data stored in the SNS topic is encrypted
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_sns_topic
+  standardMapping: SFSS-021 (3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_26
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_28
+  id: CKV_AWS_28
+  description: Ensure Dynamodb point in time recovery (backup) is enabled
+  priority: TBD
+  levelOfEffort: High
+  category: BACKUP_AND_RECOVERY
+  resource: aws_dynamodb_table
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_29
+  id: CKV_AWS_29
+  description: Ensure all data stored in the Elasticache Replication Group is securely encrypted at rest
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_elasticache_replication_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_30
+  id: CKV_AWS_30
+  description: Ensure all data stored in the Elasticache Replication Group is securely encrypted at transit
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_elasticache_replication_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_31
+  id: CKV_AWS_31
+  description: Ensure all data stored in the Elasticache Replication Group is securely encrypted at transit and has auth token
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_elasticache_replication_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_34
+  id: CKV_AWS_34
+  description: Ensure CloudFront distribution ViewerProtocolPolicy is set to HTTPS
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_cloudfront_distribution
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_36
+  id: CKV_AWS_36
+  description: Ensure CloudTrail log file validation is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_cloudtrail
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_37
+  id: CKV_AWS_37
+  description: Ensure Amazon EKS control plane logging enabled for all log types
+  priority: P3
+  levelOfEffort: Low
+  category: KUBERNETES
+  resource: aws_eks_cluster
+  standardMapping: SFSS-021(5.4.2)
+  supportPage: https://sfdc.co/CKV_AWS_37
+  vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
+  tags: []
+- names:
+  - checkov.ckv_aws_38
+  id: CKV_AWS_38
+  description: Ensure Amazon EKS public endpoint not accessible to 0.0.0.0/0
+  priority: TBD
+  levelOfEffort: High
+  category: KUBERNETES
+  resource: aws_eks_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_39
+  id: CKV_AWS_39
+  description: Ensure Amazon EKS public endpoint disabled
+  priority: P2
+  levelOfEffort: Medium
+  category: KUBERNETES
+  resource: aws_eks_cluster
+  standardMapping: SFSS-021(3.4)
+  supportPage: https://sfdc.co/CKV_AWS_39
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_40
+  id: CKV_AWS_40
+  description: Ensure IAM policies are attached only to groups or roles 
+  priority: P1
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_iam_user_policy_attachment, aws_iam_user_policy, aws_iam_policy_attachment
+  standardMapping: SFSS-021(1.1.5)
+  supportPage: https://sfdc.co/CKV_AWS_40
+  vulnerabilityCategory: Improper/Broken Authorization
+  tags: []
+- names:
+  - checkov.ckv_aws_42
+  id: CKV_AWS_42
+  description: Ensure EFS is securely encrypted
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_efs_file_system
+  standardMapping: SFSS-021(3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_42
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_44
+  id: CKV_AWS_44
+  description: Ensure Neptune storage is securely encrypted
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_neptune_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_45
+  id: CKV_AWS_45
+  description: Ensure no hard-coded secrets exist in lambda environment
+  priority: TBD
+  levelOfEffort: Medium
+  category: SECRETS
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_47
+  id: CKV_AWS_47
+  description: Ensure DAX is encrypted at rest (default is unencrypted)
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_dax_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_48
+  id: CKV_AWS_48
+  description: Ensure MQ Broker logging is enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_mq_broker
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_50
+  id: CKV_AWS_50
+  description: X-ray tracing is enabled for Lambda"
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_51
+  id: CKV_AWS_51
+  description: Ensure ECR Image Tags are immutable
+  priority: TBD
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_ecr_repository
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_65
+  id: CKV_AWS_65
+  description: Ensure container insights are enabled on ECS cluster
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_ecs_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_66
+  id: CKV_AWS_66
+  description: Ensure that CloudWatch Log Group specifies retention days
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_cloudwatch_log_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_67
+  id: CKV_AWS_67
+  description: Ensure CloudTrail is enabled in all Regions
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_cloudtrail
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_68
+  id: CKV_AWS_68
+  description: CloudFront Distribution should have WAF enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_cloudfront_distribution
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_71
+  id: CKV_AWS_71
+  description: Ensure Redshift Cluster logging is enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_redshift_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_73
+  id: CKV_AWS_73
+  description: Ensure API Gateway has X-Ray Tracing enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_api_gateway_stage
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_74
+  id: CKV_AWS_74
+  description: Ensure DocDB is encrypted at rest (default is unencrypted)
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_docdb_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_75
+  id: CKV_AWS_75
+  description: Ensure Global Accelerator accelerator has flow logs enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_globalaccelerator_accelerator
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_76
+  id: CKV_AWS_76
+  description: Ensure API Gateway has Access Logging enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_api_gateway_stage
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_77
+  id: CKV_AWS_77
+  description: Ensure Athena Database is encrypted at rest (default is unencrypted)
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_athena_database
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_78
+  id: CKV_AWS_78
+  description: Ensure that CodeBuild Project encryption is not disabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_codebuild_project
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_79
+  id: CKV_AWS_79
+  description: Ensure Instance Metadata Service Version 1 is not enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_80
+  id: CKV_AWS_80
+  description: Ensure MSK Cluster logging is enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_msk_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_82
+  id: CKV_AWS_82
+  description: Ensure Athena Workgroup should enforce configuration to prevent client disabling encryption
+  priority: TBD
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_athena_workgroup
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_84
+  id: CKV_AWS_84
+  description: Ensure Elasticsearch Domain Logging is enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_elasticsearch_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_85
+  id: CKV_AWS_85
+  description: Ensure DocDB Logging is enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_docdb_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_86
+  id: CKV_AWS_86
+  description: Ensure Cloudfront distribution has Access Logging enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_cloudfront_distribution 
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_90
+  id: CKV_AWS_90
+  description: Ensure DocDB TLS is not disabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_docdb_cluster_parameter_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_91
+  id: CKV_AWS_91
+  description: Ensure the ELBv2 (Application/Network) has access logging enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_lb, aws_alb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_92
+  id: CKV_AWS_92
+  description: Ensure the ELB has access logging enabled
+  priority: P2
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_elb
+  standardMapping: SFSS-021 5.4.2
+  supportPage: https://sfdc.co/CKV_AWS_92
+  vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
+  tags: []
+- names:
+  - checkov.ckv_aws_93
+  id: CKV_AWS_93
+  description: Ensure S3 bucket policy does not lockout all but root user
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_s3_bucket, aws_s3_bucket_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_94
+  id: CKV_AWS_94
+  description: Ensure Glue Data Catalog Encryption is enabled
+  priority: TBD
+  levelOfEffort: High
+  category: LOGGING
+  resource: aws_glue_data_catalog_encryption_settings
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_95
+  id: CKV_AWS_95
+  description: Ensure API Gateway V2 has Access Logging enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_apigatewayv2_stage, aws_serverless_http_api
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_96
+  id: CKV_AWS_96
+  description: Ensure all data stored in Aurora is securely encrypted at rest
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_rds_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_97
+  id: CKV_AWS_97
+  description: Ensure Encryption in transit is enabled for EFS volumes in ECS Task definitions
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_ecs_task_definition
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_98
+  id: CKV_AWS_98
+  description: Ensure all data stored in the Sagemaker Endpoint is securely encrypted at rest
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_sagemaker_endpoint_configuration
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_99
+  id: CKV_AWS_99
+  description: Ensure Glue Security Configuration Encryption is enabled
+  priority: P2
+  levelOfEffort: High
+  category: LOGGING
+  resource: aws_glue_security_configuration
+  standardMapping: SFSS-021 3.2, 3.3
+  supportPage: https://sfdc.co/CKV_AWS_99
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_100
+  id: CKV_AWS_100
+  description: Ensure AWS EKS node group does not have implicit SSH access from 0.0.0.0/0
+  priority: TBD
+  levelOfEffort: High
+  category: KUBERNETES
+  resource: aws_eks_node_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_101
+  id: CKV_AWS_101
+  description: Ensure Neptune logging is enabled
+  priority: TBD
+  levelOfEffort: High
+  category: LOGGING
+  resource: aws_neptune_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_102
+  id: CKV_AWS_102
+  description: Ensure Neptune Cluster instance is not publicly available
+  priority: TBD
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_neptune_cluster_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_104
+  id: CKV_AWS_104
+  description: Ensure DocDB has audit logs enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_docdb_cluster_parameter_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_105
+  id: CKV_AWS_105
+  description: Ensure Redshift uses SSL
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_redshift_parameter_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_106
+  id: CKV_AWS_106
+  description: Ensure EBS default encryption is enabled
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_ebs_encryption_by_default
+  standardMapping: SFSS-021(3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_106
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_107
+  id: CKV_AWS_107
+  description: Ensure IAM policies does not allow credentials exposure
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_iam_policy_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_108
+  id: CKV_AWS_108
+  description: Ensure IAM policies does not allow data exfiltration
+  priority: TBD
+  levelOfEffort: Low
+  category: TBD
+  resource: aws_iam_policy_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_109
+  id: CKV_AWS_109
+  description: Ensure IAM policies does not allow permissions management / resource exposure without constraints
+  priority: TBD
+  levelOfEffort: Low
+  category: TBD
+  resource: aws_iam_policy_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_110
+  id: CKV_AWS_110
+  description: Ensure IAM policies does not allow privilege escalation
+  priority: TBD
+  levelOfEffort: Medium
+  category: TBD
+  resource: aws_iam_policy_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_111
+  id: CKV_AWS_111
+  description: Ensure IAM policies does not allow write access without constraints
+  priority: TBD
+  levelOfEffort: Low
+  category: TBD
+  resource: aws_iam_policy_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_112
+  id: CKV_AWS_112
+  description: Ensure Session Manager data is encrypted in transit
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_ssm_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_113
+  id: CKV_AWS_113
+  description: Ensure Session Manager logs are enabled and encrypted
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION, LOGGING
+  resource: aws_ssm_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_114
+  id: CKV_AWS_114
+  description: Ensure that EMR clusters with Kerberos have Kerberos Realm set
+  priority: TBD
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_emr_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_115
+  id: CKV_AWS_115
+  description: Ensure that AWS Lambda function is configured for function-level concurrent execution limit
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_116
+  id: CKV_AWS_116
+  description: Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_117
+  id: CKV_AWS_117
+  description: Ensure that AWS Lambda function is configured inside a VPC
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_118
+  id: CKV_AWS_118
+  description: Ensure that enhanced monitoring is enabled for Amazon RDS instances
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_db_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_119
+  id: CKV_AWS_119
+  description: Ensure DynamoDB Tables are encrypted using a KMS Customer Managed CMKEnsure DynamoDB Tables are encrypted using a KMS Customer Managed CMK
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_dynamodb_table
+  standardMapping: SFSS-021 (3.2, 3.3)
+  supportPage: https://sfdc.co/CKV_AWS_119
+  vulnerabilityCategory: Insecure Configuration of Data Storage
+  tags: []
+- names:
+  - checkov.ckv_aws_120
+  id: CKV_AWS_120
+  description: Ensure API Gateway caching is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_api_gateway_stage
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_121
+  id: CKV_AWS_121
+  description: Ensure AWS Config is enabled in all regions
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_config_configuration_aggregator
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_122
+  id: CKV_AWS_122
+  description: Ensure that direct internet access is disabled for an Amazon SageMaker Notebook Instance
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_sagemaker_notebook_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_123
+  id: CKV_AWS_123
+  description: Ensure that VPC Endpoint Service is configured for Manual Acceptance
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_vpc_endpoint_service
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_124
+  id: CKV_AWS_124
+  description: Ensure that CloudFormation stacks are sending event notifications to an SNS topic
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_cloudformation_stack
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_126
+  id: CKV_AWS_126
+  description: Ensure that detailed monitoring is enabled for EC2 instances
+  priority: TBD
+  levelOfEffort: Medium
+  category: LOGGING
+  resource: aws_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_127
+  id: CKV_AWS_127
+  description: Ensure that Elastic Load Balancer(s) uses SSL certificates provided by AWS Certificate Manager
+  priority: TBD
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_elb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_128
+  id: CKV_AWS_128
+  description: Ensure that an Amazon RDS Clusters have AWS Identity and Access Management (IAM) authentication enabled
+  priority: P2
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_rds_cluster
+  standardMapping: SFSS-021 1.1.10, 11.8
+  supportPage: https://sfdc.co/CKV_AWS_128
+  vulnerabilityCategory: Improper/Broken Authentication
+  tags: []
+- names:
+  - checkov.ckv_aws_129
+  id: CKV_AWS_129
+  description: Ensure that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled
+  priority: P2
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_db_instance
+  standardMapping: SFSS-021 5.4.2
+  supportPage: https://sfdc.co/CKV_AWS_129
+  vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
+  tags: []
+- names:
+  - checkov.ckv_aws_130
+  id: CKV_AWS_130
+  description: Ensure VPC subnets do not assign public IP by default
+  priority: P2
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_subnet
+  standardMapping: TBD
+  supportPage: https://sfdc.co/CKV_AWS_130
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_131
+  id: CKV_AWS_131
+  description: Ensure that ALB drops HTTP headers
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_lb, aws_alb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_134
+  id: CKV_AWS_134
+  description: Ensure that Amazon ElastiCache Redis clusters have automatic backup turned on
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_elasticache_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_135
+  id: CKV_AWS_135
+  description: Ensure that EC2 is EBS optimized
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_136
+  id: CKV_AWS_136
+  description: Ensure that ECR repositories are encrypted using KMS
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ecr_repository
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_137
+  id: CKV_AWS_137
+  description: Ensure that Elasticsearch is configured inside a VPC
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_elasticsearch_domain, aws_opensearch_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_138
+  id: CKV_AWS_138
+  description: Ensure that ELB is cross-zone-load-balancing enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: NETWORKING
+  resource: aws_elb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_139
+  id: CKV_AWS_139
+  description: Ensure that RDS clusters have deletion protection enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_rds_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_141
+  id: CKV_AWS_141
+  description: Ensured that redshift cluster allowing version upgrade by default
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_redshift_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_143
+  id: CKV_AWS_143
+  description: Ensure that S3 bucket has lock configuration enabled by default
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_144
+  id: CKV_AWS_144
+  description: Ensure that S3 bucket has cross-region replication enabled
+  priority: TBD
+  levelOfEffort: Low 
+  category: GENERAL_SECURITY
+  resource: aws_s3_bucket
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_145
+  id: CKV_AWS_145
+  description: Ensure that S3 buckets are encrypted with KMS by default
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_s3_bucket
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: 
+  tags: []
+- names:
+  - checkov.ckv_aws_147
+  id: CKV_AWS_147
+  description: Ensure that CodeBuild projects are encrypted
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_codebuild_project
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_148
+  id: CKV_AWS_148
+  description: TBD
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_default_vpc
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_149
+  id: CKV_AWS_149
+  description: Ensure that Secrets Manager secret is encrypted using KMS CMK
+  priority: P2
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_secretsmanager_secret
+  standardMapping: SFSS-021 3.2, 3.3
+  supportPage: https://sfdc.co/CKV_AWS_149
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_150
+  id: CKV_AWS_150
+  description: Ensure that Load Balancer has deletion protection enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lb, aws_alb
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_152
+  id: CKV_AWS_152
+  description: Ensure that Load Balancer (Network/Gateway) has cross-zone load balancing enabled
+  priority: P2
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_lb, aws_alb
+  standardMapping: TBD
+  supportPage: https://sfdc.co/CKV_AWS_152
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_153
+  id: CKV_AWS_153
+  description: Autoscaling groups should supply tags to launch configurations
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_autoscaling_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_154
+  id: CKV_AWS_154
+  description: Ensure Redshift is not deployed outside of a VPC
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_redshift_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_155
+  id: CKV_AWS_155
+  description: Ensure that Workspace user volumes are encrypted
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_workspaces_workspace
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_156
+  id: CKV_AWS_156
+  description: Ensure that Workspace root volumes are encrypted
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_workspaces_workspace
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_157
+  id: CKV_AWS_157
+  description: Ensure that RDS instances have Multi-AZ enabled
+  priority: P2
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_db_instance
+  standardMapping: SFSS-021 3.4
+  supportPage: https://sfdc.co/CKV_AWS_157
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_158
+  id: CKV_AWS_158
+  description: Ensure that CloudWatch Log Group is encrypted by KMS
+  priority: P2
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_cloudwatch_log_group
+  standardMapping: SFSS-021 (3.3, 5.5.1, 5.1, 1.2.2)
+  supportPage: https://sfdc.co/CKV_AWS_158
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_159
+  id: CKV_AWS_159
+  description: Ensure that Athena Workgroup is encrypted
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_athena_workgroup
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_160
+  id: CKV_AWS_160
+  description: Ensure that Timestream database is encrypted with KMS CMK
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_timestreamwrite_database
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_161
+  id: CKV_AWS_161
+  description: Ensure RDS database has IAM authentication enabled
+  priority: P1
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_db_instance
+  standardMapping: SFSS-021 (1.1.10, 11.8) 
+  supportPage: https://sfdc.co/CKV_AWS_161
+  vulnerabilityCategory: Improper/Broken Authentication
+  tags: []
+- names:
+  - checkov.ckv_aws_162
+  id: CKV_AWS_162
+  description: Ensure RDS cluster has IAM authentication enabled
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_db_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_163
+  id: CKV_AWS_163
+  description: Ensure ECR image scanning on push is enabled
+  priority: TBD
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_ecr_repository
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_164
+  id: CKV_AWS_164
+  description: Ensure Transfer Server is not exposed publicly
+  priority: TBD
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_transfer_server
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_167
+  id: CKV_AWS_167
+  description: Ensure Glacier Vault access policy is not public by only allowing specific services or principals to access it
+  priority: TBD
+  levelOfEffort: Medium
+  category: GENERAL_SECURITY
+  resource: aws_glacier_vault
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_168
+  id: CKV_AWS_168
+  description: Ensure SQS queue policy is not public by only allowing specific services or principals to access it
+  priority: TBD
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_sqs_queue_policy, aws_sqs_queue
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_170
+  id: CKV_AWS_170
+  description: Ensure QLDB ledger permissions mode is set to STANDARD
+  priority: TBD
+  levelOfEffort: Medium
+  category: IAM
+  resource: aws_qldb_ledger
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_171
+  id: CKV_AWS_171
+  description: Ensure Cluster security configuration encryption is using SSE-KMS
+  priority: P1
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_emr_security_configuration
+  standardMapping: SFSS-074 6.3
+  supportPage: https://sfdc.co/CKV_AWS_171
+  vulnerabilityCategory: Missing Encryption of Sensitive Data
+  tags: []
+- names:
+  - checkov.ckv_aws_172
+  id: CKV_AWS_172
+  description: Ensure QLDB ledger has deletion protection enabled
+  priority: TBD
+  levelOfEffort: Low 
+  category: GENERAL_SECURITY
+  resource: aws_qldb_ledger
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_173
+  id: CKV_AWS_173
+  description: Check encryption settings for Lambda environmental variable
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_174
+  id: CKV_AWS_174
+  description: Verify CloudFront Distribution Viewer Certificate is using TLS v1.2
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_cloudfront_distribution
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_175
+  id: CKV_AWS_175
+  description: Ensure WAF has associated rules
+  priority: TBD
+  levelOfEffort: Low
+  category: APPLICATION_SECURITY
+  resource: aws_waf_web_acl, aws_wafregional_web_acl, aws_wafv2_web_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_176
+  id: CKV_AWS_176
+  description: Ensure Logging is enabled for WAF  Web Access Control Lists
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_waf_web_acl, aws_wafregional_web_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_178
+  id: CKV_AWS_178
+  description: Ensure fx ontap file system is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_fsx_ontap_file_system
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_179
+  id: CKV_AWS_179
+  description: Ensure FSX Windows filesystem is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_fsx_windows_file_system
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_180
+  id: CKV_AWS_180
+  description: Ensure Image Builder component is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_imagebuilder_component
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_181
+  id: CKV_AWS_181
+  description: Ensure S3 Object Copy is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_s3_object_copy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_182
+  id: CKV_AWS_182
+  description: Ensure Doc DB is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_docdb_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_183
+  id: CKV_AWS_183
+  description: Ensure EBS Snapshot Copy is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ebs_snapshot_copy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_184
+  id: CKV_AWS_184
+  description: Ensure resource is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_efs_file_system
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_187
+  id: CKV_AWS_187
+  description: Ensure Sagemaker domain is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_sagemaker_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_189
+  id: CKV_AWS_189
+  description: Ensure EBS Volume is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ebs_volume
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_190
+  id: CKV_AWS_190
+  description: Ensure lustre file systems is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_fsx_lustre_file_system
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_191
+  id: CKV_AWS_191
+  description: Ensure Elasticache replication group is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_elasticache_replication_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_192
+  id: CKV_AWS_192
+  description: Ensure WAF prevents message lookup in Log4j2. See CVE-2021-44228 aka log4jshell
+  priority: TBD
+  levelOfEffort: High
+  category: APPLICATION_SECURITY
+  resource: aws_wafv2_web_acl
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_193
+  id: CKV_AWS_193
+  description: Ensure AppSync has Logging enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_appsync_graphql_api
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_194
+  id: CKV_AWS_194
+  description: Ensure AppSync has Field-Level logs enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_appsync_graphql_api
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_195
+  id: CKV_AWS_195
+  description: Ensure Glue component has a security configuration associated
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_glue_crawler, aws_glue_dev_endpoint, aws_glue_job
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_196
+  id: CKV_AWS_196
+  description: Ensure no aws_elasticache_security_group resources exist
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_elasticache_security_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_197
+  id: CKV_AWS_197
+  description: Ensure MQ Broker Audit logging is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_mq_broker
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_198
+  id: CKV_AWS_198
+  description: Ensure no aws_db_security_group resources exist
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_db_security_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_199
+  id: CKV_AWS_199
+  description: Ensure Image Builder Distribution Configuration encrypts AMI's
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_imagebuilder_distribution_configuration
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_200
+  id: CKV_AWS_200
+  description: Ensure that Image Recipe EBS Disk are encrypted with CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_imagebuilder_image_recipe
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_201
+  id: CKV_AWS_201
+  description: Ensure MemoryDB is encrypted at rest using KMS CMKs
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_memorydb_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_202
+  id: CKV_AWS_202
+  description: Ensure MemoryDB data is encrypted in transit
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_memorydb_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_203
+  id: CKV_AWS_203
+  description: Ensure resource is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_fsx_openzfs_file_system
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_204
+  id: CKV_AWS_204
+  description: Ensure AMIs are encrypted using KMS CMKs
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ami
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_205
+  id: CKV_AWS_205
+  description: Ensure to Limit AMI launch Permissions
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_ami_launch_permission
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_206
+  id: CKV_AWS_206
+  description: Ensure API Gateway Domain uses a modern security Policy
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_api_gateway_domain_name
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_207
+  id: CKV_AWS_207
+  description: Ensure MQ Broker minor version updates are enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_mq_broker
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_208
+  id: CKV_AWS_208
+  description: Ensure MQBroker version is current
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_mq_broker, aws_mq_configuration
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_209
+  id: CKV_AWS_209
+  description: Ensure MQ broker encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_mq_broker
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_210
+  id: CKV_AWS_210
+  description: Batch job does not define a privileged container
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_batch_job_definition
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_211
+  id: CKV_AWS_211
+  description: Ensure RDS uses a modern CaCert
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_db_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_212
+  id: CKV_AWS_212
+  description: Ensure EBS Volume is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_dms_replication_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_213
+  id: CKV_AWS_213
+  description: Ensure ELB Policy uses only secure protocols
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_load_balancer_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_214
+  id: CKV_AWS_214
+  description: Ensure Appsync API Cache is encrypted at rest
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_appsync_api_cache
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_215
+  id: CKV_AWS_215
+  description: Ensure Appsync API Cache is encrypted in transit
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_appsync_api_cache
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_216
+  id: CKV_AWS_216
+  description: Ensure Cloudfront distribution is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_cloudfront_distribution
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_217
+  id: CKV_AWS_217
+  description: Ensure Create before destroy for API deployments
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_api_gateway_deployment
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_218
+  id: CKV_AWS_218
+  description: Ensure that Cloudsearch is using latest TLS
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_cloudsearch_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_219
+  id: CKV_AWS_219
+  description: Ensure Code Pipeline Artifact store is using a KMS CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_codepipeline
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_220
+  id: CKV_AWS_220
+  description: Ensure that Cloudsearch is using https
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_cloudsearch_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_221
+  id: CKV_AWS_221
+  description: Ensure Code artifact Domain is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_codeartifact_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_222
+  id: CKV_AWS_222
+  description: Ensure DMS instance gets all minor upgrade automatically
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_dms_replication_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_223
+  id: CKV_AWS_223
+  description: Ensure ECS Cluster enables logging of ECS Exec
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_ecs_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_224
+  id: CKV_AWS_224
+  description: Ensure Cluster logging with CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ecs_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_225
+  id: CKV_AWS_225
+  description: Ensure API Gateway method setting caching is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_api_gateway_method_settings
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_226
+  id: CKV_AWS_226
+  description: Ensure DB instance gets all minor upgrades automatically
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_db_instance, aws_rds_cluster_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_227
+  id: CKV_AWS_227
+  description: Ensure KMS key is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_kms_key
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_229
+  id: CKV_AWS_229
+  description: Ensure Network ACLs don't permit unrestricted inbound traffic on port 21
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_network_acl, aws_network_acl_rule
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_230
+  id: CKV_AWS_230
+  description: Ensure Network ACLs don't permit unrestricted inbound traffic on port 20
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_network_acl, aws_network_acl_rule
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_231
+  id: CKV_AWS_231
+  description: Ensure Network ACLs don't permit unrestricted inbound traffic on port 3389
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_network_acl, aws_network_acl_rule
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_232
+  id: CKV_AWS_232
+  description: Ensure Network ACLs don't permit unrestricted inbound traffic on port 22
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_network_acl, aws_network_acl_rule
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_233
+  id: CKV_AWS_233
+  description: Ensure Create before destroy for ACM certificates
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_acm_certificate
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_234
+  id: CKV_AWS_234
+  description: Verify logging preference for ACM certificates
+  priority: TBD
+  levelOfEffort: Low 
+  category: LOGGING
+  resource: aws_acm_certificate
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_235
+  id: CKV_AWS_235
+  description: Ensure that copied AMIs are encrypted
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ami_copy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_236
+  id: CKV_AWS_236
+  description: Ensure AMI copying uses a CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_ami_copy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_237
+  id: CKV_AWS_237
+  description: Ensure Create before destroy for API GATEWAY
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_api_gateway_rest_api
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_238
+  id: CKV_AWS_238
+  description: Ensure that Guard Duty detector is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_guardduty_detector
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_239
+  id: CKV_AWS_239
+  description: Ensure DAX cluster endpoint is using TLS
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_dax_cluster
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_240
+  id: CKV_AWS_240
+  description: Ensure Kinesis Firehose delivery stream is encrypted
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_kinesis_firehose_delivery_stream
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_242
+  id: CKV_AWS_242
+  description: Ensure MWAA environment has scheduler logs enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_mwaa_environment
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_243
+  id: CKV_AWS_243
+  description: Ensure MWAA environment has worker logs enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_mwaa_environment
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_244
+  id: CKV_AWS_244
+  description: Ensure MWAA environment has webserver logs enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_mwaa_environment
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_245
+  id: CKV_AWS_245
+  description: Ensure replicated backups are encrypted at rest using KMS CMKs
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_db_instance_automated_backups_replication
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_248
+  id: CKV_AWS_248
+  description: Ensure that Elasticsearch is not using the default Security Group
+  priority: TBD
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_elasticsearch_domain, aws_opensearch_domain
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_249
+  id: CKV_AWS_249
+  description: Ensure that the Execution Role ARN and the Task Role ARN are different in ECS Task definitions
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_ecs_task_definition
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_250
+  id: CKV_AWS_250
+  description: Ensure that RDS PostgreSQL instances use a non vulnerable version with the log_fdw extension
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_rds_cluster, aws_db_instance
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_251
+  id: CKV_AWS_251
+  description: Ensure CloudTrail logging is enabled
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_cloudtrail
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_252
+  id: CKV_AWS_252
+  description: Ensure CloudTrail defines an SNS Topic
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_cloudtrail
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_253
+  id: CKV_AWS_253
+  description: Ensure DLM cross region events are encrypted
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_dlm_lifecycle_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_254
+  id: CKV_AWS_254
+  description: Ensure DLM cross region events are encrypted with Customer Managed Key
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_dlm_lifecycle_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_255
+  id: CKV_AWS_255
+  description: Ensure DLM cross region schedules are encrypted
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_dlm_lifecycle_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_256
+  id: CKV_AWS_256
+  description: Ensure DLM cross region schedules are encrypted using a Customer Managed Key
+  priority: TBD
+  levelOfEffort: Low
+  category: BACKUP_AND_RECOVERY
+  resource: aws_dlm_lifecycle_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD 
+  tags: []
+- names:
+  - checkov.ckv_aws_257
+  id: CKV_AWS_257
+  description: Ensure codecommit branch changes have at least 2 approvals
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_codecommit_approval_rule_template
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_258
+  id: CKV_AWS_258
+  description: Ensure that Lambda function URLs AuthType is not None
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lambda_function_url
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_259
+  id: CKV_AWS_259
+  description: Ensure CloudFront response header policy enforces Strict Transport Security
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_cloudfront_response_headers_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_260
+  id: CKV_AWS_260
+  description: Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+  priority: P2
+  levelOfEffort: Low
+  category: NETWORKING
+  resource: aws_security_group, aws_security_group_rule, aws_vpc_security_group_ingress_rule
+  standardMapping: SFSS-021 (11.5)
+  supportPage: https://sfdc.co/CKV_AWS_260
+  vulnerabilityCategory: Insecure Configuration of Network Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_261
+  id: CKV_AWS_261
+  description: Ensure HTTP HTTPS Target group defines Healthcheck
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_lb_target_group, aws_alb_target_group
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_262
+  id: CKV_AWS_262
+  description: Ensure Kendra index Server side encryption uses CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_kendra_index
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_263
+  id: CKV_AWS_263
+  description: Ensure App Flow flow uses CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_appflow_flow
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_264
+  id: CKV_AWS_264
+  description: Ensure App Flow connector profile uses CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_appflow_connector_profile
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_265
+  id: CKV_AWS_265
+  description: Ensure Keyspaces Table uses CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_keyspaces_table
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD 
+  tags: []
+- names:
+  - checkov.ckv_aws_266
+  id: CKV_AWS_266
+  description: Ensure App Flow connector profile uses CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_db_snapshot_copy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_267
+  id: CKV_AWS_267
+  description: Ensure that Comprehend Entity Recognizer's model is encrypted by KMS using a customer managed Key (CMK)
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_comprehend_entity_recognizer
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_268
+  id: CKV_AWS_268
+  description: Ensure that Comprehend Entity Recognizer's volume is encrypted by KMS using a customer managed Key
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_comprehend_entity_recognizer
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_269
+  id: CKV_AWS_269
+  description: Ensure Connect Instance Kinesis Video Stream Storage Config uses CMK
+  priority: TBD
+  levelOfEffort: Medium
+  category: ENCRYPTION
+  resource: aws_connect_instance_storage_config
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_270
+  id: CKV_AWS_270
+  description: Ensure Connect Instance S3 Storage Config uses CMK
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_connect_instance_storage_config
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_271
+  id: CKV_AWS_271
+  description: Ensure DynamoDB table replica KMS encryption uses CMK
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: aws_dynamodb_table_replica
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_272
+  id: CKV_AWS_272
+  description: Ensure AWS Lambda function is configured to validate code-signing
+  priority: TBD
+  levelOfEffort: High
+  category: SUPPLY_CHAIN
+  resource: aws_lambda_function
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_273
+  id: CKV_AWS_273
+  description: Ensure access is controlled through SSO and not AWS IAM defined users
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_iam_user
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_274
+  id: CKV_AWS_274
+  description: Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy
+  priority: P1
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_role, aws_iam_policy_attachment, aws_iam_role_policy_attachment, aws_iam_user_policy_attachment, aws_iam_group_policy_attachment, aws_ssoadmin_managed_policy_attachment
+  standardMapping: SFSS-003 2.3
+  supportPage: https://sfdc.co/CKV_AWS_274
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.ckv_aws_275
+  id: CKV_AWS_275
+  description: Disallow policies from using the AWS AdministratorAccess policy
+  priority: TBD
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_policy
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_276
+  id: CKV_AWS_276
+  description: Ensure Data Trace is not enabled in API Gateway Method Settings
+  priority: TBD
+  levelOfEffort: Low
+  category: LOGGING
+  resource: aws_api_gateway_method_settings
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_278
+  id: CKV_AWS_278
+  description: Ensure MemoryDB snapshot is encrypted by KMS using a customer managed Key
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_memorydb_snapshot
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_279
+  id: CKV_AWS_279
+  description: Ensure Neptune snapshot is securely encrypted
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_neptune_cluster_snapshot
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_280
+  id: CKV_AWS_280
+  description: Ensure Neptune snapshot is encrypted by KMS using a customer managed Key
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_neptune_cluster_snapshot
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_281
+  id: CKV_AWS_281
+  description: Ensure RedShift snapshot copy is encrypted by KMS using a customer managed Ke
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_redshift_snapshot_copy_grant
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_282
+  id: CKV_AWS_282
+  description: Ensure that Redshift Serverless namespace is encrypted by KMS using a customer managed key 
+  priority: TBD
+  levelOfEffort: High
+  category: ENCRYPTION
+  resource: aws_redshiftserverless_namespace
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_aws_283
+  id: CKV_AWS_283
+  description: Ensure no IAM policies documents allow ALL or any AWS principal permissions to the resource
+  priority: TBD
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_policy_document
+  standardMapping: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0082
+  id: SFDC_CKV_TF_0082
+  description: Ensure EC2 AMIs are not publicly accessible
+  priority: P1
+  levelOfEffort: High
+  category: GENERAL_SECURITY
+  resource: aws_ami
+  standardMapping: SFSS-021 1.5
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0082
+  vulnerabilityCategory: Improper/Broken Authorization
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0083
+  id: SFDC_CKV_TF_0083
+  description: Ensure AWS IAM Password Policy requires to follow the standard.
+  priority: TBD
+  levelOfEffort: Low
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping: SFSS-006 (4.10)
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0083
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0084
+  id: SFDC_CKV_TF_0084
+  description: Ensure NACL ingress does not allow all Ports
+  priority: P2
+  levelOfEffort: High
+  category: NETWORKING
+  resource: aws_network_acl_rule
+  standardMapping: SFSS-021 11.4
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0084
+  vulnerabilityCategory: Insecure Network Configuration
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0086
+  id: SFDC_CKV_TF_0086
+  description: Ensure Deletion Protection is enabled in RDS cluster resource
+  priority: TBD
+  levelOfEffort: Low
+  category: GENERAL_SECURITY
+  resource: aws_rds_cluster
+  standardMapping: 
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0086
+  vulnerabilityCategory: 
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0089
+  id: SFDC_CKV_TF_0089
+  description: Ensure that appropriate hashing algorithm is enabled for SNS
+  priority: TBD
+  levelOfEffort: TBD
+  category: ENCRYPTION
+  resource: aws_sns_topic
+  standardMapping: SFSS-070 - 6
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0089
+  vulnerabilityCategory: Broken Cryptography
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0092
+  id: SFDC_CKV_TF_0092
+  description: Ensure IAM password policy prevents password reuse
+  priority: P1
+  levelOfEffort: High
+  category: IAM
+  resource: aws_iam_account_password_policy
+  standardMapping: 
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0092
+  vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
+  tags: []
+- names:
+  - checkov.sfdc_ckv_tf_0094
+  id: SFDC_CKV_TF_0094
+  description: VM instance/serverless with a private key of a wildcard domain certificate in cleartext
+  priority: P1
+  levelOfEffort: High
+  category: SECRETS
+  resource: aws_iam_account_password_policy
+  standardMapping: SFSS-019 6.1
+  supportPage: https://sfdc.co/SFDC_CKV_TF_0094
+  vulnerabilityCategory: Sensitive Data Exposure
+  tags: []
+- names:
+  - policy.mandatory.release.helm.tagging.presencecheck
+  id: fp0003
+  priority: TBD
+  description: Check presence of platform mandatory tags for deployment, service, replicaset, statefulset, pvc and daemonset
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/fp0003
+  vulnerabilityCategory: Other
+  tags: []
+- names:
+  - policy.mandatory.release.helm.tagging.nonpresencecheck
+  id: TBD
+  priority: TBD
+  description: Check platform mandatory tags are not hard coded for deployment, service, replicaset, statefulset, pvc and daemonset
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: Other
+  tags: []
+- names:
+  - policy.mandatory.release.helm.tagging.faketagcheck
+  id: TBD
+  priority: Check presence of fake platform mandatory tags
+  description: TBD
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: Other
+  tags: []
+- names:
+  - policy.mandatory.release.helm.tagging.jobnonpresencecheck
+  id: TBD
+  priority: TBD
+  description: Check platform mandatory tags are not hard coded for job  and cronjob
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: Other
+  tags: []
+- names:
+  - policy.mandatory.release.helm.tagging.jobpresencecheck
+  id: TBD
+  priority: TBD
+  description: Check presence of platform mandatory tags for job  and cronjob
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: Other
+  tags: []
+- names:
+  - policy.mandatory.release.helm.soter.nonnlb
+  id: TBD
+  priority: TBD
+  description: check if helm charts for Kubernetes Service deployment has a fixed IP, 127.0.0.1/32, listed as loadBalancerSourceRanges.  Soter service is responsible to keep this updated if the public IPs of other FDs change
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.privileged
+  id: K8S0013
+  priority: P1
+  description: Container is privileged. Privileged containers have all capabilities and also removes cgroup resource accounting
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0013
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.dropcapabilities
+  id: K8S0004
+  priority: P1
+  description: Container has not dropped kernel capabilities. Reducing kernel capabilities available to a container limits its attack surface
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0004
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.dangerouscapabilities
+  id: K8S0001
+  priority: P1
+  description: The securityContext of PodSpec adds capabilities that can be used to escalate privileges or for breaking out of a container.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0001
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.highriskcapabilities
+  id: K8S0007
+  priority: P1
+  description: Container uses high risk capability. Capabilities permit certain named  root  actions without giving full  root  access. Certain capabilities, like CAP_SYS_ADMIN, is equivalent to root
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0007
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.dockersock
+  id: K8S0003
+  priority: P1
+  description: Container mounts the docker socket. This leaks information about other containers and can allow container breakout
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0003
+  vulnerabilityCategory: OPA -Lack of Binary Hardening rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.mesh.istioresource
+  id: OPA-MESH-006
+  priority: TBD
+  description: Service Mesh validation failed for %s. Usage of %s labels is restricted
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/OPA-MESH-006
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.mesh.envoyfilter
+  id: OPA-MESH-002
+  priority: TBD
+  description: Service Mesh validation failed for %s. EnvoyFilter needs to have the workload selector with the p_servicename label being used as selector
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/OPA-MESH-002
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.mesh.ingressgatewayenvoyfilter
+  id: OPA-MESH-005
+  priority: TBD
+  description: Service Mesh validation failed for %s. EnvoyFilter for Ingress Gateway needs to have the context set to GATEWAY
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/OPA-MESH-005
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.mesh.sidecarannotations
+  id: OPA-MESH-004
+  priority: TBD
+  description: Service Mesh validation failed for %s. traffic.sidecar.istio.io annotations other than %s are forbidden
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/OPA-MESH-004
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.mesh.meshserviceinstance
+  id: OPA-MESH-007
+  priority: TBD
+  description: Service %s is using the deprecated label mesh_service_instance. Please remove this from the service spec
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/OPA-MESH-007
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.listsecrets
+  id: K8S1024
+  priority: P1
+  description: A user with a role that allows listing secrets can potentially view all the secrets in a specific namespace or in the whole cluster (with ClusterRole). An attacker with the listing secrets permission may be able to obtain usernames and passwords for applications, SSH keys, other more privileged user’s tokens and more. All of these can be used in different ways depending on their capabilities.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1024
+  vulnerabilityCategory: OPA -Sensitive Data Exposure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.impersonategroups
+  id: K8S1023
+  priority: P1
+  description: Role allows one to impersonate privileged groups (like system:masters)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1023
+  vulnerabilityCategory: OPA -Improper/Broken Authentication rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.dashboard
+  id: K8S0002
+  priority: P1
+  description: Container runs kubernetes web ui. Well-known compromises of the cluster via the dashboard were due the way the dashboards were set up.Note- this rule currently only checks for usage of kubernetes-webui, rather than checking its configuration
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0002
+  vulnerabilityCategory: OPA -Lack of Binary Hardening rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyresourceimpersonate
+  id: K8S1003
+  priority: P1
+  description: With a  user impersonation  privilege, an attacker could impersonate a privileged account
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1003
+  vulnerabilityCategory: OPA -Improper/Broken Authentication rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.tiller
+  id: K8S0023
+  priority: P1
+  description: Container is helm tiller. Helm Tiller installations often have an unauthenticated API open to the cluster which provides a privilege escalation route to ClusterAdmin or NamespaceEditor.Note- This policy only warns for images that /tiller in their name from being deployed
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0023
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.procmount
+  id: K8S0015
+  priority: P1
+  description: Security context has procmount set to UnmaskedProcMount. This bypasses the default masking behavior of the container runtime and may lead accidental security exposure of special devices or information
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0015
+  vulnerabilityCategory: OPA -Sensitive Data Exposure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbgroups
+  id: K8S1011
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole groups resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1011
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbdaemonsets
+  id: K8S1009
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole daemonsets resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1009
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.unsafesysctls
+  id: TBD
+  priority: P1
+  description: Unsafe sysctls have been enabled. This may have various security consequences.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.abac
+  id: K8S2000
+  priority: P1
+  description: Do not enable (legacy) Attribute-Based Access Control (ABAC) for any reason
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S2000
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbreplicationcontrollers
+  id: K8S1015
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole replicationcontrollers resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1015
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbusers
+  id: K8S1020
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole users resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1020
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.http
+  id: TBD
+  priority: P1
+  description: Callback uses http rather than https. An attacker may be able to perform a MiTM attack on this communication.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Data Transport rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.hostnetwork
+  id: K8S0009
+  priority: P2
+  description: Container shares the host network.Sharing the hosts network namespace permits processes in the pod to communicate with processes bound to the host’s loopback adapter
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0009
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.shareprocessnamespace
+  id: K8S0022
+  priority: P1
+  description: All containers in a Pod within the same PID Namespace. When this occurs, containers can, for example,  access each others' filesystem and memory , as long as they share user and group IDs. These effects could be unexpected, especially if security (e.g. egress controls) occurs in a sidecar container
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0022
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.createbind
+  id: K8S1022
+  priority: P1
+  description: Authz role allows one to attach to a pod and view all its logs in realtime
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1022
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.attachpods
+  id: K8S1021
+  priority: P1
+  description: AuthZ role allows one to attach to a pod and view all its logs in realtime
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1021
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.hostport
+  id: K8S0011
+  priority: P2
+  description: Container shares host port. The hostPort feature allows to expose a single container port on the host IP. Using the hostPort to expose an application to the outside of the Kubernetes cluster has the same consequences as using the host network.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0011
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.podexec
+  id: K8S1026
+  priority: P1
+  description: Role allows one to exec into a pod
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1026
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbjobs
+  id: K8S1012
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole jobs resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1012
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbcronjobs
+  id: K8S1008
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole cronjobs resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1008
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.hostpath
+  id: K8S0010
+  priority: P1
+  description: Container shares host path. Host bind mounts (also called  hostPath  mounts) can be used to exfiltrate data from or escalate privileges on the host system. Using host bind mounts can cause unreliability of the node if it causes a partition to fill up.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0010
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyresourcedelete
+  id: K8S1001
+  priority: P1
+  description: Authz RBAC does not follow least privilege - delete
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1001
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.maliciouscreation
+  id: K8S1025
+  priority: P1
+  description: Role allows one to create a malicious pod
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1025
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.automount
+  id: TBD
+  priority: P1
+  description: When possible, avoid automounting Kubernetes service account tokens unless there is a legitimate need for a workload to communicate to the API server.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverb
+  id: K8S1005
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole does not follow least privilege - verb
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1005
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.hostnamespace
+  id: K8S0008
+  priority: P1
+  description: Container shares the host namespace. Sharing the host’s PID namespace allows visibility of processes on the host, potentially leaking information such as environment variables and configuration. Sharing the host’s IPC namespace allows container processes to communicate with processes on the host
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0008
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbstatefulsets
+  id: K8S1019
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole statefulsets resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1019
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyresourcecreate
+  id: K8S1000
+  priority: P1
+  description: Authz RBAC does not follow least privilege - create
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1000
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbdeployments
+  id: K8S1010
+  priority: P1
+  description: Authz RBAC Role or ClusterRole deployments resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1010
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyresourcelist
+  id: K8S1004
+  priority: P1
+  description: Authz RBAC does not follow least privilege - list
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1004
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbpods
+  id: K8S1013
+  priority: P1
+  description: An attacker with permission to create a pod in the “kube-system” namespace can create cryptomining containers. But if there is a service account with privileged permissions, and the attacker knows its name, the permissions can be used to escalate privileges
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1013
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbreplicasets
+  id: K8S1014
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole replicasets resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1014
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbsecrets
+  id: K8S1018
+  priority: P1
+  description: A user with a role that allows listing secrets can potentially view all the secrets in a specific namespace or in the whole cluster (with ClusterRole). An attacker with the listing secrets permission may be able to obtain usernames and passwords for applications, SSH keys, other more privileged user’s tokens and more. All of these can be used in different ways depending on their capabilities
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1018
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbclusterrolebindings
+  id: K8S1006
+  priority: P1
+  description: Users with a ClusterRole with the verb bind enables them to create a RoleBinding with the admin ClusterRole (default high privileged role) and to add any user, including themselves, to this admin ClusterRole
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1006
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbclusterroles
+  id: K8S1007
+  priority: P1
+  description: Users with a ClusterRole with the verb bind enables them to create a RoleBinding with the admin ClusterRole (default high privileged role) and to add any user, including themselves, to this admin ClusterRole
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1007
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyresourceget
+  id: K8S1002
+  priority: P1
+  description: Authz RBAC does not follow least privilege - get
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1002
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbrolebindings
+  id: K8S1016
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole rolebindings resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1016
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.anyverbroles
+  id: K8S1017
+  priority: P1
+  description: Authz RBAC  Role  or  ClusterRole roles resources do not allow wildcards (*)
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S1017
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.tlsverify
+  id: K8S2001
+  priority: TBD
+  description: Do not set insecure-skip-tls-verify- false as this will ignore any certificate check, potentially leading to MiTM attacks.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S2001
+  vulnerabilityCategory: OPA -Insecure Data Transport rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.secrets
+  id: K8S0026
+  priority: P1
+  description: Minimize the use of environment variable secrets. By separating the secret into a separate object that is flagged for privacy allows you to more easily manage it differently than open configuration like environment variables.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0026
+  vulnerabilityCategory: OPA -Sensitive Data Exposure rules
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.expose_net_bind_service
+  id: DF0005
+  priority: P1
+  description: Do Not Use cap_net_bind_service Without Using Privileged Ports
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0005
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.entrypoint
+  id: DF0003
+  priority: P1
+  description: Multiple ENTRYPOINT Instructions Found
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0003
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.valid_ports
+  id: DF0006
+  priority: P1
+  description: Only Expose Valid Ports
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0006
+  vulnerabilityCategory: OPA -Insecure Configuration of Network Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.fkp.deprecations
+  id: TBD
+  priority: P2
+  description: Check Kubernetes API Deprecation versions as no longer served for kubernetes v1 13, 14, 15, and  16
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.fkp.flowcontrol
+  id: TBD
+  priority: TBD
+  description: Kubernetes API Deprecation check failed for Flowcontrol. API versions is no longer served for kubernetes v1.29 & above
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/FP0006
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.iac.deprecations
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.approved_registry
+  id: DF0009
+  priority: TBD
+  description: Use an Approved Registry
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0009
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.run_sudo
+  id: DF0011
+  priority: P1
+  description: RUN- Avoid using sudo
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0011
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.user
+  id: DF0012
+  priority: P1
+  description: USER instruction should be provided
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0012
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.run_install_openssh
+  id: DF0010
+  priority: P1
+  description: Avoid Installing OpenSSH
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0010
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.automount
+  id: K8S2003
+  priority: P1
+  description: Avoid automounting Kubernetes service account tokens unless there is a legitimate need for a workload to communicate to the API server
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S2003
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.fkp.hpa
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.emptydirsizelimit
+  id: K8S0005
+  priority: P2
+  description: Container mounts an empty dir without a size limit. A Pod with access to an  emptyDir  can consume the Node's entire disk (i.e. the limit is unbounded) until the offending Pod is deleted or evicted. This can constitute a denial-of-service condition at the affected Node
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0005
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.fsgroup
+  id: K8S0006
+  priority: P1
+  description: The provided pod spec fsGroup is not allowed
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0006 
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.nodeport
+  id: K8S0012
+  priority: P1
+  description: Nodeport being used. The NodePort service represents a static endpoint through which the selected pods can be reached. It is preferable to use a load balancer in front of the Kubernetes nodes. This gives you an extra resiliency for the case that some of the Kubernetes nodes become unavailable.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0012
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.privilegeescalation
+  id: K8S0014
+  priority: P1
+  description: The security context enables allowprivilegeescalation. Setting it to  false  ensures that no child process of a container can gain more privileges than its parent.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0014
+  vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.readOnlyRootFilesystem
+  id: K8S0016
+  priority: P2
+  description: Container does not have an immutable root filesystem. An attacker may be able to add malicious binaries to PATH
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0016
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.resourcelimits
+  id: K8S0017
+  priority: P1
+  description: Container does not have memory/resource limits. Enforcing CPU limits prevents DOS via resource exhaustion. When Containers have resource requests specified the scheduler can make better decisions about which nodes to place Pods on and how to deal with resource contention.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0017
+  vulnerabilityCategory: Denial-of-Service (DoS)
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.runasnonroot
+  id: K8S0019
+  priority: P1
+  description: Container does not set runAsNonRoot. RunAsNonRoot forces the running image to run as a non-root user to ensure least privilege.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0019
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.runasuser
+  id: K8S0020
+  priority: P1
+  description: Container has a low UID user. Running as a low UID may conflict with the host’s user table.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0020
+  vulnerabilityCategory: OPA -Insecure Configuration of Identity and Access Management Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.duplicatehostpath
+  id: K8S0025
+  priority: P1
+  description: If using hostPath, and an exception is granted, please ensure that you understand the data requirements of your pod. If containers do not need access to the same data, ensure that they are on separate volumes, such that if one container is compromised, the data for the other container is not at risk.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/K8S0025
+  vulnerabilityCategory: OPA -Insecure Configuration of Build and Deployment Infrastructure rules
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.rolloutkind
+  id: K8S2004
+  priority: P2
+  description: Rollout(Argo Rollouts) objects are the way, we do Safe Deployment leveraging Zero Downtime. This provides higher availability, though to adopt this you have to make changes on your helm and update your manifest with FIT.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/k8s2004
+  vulnerabilityCategory: Denial-of-Service (DoS)
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.latest_tag
+  id: DF0007
+  priority: P1
+  description: Pin Image Version to Release Tag
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0007
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.base_image_tag
+  id: DF0008
+  priority: TBD
+  description: Tag the Version of a (base) Image Explicitly
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0008
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.add_run_http
+  id: DF0001
+  priority: TBD
+  description: Use ADD with a secure protocol, like https. The current source (%s) uses an insecure protocol
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0001
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.copy
+  id: DF0002
+  priority: P1
+  description: Use COPY instead of ADD for files and folders
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0002
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.env_proxy
+  id: DF0004
+  priority: P1
+  description: Avoid using %s as it enables one to obtain 3pp from an unapproved source
+  resource: Docker
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/DF0004
+  vulnerabilityCategory: Lack of Binary Hardening
+  tags: []
+- names:
+  - policy.mandatory.release.helm.fkp.externalip
+  id: TBD
+  priority: TBD
+  description: FKP Check for ExternalIPs of K8s Service failed for %s, externalIPs is not allowed
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/FP0007
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.fkp.kubesystem
+  id: TBD
+  priority: TBD
+  description: Forbidden to deploy k8s resource %v to kube-system namespace through helm charts
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/FP0009
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.mesh.sidecar
+  id: OPA-MESH-003
+  priority: TBD
+  description: Service Mesh validation failed for %s. Sidecar resource needs to have the workload selector with one of the labels as selector
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.apiserverrequesttimeout
+  id: OPA-K8S-0029
+  priority: TBD
+  description: If the kube-apiserver exists in command, then --request-timeout must be included with hours.
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: http://sfdc.co/k8s0029
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.dropcapabilities_rule2
+  id: OPA-K8S-0004
+  priority: TBD
+  description: Missing securityContext settings for the container with dropped kernel capabilities. Reducing kernel capabilities available to a container limits its attack surface
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: https://sfdc.co/k8s0004
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.nonprivilegedhostports
+  id: OPA-K8S-1027
+  priority: TBD
+  description: The Kubernetes cluster must use non-privileged host ports for user pods
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: http://sfdc.co/K8S1027
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.helm.syssec.restrictdefaultserviceaccountuse
+  id: OPA-K8S-1028
+  priority: TBD
+  description: Ensure that default service accounts are not actively used by bounding to a role or cluster role
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: http://sfdc.co/K8S1028
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.release.docker.syssec.managed_image
+  id: DF-0013
+  priority: TBD
+  description: TBD
+  resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
