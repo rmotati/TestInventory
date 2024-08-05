@@ -34,25 +34,26 @@ function fetcMetadata(policystatus) {
 }
 
 function fetcBuggingEnforcedData(policystatus) {
-  // Fetch and process the YAML data
-  fetch(policystatus)
-    .then((response) => response.text())
-    .then((text) => {
-      let data = jsyaml.load(text);
-      if (data.enforced) {
-        data.enforced.forEach((element) => {
-          buggingEnforcedData.push(element);
-        });
-      } else if (data.bugging) {
-        data.bugging.forEach((element) => {
-          buggingEnforcedData.push(element);
-        });
-      }
-    })
-    .catch((error) => console.error("Error loading YAML file:", error));
-}
+    fetch(policystatus)
+      .then((response) => response.text())
+      .then((text) => {
+        let data = jsyaml.load(text);
+        if (data.enforced) {
+          data.enforced.forEach((element) => {
+            buggingEnforcedData.push(element);
+          });
+        } else if (data.bugging) {
+          data.bugging.forEach((element) => {
+            buggingEnforcedData.push(element);
+          });
+        }
+      })
+      .catch((error) => console.error("Error loading YAML file:", error));
+  }
+  
 
-function getIncuBatingData() {
+
+function getIncubatingData() {
     const tabs = document.querySelectorAll(".tab");
     tabs.forEach((tab) => {
       tab.addEventListener("click", function () {
@@ -60,27 +61,22 @@ function getIncuBatingData() {
         this.classList.add("active");
       });
     });
-
-
-  incubatingData = [];
-
   
-  const obj =  policyMetaData.policies.filter(policy  => 
-    buggingEnforcedData.every(buggingEnforced => buggingEnforced.namespace !== policy.names[0])
-  );
-  incubatingData = obj;
-  var tabName = document
-    .querySelector(".side-tab.active")
-    .getAttribute("data-table");
-
-  getDatafromtabs(tabName,mainTab="incubating");
-}
+    incubatingData = [];
+  
+    const obj = policyMetaData.policies.filter(policy =>
+      buggingEnforcedData.every(buggingEnforced => buggingEnforced.namespace !== policy.names[0])
+    );
+    incubatingData = obj;
+    var tabName = document
+      .querySelector(".side-tab.active")
+      .getAttribute("data-table");
+  
+    getDatafromtabs(tabName, "incubating");
+  }
 
 function fetchyamldata(policystatus) {
   dataTable.innerHTML = "";
-  // document.querySelectorAll('.side-tab')[0].classList.add('active')
-  // document.querySelectorAll('.side-tab')[1].classList.remove('active')
-  // document.querySelectorAll('.side-tab')[2].classList.remove('active')
 
   const tabs = document.querySelectorAll(".tab");
   tabs.forEach((tab) => {
@@ -103,43 +99,45 @@ function fetchyamldata(policystatus) {
       .catch((error) => console.error("Error loading YAML file:", error));
   }
 }
-function getDatafromtabs(sideTabName,mainTab) {
-  const searchInput = (document.getElementById("searchPolicy").value = "");
-  var mainTabName = document
-  .querySelector(".tab.active")
-  .getAttribute("data-table");
-  if(mainTab === 'incubating') {
-    mainTabName = "incubating"
-  }
-
-  const sideTabs = document.querySelectorAll(".side-tab");
-  sideTabs.forEach((tab) => {
-    tab.addEventListener("click", function () {
-      sideTabs.forEach((tab) => tab.classList.remove("active"));
-      this.classList.add("active");
+function getDatafromtabs(sideTabName, mainTab) {
+    console.log('sideTabName:', sideTabName, 'mainTab:', mainTab);
+  
+    const searchInput = (document.getElementById("searchPolicy").value = "");
+    var mainTabName = document.querySelector(".tab.active").getAttribute("data-table");
+    
+    if (mainTab === 'incubating') {
+      mainTabName = "incubating";
+    }
+  
+    console.log('mainTabName:', mainTabName);
+  
+    const sideTabs = document.querySelectorAll(".side-tab");
+    sideTabs.forEach((tab) => {
+      tab.addEventListener("click", function () {
+        sideTabs.forEach((tab) => tab.classList.remove("active"));
+        this.classList.add("active");
+      });
     });
-  });
-
-  if (mainTabName === "bugging") {
-    let finalData = data.bugging;
-    let buggingData = prepareFinalData(finalData);
-    renderTableForBugging(buggingData, sideTabName);
-  } else if (mainTabName === "enforced") {
-    let finalData = data.enforced;
-    let enfocedData = prepareFinalData(finalData);
-    renderEnforceTable(enfocedData, sideTabName);
-  } else {
-  console.log("incubating data",incubatingData)
-    renderTableForBugging(incubatingData, sideTabName);
+  
+    if (mainTabName === "bugging") {
+      let finalData = data.bugging;
+      let buggingData = prepareFinalData(finalData);
+      renderTableForBugging(buggingData, sideTabName);
+    } else if (mainTabName === "enforce") {
+      let finalData = data.enforced;
+      let enforcedData = prepareFinalData(finalData);
+      console.log('enforcedData:', enforcedData);
+      renderEnforceTable(enforcedData, sideTabName);
+    } else {
+      renderTableForBugging(incubatingData, sideTabName);
+    }
   }
-
-//   renderTableForBugging(incubatingData, sideTabName);
-}
+  
+  
 
 function prepareFinalData(finalData) {
   metaDataArray = [];
   for (var i = 0; i < finalData.length; i++) {
-    //  let namespaces = policyMetaData.find(o => o.names[0] === finalData[i].namespace);
     let namespaces = policyMetaData.policies.find(
       (o) => o.names[0] === finalData[i].namespace
     );
@@ -166,32 +164,32 @@ function renderTableForBugging(data, sideTabName) {
   table.innerHTML = "";
   const headerRow = table.insertRow();
   headerRow.innerHTML = `
-        <th>Serial</th>
-        <th>Policy Name</th>
-        <th>Id</th>
-        <th>Description</th>
-        <th>Priority</th>
-        <th>Level Of Effort</th>
-        <th>Category</th>
-        <th>Resource</th>
-        <th>Standard Mapping</th>
-        <th>Support Page</th>
-        <th>Vulnarability Category</th>
-        <th>Tags</th>
+            <th>Serial</th>
+            <th>Policy Name</th>
+            <th>Policy ID</th>
+            <th>Priority</th>
+            <th>LOE</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Resource</th>
+            <th>Standard Mapping</th>
+            <th>Support Page</th>
+            <th>Vulnarability Category</th>
+            <th>Tags</th>
     `;
   filteredData.forEach((item, index) => {
     const row = table.insertRow();
     row.innerHTML = `
-             <td>${index + 1}</td>
+            <td>${index + 1}</td>
             <td>${item.names[0]}</td>
-            <td>${item.id}</td>
-            <td>${item.description}</td>
+            <td><a href="${item.supportPage}" target="_blank">${item.id}</a></td>
             <td>${item.priority}</td>
             <td>${item.levelOfEffort}</td>
-             <td>${item.category}</td>
+            <td>${item.category}</td>
+            <td>${item.description}</td>
             <td>${item.resource}</td>
-            <td>${item.standardMapping} || ''</td>
-            <td>${item.supportPage}</td>
+            <td>${item.standardMapping}</td>
+            <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
             <td>${item.vulnerabilityCategory}</td>
             <td>${item.tags}</td>
         `;
@@ -202,70 +200,59 @@ function renderTableForBugging(data, sideTabName) {
 }
 
 function renderEnforceTable(data, sideTabName) {
-  dataTable.innerHTML = "";
-  if (sideTabName === "checkov") {
-    filteredData = data.filter((item) => item.names[0].includes(sideTabName));
-    searchData = data.filter((item) => item.names[0].includes(sideTabName));
-  } else {
-    filteredData = data.filter((item) =>
-      item.names[0].includes(`release.${sideTabName}`)
-    );
-  }
-  policiesCount = filteredData.length;
-  const table = document.createElement("table");
-  const headerRow = table.insertRow();
-  headerRow.innerHTML = `
-        <th>Serial</th>
-        <th>Policy Name</th>
-        <th>Id</th>
-        <th>Description</th>
-        <th>Priority</th>
-        <th>Level Of Effort</th>
-        <th>Category</th>
-        <th>Resource</th>
-        <th>Standard Mapping</th>
-        <th>Support Page</th>
-        <th>Vulnarability Category</th>
-        <th>Tags</th>
-        <th>Exceptions</th>
-
-    `;
-  filteredData.forEach((item, index) => {
-    var exceptions;
-    if (item.exceptions) {
-      exceptions = item.exceptions.map(function (item) {
-        return item["service"];
-      });
+    dataTable.innerHTML = "";
+    
+    if (sideTabName === "checkov") {
+      filteredData = data.filter((item) => item.names[0].includes(sideTabName));
+      searchData = data.filter((item) => item.names[0].includes(sideTabName));
     } else {
-      exceptions = "";
+      filteredData = data.filter((item) => item.names[0].includes(`release.${sideTabName}`));
     }
-
-    const row = table.insertRow();
-    row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${item.names[0]}</td>
-            <td>${item.id}</td>
-            <td>${item.description}</td>
-            <td>${item.priority}</td>
-            <td>${item.levelOfEffort}</td>
-             <td>${item.category}</td>
-            <td>${item.resource}</td>
-            <td>${item.standardMapping}</td>
-            <td>${item.supportPage}</td>
-            <td>${item.vulnerabilityCategory}</td>
-            <td>${item.tags}</td>
-            <td>${exceptions}</td>
-        `;
-  });
-
-  dataTable.appendChild(table);
-  policiesCountEl.innerText = "Total Policies : " + policiesCount;
-}
-
-// function getIncubatingData() {
-//   dataTable.innerHTML = "<h3 class='work-progress'>Work in progress</h3>";
-//   policiesCountEl.innerText = " ";
-// }
+    
+    policiesCount = filteredData.length;
+    
+    const table = document.createElement("table");
+    const headerRow = table.insertRow();
+    headerRow.innerHTML = `
+      <th>Serial</th>
+      <th>Policy Name</th>
+      <th>Policy ID</th>
+      <th>Priority</th>
+      <th>LOE</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Resource</th>
+      <th>Standard Mapping</th>
+      <th>Support Page</th>
+      <th>Vulnerability Category</th>
+      <th>Tags</th>
+      <th>Exceptions</th>
+    `;
+    
+    filteredData.forEach((item, index) => {
+      const row = table.insertRow();
+      const exceptions = item.exceptions ? item.exceptions.map(ex => ex.service).join(", ") : "";
+      
+      row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${item.names[0]}</td>
+        <td>${item.id}</td>
+        <td>${item.priority}</td>
+        <td>${item.levelOfEffort}</td>
+        <td>${item.category}</td>
+        <td>${item.description}</td>
+        <td>${item.resource}</td>
+        <td>${item.standardMapping}</td>
+        <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
+        <td>${item.vulnerabilityCategory}</td>
+        <td>${item.tags}</td>
+        <td>${exceptions}</td>
+      `;
+    });
+    
+    dataTable.appendChild(table);
+    policiesCountEl.innerText = "Total Policies : " + policiesCount;
+  }  
 
 const searchInput = document.getElementById("searchPolicy");
 searchInput.addEventListener("input", function () {
