@@ -16,8 +16,9 @@ var incubatingData = [];
 
 var policiesCount;
 var filteredData;
+var filteredData1;
 var searchData;
-// var tableName = "checkov"
+
 fetcMetadata("controls.yaml");
 fetcBuggingEnforcedData("policies.yaml");
 fetcBuggingEnforcedData("bugging.yaml");
@@ -50,8 +51,6 @@ function fetcBuggingEnforcedData(policystatus) {
       })
       .catch((error) => console.error("Error loading YAML file:", error));
   }
-  
-
 
 function getIncubatingData() {
     const tabs = document.querySelectorAll(".tab");
@@ -132,8 +131,6 @@ function getDatafromtabs(sideTabName, mainTab) {
       renderTableForBugging(incubatingData, sideTabName);
     }
   }
-  
-  
 
 function prepareFinalData(finalData) {
   metaDataArray = [];
@@ -172,7 +169,6 @@ function renderTableForBugging(data, sideTabName) {
             <th>Category</th>
             <th>Description</th>
             <th>Resource</th>
-            <th>Standard Mapping</th>
             <th>Support Page</th>
             <th>Vulnarability Category</th>
             <th>Tags</th>
@@ -188,7 +184,6 @@ function renderTableForBugging(data, sideTabName) {
             <td>${item.category}</td>
             <td>${item.description}</td>
             <td>${item.resource}</td>
-            <td>${item.standardMapping}</td>
             <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
             <td>${item.vulnerabilityCategory}</td>
             <td>${item.tags}</td>
@@ -222,7 +217,6 @@ function renderEnforceTable(data, sideTabName) {
       <th>Category</th>
       <th>Description</th>
       <th>Resource</th>
-      <th>Standard Mapping</th>
       <th>Support Page</th>
       <th>Vulnerability Category</th>
       <th>Tags</th>
@@ -236,13 +230,12 @@ function renderEnforceTable(data, sideTabName) {
       row.innerHTML = `
         <td>${index + 1}</td>
         <td>${item.names[0]}</td>
-        <td>${item.id}</td>
+        <td><a href="${item.supportPage}" target="_blank">${item.id}</a></td>
         <td>${item.priority}</td>
         <td>${item.levelOfEffort}</td>
         <td>${item.category}</td>
         <td>${item.description}</td>
         <td>${item.resource}</td>
-        <td>${item.standardMapping}</td>
         <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
         <td>${item.vulnerabilityCategory}</td>
         <td>${item.tags}</td>
@@ -329,3 +322,12 @@ for (i = 0; i < ppdropdown.length; i++) {
     }
   });
 }
+
+// Functions to handle clicking on Git and Slack icons
+document.getElementById('git-icon').addEventListener('click', function () {
+    window.open('https://git.soma.salesforce.com/opa/falcon-policies', '_blank');
+});
+
+document.getElementById('slack-icon').addEventListener('click', function () {
+    window.open('https://salesforce-internal.slack.com/archives/C0299NZBQKF', '_blank');
+});
