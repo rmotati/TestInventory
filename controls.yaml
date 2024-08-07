@@ -163,10 +163,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_elasticsearch_domain
-  standardMapping: SFSS-021(3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_5
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_6
   id: CKV_AWS_6
@@ -175,10 +175,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: AWS::Elasticsearch::Domain
-  standardMapping: SFSS-025 - 4.3
   supportPage: https://sfdc.co/CKV_AWS_6
   vulnerabilityCategory: Insecure Data Transport
-  tags: []
+  tags:
+  - SFSS-025(4.3)
 - names:
   - checkov.ckv_aws_13
   id: CKV_AWS_13
@@ -187,7 +187,6 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping: TBD
   supportPage: https://sfdc.co/CKV_AWS_13
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   tags: []
@@ -199,10 +198,10 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_db_instance, aws_rds_cluster_instance
-  standardMapping: SFSS-021(11.5)
   supportPage: https://sfdc.co/CKV_AWS_17
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_19
   id: CKV_AWS_19
@@ -211,10 +210,10 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_s3_bucket
-  standardMapping: sfss-021 (3.2)
   supportPage: https://sfdc.co/CKV_AWS_19
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2)
 - names:
   - checkov.ckv_aws_20
   id: CKV_AWS_20
@@ -223,10 +222,10 @@ policies:
   levelOfEffort: High
   category: LOGGING
   resource: aws_s3_bucket
-  standardMapping: SFSS-021 (3.4,3.8)
   supportPage: https://sfdc.co/CKV_AWS_20
   vulnerabilityCategory: Insecure Configuration of Data Storage
-  tags: []
+  tags:
+  - SFSS-021(3.4,3.8)
 - names:
   - checkov.ckv_aws_24
   id: CKV_AWS_24
@@ -235,10 +234,10 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_security_group, aws_security_group_rule
-  standardMapping: SFSS-021 (11.5)
   supportPage: https://sfdc.co/CKV_AWS_24
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_27
   id: CKV_AWS_27
@@ -247,10 +246,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_sqs_queue
-  standardMapping: SFSS-019 6.1
   supportPage: https://sfdc.co/CKV_AWS_27
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-019(6.1)
 - names:
   - checkov.ckv_aws_32
   id: CKV_AWS_32
@@ -259,10 +258,10 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_ecr_repository_policy
-  standardMapping: SFSS-021 1.1.10, 11.8
   supportPage: https://sfdc.co/CKV_AWS_32
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(1.1.10, 11.8)
 - names:
   - checkov.ckv_aws_33
   id: CKV_AWS_33
@@ -271,10 +270,10 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_kms_key
-  standardMapping: SFSS-021 1.3
   supportPage: https://sfdc.co/CKV_AWS_33
   vulnerabilityCategory: Insecure Configuration of Build and Deployment Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(1.3)
 - names:
   - checkov.ckv_aws_35
   id: CKV_AWS_35
@@ -283,10 +282,10 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_cloudtrail
-  standardMapping: SFSS-021(5.1, 1.2.2)
   supportPage: https://sfdc.co/CKV_AWS_35
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(5.1, 1.2.2)
 - names:
   - checkov.ckv_aws_41
   id: CKV_AWS_41
@@ -295,10 +294,10 @@ policies:
   levelOfEffort: High
   category: SECRETS
   resource: aws
-  standardMapping: SFSS-021 3.6, 14.4
   supportPage: https://sfdc.co/CKV_AWS_41
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-021(3.6, 14.4)
 - names:
   - checkov.ckv_aws_43
   id: CKV_AWS_43
@@ -307,10 +306,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_kinesis_stream
-  standardMapping: SFSS-019 6.1
   supportPage: https://sfdc.co/CKV_AWS_43
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-019(6.1)
 - names:
   - checkov.ckv_aws_46
   id: CKV_AWS_46
@@ -319,10 +318,10 @@ policies:
   levelOfEffort: High
   category: SECRETS
   resource: aws_instance
-  standardMapping: SFSS-021 3.6, 14.5
   supportPage: https://sfdc.co/CKV_AWS_46
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-021(3.6, 14.5)
 - names:
   - checkov.ckv_aws_49
   id: CKV_AWS_49
@@ -331,10 +330,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_policy_document
-  standardMapping: SFSS-003 (2.3)
   supportPage: https://sfdc.co/CKV_AWS_49
   vulnerabilityCategory: Improper/Broken Authentication
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.ckv_aws_53
   id: CKV_AWS_53
@@ -343,10 +342,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_s3_bucket_public_access_block
-  standardMapping: SFSS-021 (3.3)
   supportPage: https://sfdc.co/CKV_AWS_53
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(3.3)
 - names:
   - checkov.ckv_aws_54
   id: CKV_AWS_54
@@ -355,10 +354,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_s3_bucket_public_access_block
-  standardMapping: SFSS-021 (3.4,11.5)
   supportPage: https://sfdc.co/CKV_AWS_54
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(3.4, 11.5)
 - names:
   - checkov.ckv_aws_55
   id: CKV_AWS_55
@@ -367,10 +366,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_s3_bucket_public_access_block
-  standardMapping: SFSS-021(3.4)
   supportPage: https://sfdc.co/CKV_AWS_55
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(3.4)
 - names:
   - checkov.ckv_aws_56
   id: CKV_AWS_56
@@ -379,10 +378,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_s3_bucket_public_access_block
-  standardMapping: SFSS-021(3.4)
   supportPage: https://sfdc.co/CKV_AWS_56
   vulnerabilityCategory: Insecure Configuration of Data Storage
-  tags: []
+  tags:
+  - SFSS-021(3.4)
 - names:
   - checkov.ckv_aws_57
   id: CKV_AWS_57
@@ -391,10 +390,10 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_s3_bucket
-  standardMapping: SFSS-021(3.4,3.8)
   supportPage: https://sfdc.co/CKV_AWS_57
   vulnerabilityCategory: Insecure Configuration of Data Storage
-  tags: []
+  tags:
+  - SFSS-021(3.4, 3.8)
 - names:
   - checkov.ckv_aws_58
   id: CKV_AWS_58
@@ -403,7 +402,6 @@ policies:
   levelOfEffort: Low
   category: KUBERNETES
   resource: aws_eks_cluster
-  standardMapping: 
   supportPage: https://sfdc.co/CKV_AWS_58
   vulnerabilityCategory: Missing Encryption of Sensitive Data
   tags: []
@@ -415,10 +413,10 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_api_gateway_method
-  standardMapping: SFSS-21(1.1.10, 11.8)
   supportPage: https://sfdc.co/CKV_AWS_59
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-21(1.1.10, 11.8)
 - names:
   - checkov.ckv_aws_60
   id: CKV_AWS_60
@@ -427,10 +425,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_role
-  standardMapping: SFSS-003 2.3
   supportPage: https://sfdc.co/CKV_AWS_60
   vulnerabilityCategory: Improper/Broken Authentication
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.ckv_aws_61
   id: CKV_AWS_61
@@ -439,10 +437,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_role
-  standardMapping: SFSS-021 1.1.5
   supportPage: https://sfdc.co/CKV_AWS_61
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(1.1.5)
 - names:
   - checkov.ckv_aws_62
   id: CKV_AWS_62
@@ -451,10 +449,10 @@ policies:
   levelOfEffort: Critical
   category: IAM
   resource: aws_iam_group_policy, aws_iam_policy, aws_iam_role_policy, aws_iam_user_policy, aws_ssoadmin_permission_set_inline_policy
-  standardMapping: SFSS-021 1.1.5
   supportPage: https://sfdc.co/CKV_AWS_62
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(1.1.5)
 - names:
   - checkov.ckv_aws_63
   id: CKV_AWS_63
@@ -463,10 +461,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_group_policy, aws_iam_policy, aws_iam_role_policy, aws_iam_user_policy, aws_ssoadmin_permission_set_inline_policy
-  standardMapping: SFSS-021 1.1.5
   supportPage: https://sfdc.co/CKV_AWS_63
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(1.1.5)
 - names:
   - checkov.ckv_aws_64
   id: CKV_AWS_64
@@ -475,10 +473,10 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_redshift_cluster
-  standardMapping: SFSS-021 (3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_64
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_69
   id: CKV_AWS_69
@@ -487,10 +485,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_mq_broker
-  standardMapping: SFSS-021 (11.5)
   supportPage: https://sfdc.co/CKV_AWS_69
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_70
   id: CKV_AWS_70
@@ -499,10 +497,10 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_s3_bucket, aws_s3_bucket_policy
-  standardMapping: SFSS-021 (1.3,3.4)
   supportPage: https://sfdc.co/CKV_AWS_70
   vulnerabilityCategory: Insecure Configuration of Data Storage
-  tags: []
+  tags:
+  - SFSS-021(1.3,3.4)
 - names:
   - checkov.ckv_aws_72
   id: CKV_AWS_72
@@ -511,10 +509,10 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_sqs_queue_policy
-  standardMapping: SFSS-021(1.3)
   supportPage: https://sfdc.co/CKV_AWS_72
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(1.3)
 - names:
   - checkov.ckv_aws_81
   id: CKV_AWS_81
@@ -523,10 +521,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_msk_cluster
-  standardMapping: SFSS-021(3.3)
   supportPage: https://sfdc.co/CKV_AWS_81
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.3)
 - names:
   - checkov.ckv_aws_83
   id: CKV_AWS_83
@@ -535,10 +533,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_elasticsearch_domain
-  standardMapping: SFSS-025(4.3)
   supportPage: https://sfdc.co/CKV_AWS_83
   vulnerabilityCategory: Insecure Data Transport
-  tags: []
+  tags:
+  - SFSS-025(4.3)
 - names:
   - checkov.ckv_aws_87
   id: CKV_AWS_87
@@ -547,10 +545,10 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_redshift_cluster
-  standardMapping: SFSS-021(11.5)
   supportPage: https://sfdc.co/CKV_AWS_87
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_88
   id: CKV_AWS_88
@@ -559,10 +557,10 @@ policies:
   levelOfEffort: High
   category: NETWORKING
   resource: aws_instance, aws_launch_template
-  standardMapping: SFSS-021(11.4, 11.5)
   supportPage: https://sfdc.co/CKV_AWS_88
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.4, 11.5)
 - names:
   - checkov.ckv_aws_89
   id: CKV_AWS_89
@@ -571,10 +569,10 @@ policies:
   levelOfEffort: High
   category: NETWORKING
   resource: aws_dms_replication_instance
-  standardMapping: SFSS-021(11.5)
   supportPage: https://sfdc.co/CKV_AWS_89
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_103
   id: CKV_AWS_103
@@ -583,10 +581,10 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_alb_listener, aws_lb_listener
-  standardMapping: SFSS-151(1.1)
   supportPage: https://sfdc.co/CKV_AWS_103
   vulnerabilityCategory: Insecure Data Transport
-  tags: []
+  tags:
+  - SFSS-151(1.1)
 - names:
   - checkov.ckv_aws_129
   id: CKV_AWS_129
@@ -595,10 +593,10 @@ policies:
   levelOfEffort: Low 
   category: LOGGING
   resource: aws_db_instance
-  standardMapping: SFSS-021(5.4.2)
   supportPage: https://sfdc.co/CKV_AWS_129
   vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
-  tags: []
+  tags:
+  - SFSS-021(5.4.2)
 - names:
   - checkov.ckv_aws_133
   id: CKV_AWS_133
@@ -607,7 +605,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_db_instance, aws_rds_cluster
-  standardMapping: 
   supportPage: https://sfdc.co/CKV_AWS_133
   vulnerabilityCategory: Missing Backup, Availability, or Disaster Recovery Strategy
   tags: []
@@ -619,10 +616,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_rds_global_cluster
-  standardMapping: SFSS-021(3.2)
   supportPage: https://sfdc.co/CKV_AWS_140
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2)
 - names:
   - checkov.ckv_aws_142
   id: CKV_AWS_142
@@ -631,10 +628,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_redshift_cluster
-  standardMapping: SFSS-074(6.3)
   supportPage: https://sfdc.co/CKV_AWS_142
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_146
   id: CKV_AWS_146
@@ -643,10 +640,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_db_cluster_snapshot
-  standardMapping: SFSS-021(3.2)
   supportPage: https://sfdc.co/CKV_AWS_146
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2)
 - names:
   - checkov.ckv_aws_165
   id: CKV_AWS_165
@@ -655,10 +652,10 @@ policies:
   levelOfEffort: Medium
   category: BACKUP_AND_RECOVERY
   resource: aws_dynamodb_global_table
-  standardMapping: SFSS-021(4.1)
   supportPage: https://sfdc.co/CKV_AWS_165
   vulnerabilityCategory: Missing Backup, Availability or Disaster Recovery Strategy
-  tags: []
+  tags:
+  - SFSS-021(4.1)
 - names:
   - checkov.ckv_aws_166
   id: CKV_AWS_166
@@ -667,10 +664,10 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_backup_vault
-  standardMapping: SFSS-021(3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_166
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_169
   id: CKV_AWS_169
@@ -679,10 +676,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_sns_topic_policy
-  standardMapping: SFSS-021 (11.5)
   supportPage: https://sfdc.co/CKV_AWS_169
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_177
   id: CKV_AWS_177
@@ -691,10 +688,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_kinesis_video_stream
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_177
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_185
   id: CKV_AWS_185
@@ -703,10 +700,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_kinesis_stream
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_185
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_186
   id: CKV_AWS_186
@@ -715,10 +712,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_s3_bucket_object
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_186
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_228
   id: CKV_AWS_228
@@ -727,10 +724,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_elasticsearch_domain, aws_opensearch_domain
-  standardMapping: SFSS-151 - All
   supportPage: https://sfdc.co/CKV_AWS_228
   vulnerabilityCategory: Insecure Data Transport
-  tags: []
+  tags:
+  - SFSS-151(All)
 - names:
   - checkov.ckv_aws_241
   id: CKV_AWS_241
@@ -739,10 +736,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_kinesis_firehose_delivery_stream
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_241
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_246
   id: CKV_AWS_246
@@ -751,10 +748,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_rds_cluster_activity_stream
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_246
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_247
   id: CKV_AWS_247
@@ -763,10 +760,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_elasticsearch_domain, aws_opensearch_domain
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_247
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_277
   id: CKV_AWS_277
@@ -775,10 +772,10 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_security_group
-  standardMapping: SFSS-021 11.3
   supportPage: https://sfdc.co/CKV_AWS_277
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.3)
 - names:
   - checkov.ckv_aws_301
   id: CKV_AWS_301
@@ -787,10 +784,10 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lambda_permission
-  standardMapping: SFSS-021 (11.5)
   supportPage: https://sfdc.co/CKV_AWS_301
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_303
   id: CKV_AWS_303
@@ -799,10 +796,10 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_ssm_document
-  standardMapping: SFSS-019 (6.1)
   supportPage: https://sfdc.co/CKV_AWS_303
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-019(6.1)
 - names:
   - checkov.sfdc_ckv_tf_0071
   id: SFDC_CKV_TF_0071
@@ -811,10 +808,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_vpc_endpoint_policy
-  standardMapping: SFSS-003 (2.3)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0071
   vulnerabilityCategory: Insecure Network Configuration
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.sfdc_ckv_tf_0072
   id: SFDC_CKV_TF_0072
@@ -823,10 +820,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_s3_bucket_acl
-  standardMapping: SFSS-003 (2.3)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0072
   vulnerabilityCategory: Insecure Network Configuration
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.sfdc_ckv_tf_0073
   id: SFDC_CKV_TF_0073
@@ -835,10 +832,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_s3_bucket_acl
-  standardMapping: SFSS-003 (2.3)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0073
   vulnerabilityCategory: Insecure Network Configuration
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.sfdc_ckv_tf_0074
   id: SFDC_CKV_TF_0074
@@ -847,10 +844,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_s3_bucket_acl
-  standardMapping: SFSS-003 (2.7)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0074
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-003(2.7)
 - names:
   - checkov.sfdc_ckv_tf_0075
   id: SFDC_CKV_TF_0075
@@ -859,10 +856,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_s3_bucket_acl
-  standardMapping: SFSS-021 (1.3)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0075
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-021(1.3)
 - names:
   - checkov.sfdc_ckv_tf_0076
   id: SFDC_CKV_TF_0076
@@ -871,10 +868,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_s3_bucket
-  standardMapping: SFSS-021 (3.3)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0076
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-021(3.3)
 - names:
   - checkov.sfdc_ckv_tf_0077
   id: SFDC_CKV_TF_0077
@@ -883,10 +880,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_s3_bucket
-  standardMapping: SFSS-003 (2.7)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0077
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-003(2.7)
 - names:
   - checkov.sfdc_ckv_tf_0078
   id: SFDC_CKV_TF_0078
@@ -895,10 +892,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_s3_bucket
-  standardMapping: SFSS-003 (2.7)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0078
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-003(2.7)
 - names:
   - checkov.sfdc_ckv_tf_0081
   id: SFDC_CKV_TF_0081
@@ -907,10 +904,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_emr_security_configuration
-  standardMapping: SFSS-021 11.1
   supportPage: https://sfdc.co/SFDC_CKV_TF_0081
   vulnerabilityCategory: Insecure Data Transport
-  tags: []
+  tags:
+  - SFSS-021(11.1)
 - names:
   - checkov.sfdc_ckv_tf_0085
   id: SFDC_CKV_TF_0085
@@ -919,10 +916,10 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lambda_permission
-  standardMapping: SFSS-021 1.1.5
   supportPage: https://sfdc.co/SFDC_CKV_TF_0085
   vulnerabilityCategory: Improper/Broken Authorization
-  tags: []
+  tags:
+  - SFSS-021(1.1.5)
 - names:
   - checkov.ckv2_aws_2
   id: CKV2_AWS_2
@@ -931,10 +928,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_volume_attachment
-  standardMapping: sfss-19 (6.1)
   supportPage: https://sfdc.co/CKV2_AWS_2
   vulnerabilityCategory: Insecure Configuration of Data Storage
-  tags: []
+  tags:
+  - SFSS-19(6.1)
 - names:
   - checkov.ckv2_aws_11
   id: CKV2_AWS_11
@@ -943,10 +940,10 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_vpc
-  standardMapping: SFSS-021 (5.4.5, 5.8)
   supportPage: https://sfdc.co/CKV2_AWS_11
   vulnerabilityCategory: Insufficient Logging, Monitoring or Alerting
-  tags: []
+  tags:
+  - SFSS-021(5.4.5, 5.8)
 - names:
   - checkov.ckv2_aws_12
   id: CKV2_AWS_12
@@ -955,10 +952,10 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_vpc
-  standardMapping: SFSS-021 (11.5)
   supportPage: https://sfdc.co/CKV2_AWS_12
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv2_aws_30
   id: CKV2_AWS_30
@@ -967,10 +964,10 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_rds_cluster
-  standardMapping: SFSS-151 (1.1)
   supportPage: https://sfdc.co/CKV2_AWS_30
   vulnerabilityCategory: Insufficient Logging, Monitoring or Alerting
-  tags: []
+  tags:
+  - SFSS-151(1.1)
 - names:
   - checkov.ckv2_aws_51
   id: CKV2_AWS_51
@@ -979,10 +976,10 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_api_gateway_stage
-  standardMapping: SFSS-003 2.3
   supportPage: https://sfdc.co/CKV2_AWS_51
   vulnerabilityCategory: Improper/Broken Authorization
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.ckv2_aws_1
   id: CKV2_AWS_1
@@ -991,7 +988,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_network_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1003,7 +999,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_guardduty_detector
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1015,7 +1010,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_api_gateway_stage
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1027,7 +1021,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_security_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1039,7 +1032,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_s3_bucket
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1052,7 +1044,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_emr_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1064,7 +1055,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_rds_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1076,7 +1066,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_backup_selection
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1088,7 +1077,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_cloudtrail
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1100,7 +1088,6 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_iam_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1112,7 +1099,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_autoscaling_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1124,7 +1110,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_dynamodb_table
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1136,7 +1121,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_backup_selection
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1148,7 +1132,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_eip
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1160,7 +1143,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_lb, aws_alb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1172,7 +1154,6 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_iam_group_membership
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1184,7 +1165,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_user
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1196,7 +1176,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_route53_record
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1208,7 +1187,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_rds_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1220,7 +1198,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_lb, aws_alb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1232,7 +1209,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_api_gateway_rest_api
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1244,7 +1220,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_wafv2_web_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1256,7 +1231,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_cloudfront_distribution
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1268,7 +1242,6 @@ policies:
   levelOfEffort: Low
   category: APPLICATION_SECURITY
   resource: aws_appsync_graphql_api
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1280,7 +1253,6 @@ policies:
   levelOfEffort: Low
   category: Encryption
   resource: aws_ssm_parameter
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1292,7 +1264,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_route_table
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1304,7 +1275,6 @@ policies:
   levelOfEffort: Low
   category: AGENERAL_SECURITYWS
   resource: aws_codecommit_repository
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1316,7 +1286,6 @@ policies:
   levelOfEffort: High
   category: NETWORKING
   resource: aws_route53_zone
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1328,7 +1297,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_route53_zone
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1340,7 +1308,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_policy, aws_iam_role_policy, aws_iam_group_policy, aws_iam_user_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1352,7 +1319,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1364,7 +1330,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_cloudfront_distribution
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1376,7 +1341,6 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_s3_bucket_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1388,7 +1352,6 @@ policies:
   levelOfEffort: High
   category: NETWORKING
   resource: aws_route_table
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1400,7 +1363,6 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_s3_bucket_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1412,7 +1374,6 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: serverless_aws
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1424,7 +1385,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_lb_listener
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1436,7 +1396,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_ebs_volume
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1448,10 +1407,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_kms_key
-  standardMapping: SFSS-019 6.1
   supportPage: https://sfdc.co/CKV_AWS_7
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-019(6.1)
 - names:
   - checkov.ckv_aws_8
   id: CKV_AWS_8
@@ -1460,7 +1419,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_launch_configuration, aws_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1472,7 +1430,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1484,10 +1441,10 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping: SFSS-021 1.1.10, 11.8
   supportPage: https://sfdc.co/CKV_AWS_10
   vulnerabilityCategory: Improper/Broken Authentication
-  tags: []
+  tags:
+  - SFSS-021(1.1.10, 11.8)
 - names:
   - checkov.ckv_aws_12
   id: CKV_AWS_12
@@ -1496,7 +1453,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping:
   supportPage: https://sfdc.co/CKV_AWS_12
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   tags: []
@@ -1508,7 +1464,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping:
   supportPage: https://sfdc.co/CKV_AWS_11
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   tags: []
@@ -1520,7 +1475,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping:
   supportPage: https://sfdc.co/CKV_AWS_14
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   tags: []
@@ -1532,7 +1486,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1544,7 +1497,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_db_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1556,7 +1508,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_s3_bucket
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1568,7 +1519,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_sagemaker_notebook_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1580,7 +1530,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_sagemaker_notebook_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1592,7 +1541,6 @@ policies:
   levelOfEffort: Medium
   category: BACKUP_AND_RECOVERY
   resource: aws_s3_bucket
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1604,7 +1552,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_security_group, aws_security_group_rule, aws_db_security_group, aws_elasticache_security_group, aws_redshift_security_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1616,7 +1563,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_security_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1628,10 +1574,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_sns_topic
-  standardMapping: SFSS-021 (3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_26
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_28
   id: CKV_AWS_28
@@ -1640,7 +1586,6 @@ policies:
   levelOfEffort: High
   category: BACKUP_AND_RECOVERY
   resource: aws_dynamodb_table
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1652,7 +1597,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_elasticache_replication_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1664,7 +1608,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_elasticache_replication_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1676,7 +1619,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_elasticache_replication_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1688,7 +1630,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_cloudfront_distribution
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1700,7 +1641,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_cloudtrail
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1712,10 +1652,10 @@ policies:
   levelOfEffort: Low
   category: KUBERNETES
   resource: aws_eks_cluster
-  standardMapping: SFSS-021(5.4.2)
   supportPage: https://sfdc.co/CKV_AWS_37
   vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
-  tags: []
+  tags:
+  - SFSS-021(5.4.2)
 - names:
   - checkov.ckv_aws_38
   id: CKV_AWS_38
@@ -1724,7 +1664,6 @@ policies:
   levelOfEffort: High
   category: KUBERNETES
   resource: aws_eks_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1736,10 +1675,10 @@ policies:
   levelOfEffort: Medium
   category: KUBERNETES
   resource: aws_eks_cluster
-  standardMapping: SFSS-021(3.4)
   supportPage: https://sfdc.co/CKV_AWS_39
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(3.4)
 - names:
   - checkov.ckv_aws_40
   id: CKV_AWS_40
@@ -1748,10 +1687,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_iam_user_policy_attachment, aws_iam_user_policy, aws_iam_policy_attachment
-  standardMapping: SFSS-021(1.1.5)
   supportPage: https://sfdc.co/CKV_AWS_40
   vulnerabilityCategory: Improper/Broken Authorization
-  tags: []
+  tags:
+  - SFSS-021(1.1.5)
 - names:
   - checkov.ckv_aws_42
   id: CKV_AWS_42
@@ -1760,10 +1699,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_efs_file_system
-  standardMapping: SFSS-021(3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_42
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_44
   id: CKV_AWS_44
@@ -1772,7 +1711,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_neptune_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1784,7 +1722,6 @@ policies:
   levelOfEffort: Medium
   category: SECRETS
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1796,7 +1733,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_dax_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1808,7 +1744,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_mq_broker
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1820,7 +1755,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1832,7 +1766,6 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_ecr_repository
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1844,7 +1777,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_ecs_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1856,7 +1788,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_cloudwatch_log_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1868,7 +1799,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_cloudtrail
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1880,7 +1810,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_cloudfront_distribution
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1892,7 +1821,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_redshift_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1904,7 +1832,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_api_gateway_stage
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1916,7 +1843,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_docdb_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1928,7 +1854,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_globalaccelerator_accelerator
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1940,7 +1865,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_api_gateway_stage
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1952,7 +1876,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_athena_database
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1964,7 +1887,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_codebuild_project
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1976,7 +1898,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -1988,7 +1909,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_msk_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2000,7 +1920,6 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_athena_workgroup
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2012,7 +1931,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_elasticsearch_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2024,7 +1942,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_docdb_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2035,8 +1952,7 @@ policies:
   priority: TBD
   levelOfEffort: Medium
   category: LOGGING
-  resource: aws_cloudfront_distribution 
-  standardMapping: TBD
+  resource: aws_cloudfront_distribution
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2048,7 +1964,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_docdb_cluster_parameter_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2060,7 +1975,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_lb, aws_alb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2072,10 +1986,10 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_elb
-  standardMapping: SFSS-021 5.4.2
   supportPage: https://sfdc.co/CKV_AWS_92
   vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
-  tags: []
+  tags:
+  - SFSS-021(5.4.2)
 - names:
   - checkov.ckv_aws_93
   id: CKV_AWS_93
@@ -2084,7 +1998,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_s3_bucket, aws_s3_bucket_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2096,7 +2009,6 @@ policies:
   levelOfEffort: High
   category: LOGGING
   resource: aws_glue_data_catalog_encryption_settings
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2108,7 +2020,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_apigatewayv2_stage, aws_serverless_http_api
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2120,7 +2031,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_rds_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2132,7 +2042,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_ecs_task_definition
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2144,7 +2053,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_sagemaker_endpoint_configuration
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2156,10 +2064,10 @@ policies:
   levelOfEffort: High
   category: LOGGING
   resource: aws_glue_security_configuration
-  standardMapping: SFSS-021 3.2, 3.3
   supportPage: https://sfdc.co/CKV_AWS_99
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_100
   id: CKV_AWS_100
@@ -2168,7 +2076,6 @@ policies:
   levelOfEffort: High
   category: KUBERNETES
   resource: aws_eks_node_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2180,7 +2087,6 @@ policies:
   levelOfEffort: High
   category: LOGGING
   resource: aws_neptune_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2192,7 +2098,6 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_neptune_cluster_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2204,7 +2109,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_docdb_cluster_parameter_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2216,7 +2120,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_redshift_parameter_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2228,10 +2131,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_ebs_encryption_by_default
-  standardMapping: SFSS-021(3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_106
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_107
   id: CKV_AWS_107
@@ -2240,7 +2143,6 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_iam_policy_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2252,7 +2154,6 @@ policies:
   levelOfEffort: Low
   category: TBD
   resource: aws_iam_policy_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2264,7 +2165,6 @@ policies:
   levelOfEffort: Low
   category: TBD
   resource: aws_iam_policy_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2276,7 +2176,6 @@ policies:
   levelOfEffort: Medium
   category: TBD
   resource: aws_iam_policy_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2288,7 +2187,6 @@ policies:
   levelOfEffort: Low
   category: TBD
   resource: aws_iam_policy_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2300,7 +2198,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_ssm_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2312,7 +2209,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION, LOGGING
   resource: aws_ssm_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2324,7 +2220,6 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_emr_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2336,7 +2231,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2348,7 +2242,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2360,7 +2253,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2372,7 +2264,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_db_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2384,10 +2275,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_dynamodb_table
-  standardMapping: SFSS-021 (3.2, 3.3)
   supportPage: https://sfdc.co/CKV_AWS_119
   vulnerabilityCategory: Insecure Configuration of Data Storage
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_120
   id: CKV_AWS_120
@@ -2396,7 +2287,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_api_gateway_stage
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2408,7 +2298,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_config_configuration_aggregator
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2420,7 +2309,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_sagemaker_notebook_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2432,7 +2320,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_vpc_endpoint_service
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2444,7 +2331,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_cloudformation_stack
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2456,7 +2342,6 @@ policies:
   levelOfEffort: Medium
   category: LOGGING
   resource: aws_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2468,7 +2353,6 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_elb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2480,10 +2364,10 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_rds_cluster
-  standardMapping: SFSS-021 1.1.10, 11.8
   supportPage: https://sfdc.co/CKV_AWS_128
   vulnerabilityCategory: Improper/Broken Authentication
-  tags: []
+  tags:
+  - SFSS-021(1.1.10, 11.8)
 - names:
   - checkov.ckv_aws_129
   id: CKV_AWS_129
@@ -2492,10 +2376,10 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_db_instance
-  standardMapping: SFSS-021 5.4.2
   supportPage: https://sfdc.co/CKV_AWS_129
   vulnerabilityCategory: Insufficient Logging, Monitoring, or Alerting
-  tags: []
+  tags:
+  - SFSS-021(5.4.2)
 - names:
   - checkov.ckv_aws_130
   id: CKV_AWS_130
@@ -2504,7 +2388,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_subnet
-  standardMapping: TBD
   supportPage: https://sfdc.co/CKV_AWS_130
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
   tags: []
@@ -2516,7 +2399,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_lb, aws_alb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2528,7 +2410,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_elasticache_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2540,7 +2421,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2552,7 +2432,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ecr_repository
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2564,7 +2443,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_elasticsearch_domain, aws_opensearch_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2576,7 +2454,6 @@ policies:
   levelOfEffort: Medium
   category: NETWORKING
   resource: aws_elb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2588,7 +2465,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_rds_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2600,7 +2476,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_redshift_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2612,7 +2487,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_s3_bucket
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2624,7 +2498,6 @@ policies:
   levelOfEffort: Low 
   category: GENERAL_SECURITY
   resource: aws_s3_bucket
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2636,7 +2509,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_s3_bucket
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: 
   tags: []
@@ -2648,7 +2520,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_codebuild_project
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2660,7 +2531,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_default_vpc
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2672,10 +2542,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_secretsmanager_secret
-  standardMapping: SFSS-021 3.2, 3.3
   supportPage: https://sfdc.co/CKV_AWS_149
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.2, 3.3)
 - names:
   - checkov.ckv_aws_150
   id: CKV_AWS_150
@@ -2684,7 +2554,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lb, aws_alb
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2696,7 +2565,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_lb, aws_alb
-  standardMapping: TBD
   supportPage: https://sfdc.co/CKV_AWS_152
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
   tags: []
@@ -2708,7 +2576,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_autoscaling_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2720,7 +2587,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_redshift_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2732,7 +2598,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_workspaces_workspace
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2744,7 +2609,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_workspaces_workspace
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2756,10 +2620,10 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_db_instance
-  standardMapping: SFSS-021 3.4
   supportPage: https://sfdc.co/CKV_AWS_157
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(3.4)
 - names:
   - checkov.ckv_aws_158
   id: CKV_AWS_158
@@ -2768,10 +2632,10 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_cloudwatch_log_group
-  standardMapping: SFSS-021 (3.3, 5.5.1, 5.1, 1.2.2)
   supportPage: https://sfdc.co/CKV_AWS_158
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-021(3.3, 5.5.1, 5.1, 1.2.2)
 - names:
   - checkov.ckv_aws_159
   id: CKV_AWS_159
@@ -2780,7 +2644,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_athena_workgroup
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2792,7 +2655,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_timestreamwrite_database
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2804,10 +2666,10 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_db_instance
-  standardMapping: SFSS-021 (1.1.10, 11.8) 
   supportPage: https://sfdc.co/CKV_AWS_161
   vulnerabilityCategory: Improper/Broken Authentication
-  tags: []
+  tags:
+  - SFSS-021(1.1.10, 11.8)
 - names:
   - checkov.ckv_aws_162
   id: CKV_AWS_162
@@ -2816,7 +2678,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_db_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2828,7 +2689,6 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_ecr_repository
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2840,7 +2700,6 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_transfer_server
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2852,7 +2711,6 @@ policies:
   levelOfEffort: Medium
   category: GENERAL_SECURITY
   resource: aws_glacier_vault
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2864,7 +2722,6 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_sqs_queue_policy, aws_sqs_queue
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2876,7 +2733,6 @@ policies:
   levelOfEffort: Medium
   category: IAM
   resource: aws_qldb_ledger
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2888,10 +2744,10 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_emr_security_configuration
-  standardMapping: SFSS-074 6.3
   supportPage: https://sfdc.co/CKV_AWS_171
   vulnerabilityCategory: Missing Encryption of Sensitive Data
-  tags: []
+  tags:
+  - SFSS-074(6.3)
 - names:
   - checkov.ckv_aws_172
   id: CKV_AWS_172
@@ -2900,7 +2756,6 @@ policies:
   levelOfEffort: Low 
   category: GENERAL_SECURITY
   resource: aws_qldb_ledger
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2912,7 +2767,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2924,7 +2778,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_cloudfront_distribution
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2936,7 +2789,6 @@ policies:
   levelOfEffort: Low
   category: APPLICATION_SECURITY
   resource: aws_waf_web_acl, aws_wafregional_web_acl, aws_wafv2_web_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2948,7 +2800,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_waf_web_acl, aws_wafregional_web_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2960,7 +2811,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_fsx_ontap_file_system
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2972,7 +2822,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_fsx_windows_file_system
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2984,7 +2833,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_imagebuilder_component
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -2996,7 +2844,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_s3_object_copy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3008,7 +2855,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_docdb_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3020,7 +2866,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ebs_snapshot_copy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3032,7 +2877,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_efs_file_system
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3044,7 +2888,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_sagemaker_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3056,7 +2899,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ebs_volume
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3068,7 +2910,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_fsx_lustre_file_system
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3080,7 +2921,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_elasticache_replication_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3092,7 +2932,6 @@ policies:
   levelOfEffort: High
   category: APPLICATION_SECURITY
   resource: aws_wafv2_web_acl
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3104,7 +2943,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_appsync_graphql_api
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3116,7 +2954,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_appsync_graphql_api
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3128,7 +2965,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_glue_crawler, aws_glue_dev_endpoint, aws_glue_job
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3140,7 +2976,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_elasticache_security_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3152,7 +2987,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_mq_broker
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3164,7 +2998,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_db_security_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3176,7 +3009,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_imagebuilder_distribution_configuration
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3188,7 +3020,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_imagebuilder_image_recipe
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3200,7 +3031,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_memorydb_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3212,7 +3042,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_memorydb_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3224,7 +3053,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_fsx_openzfs_file_system
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3236,7 +3064,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ami
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3248,7 +3075,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_ami_launch_permission
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3260,7 +3086,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_api_gateway_domain_name
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3272,7 +3097,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_mq_broker
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3284,7 +3108,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_mq_broker, aws_mq_configuration
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3296,7 +3119,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_mq_broker
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3308,7 +3130,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_batch_job_definition
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3320,7 +3141,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_db_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3332,7 +3152,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_dms_replication_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3344,7 +3163,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_load_balancer_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3356,7 +3174,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_appsync_api_cache
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3368,7 +3185,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_appsync_api_cache
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3380,7 +3196,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_cloudfront_distribution
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3392,7 +3207,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_api_gateway_deployment
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3404,7 +3218,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_cloudsearch_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3416,7 +3229,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_codepipeline
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3428,7 +3240,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_cloudsearch_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3440,7 +3251,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_codeartifact_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3452,7 +3262,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_dms_replication_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3464,7 +3273,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_ecs_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3476,7 +3284,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ecs_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3488,7 +3295,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_api_gateway_method_settings
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3500,7 +3306,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_db_instance, aws_rds_cluster_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3512,7 +3317,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_kms_key
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3524,7 +3328,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_network_acl, aws_network_acl_rule
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3536,7 +3339,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_network_acl, aws_network_acl_rule
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3548,7 +3350,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_network_acl, aws_network_acl_rule
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3560,7 +3361,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_network_acl, aws_network_acl_rule
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3572,7 +3372,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_acm_certificate
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3584,7 +3383,6 @@ policies:
   levelOfEffort: Low 
   category: LOGGING
   resource: aws_acm_certificate
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3596,7 +3394,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ami_copy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3608,7 +3405,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_ami_copy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3620,7 +3416,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_api_gateway_rest_api
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3632,7 +3427,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_guardduty_detector
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3644,7 +3438,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_dax_cluster
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3656,7 +3449,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_kinesis_firehose_delivery_stream
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3668,7 +3460,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_mwaa_environment
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3680,7 +3471,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_mwaa_environment
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3692,7 +3482,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_mwaa_environment
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3704,7 +3493,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_db_instance_automated_backups_replication
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3716,7 +3504,6 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_elasticsearch_domain, aws_opensearch_domain
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3728,7 +3515,6 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_ecs_task_definition
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3740,7 +3526,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_rds_cluster, aws_db_instance
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3752,7 +3537,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_cloudtrail
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3764,7 +3548,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_cloudtrail
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3776,7 +3559,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_dlm_lifecycle_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3788,7 +3570,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_dlm_lifecycle_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3800,7 +3581,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_dlm_lifecycle_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3812,7 +3592,6 @@ policies:
   levelOfEffort: Low
   category: BACKUP_AND_RECOVERY
   resource: aws_dlm_lifecycle_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD 
   tags: []
@@ -3824,7 +3603,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_codecommit_approval_rule_template
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3836,7 +3614,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lambda_function_url
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3848,7 +3625,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_cloudfront_response_headers_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3860,10 +3636,10 @@ policies:
   levelOfEffort: Low
   category: NETWORKING
   resource: aws_security_group, aws_security_group_rule, aws_vpc_security_group_ingress_rule
-  standardMapping: SFSS-021 (11.5)
   supportPage: https://sfdc.co/CKV_AWS_260
   vulnerabilityCategory: Insecure Configuration of Network Infrastructure
-  tags: []
+  tags:
+  - SFSS-021(11.5)
 - names:
   - checkov.ckv_aws_261
   id: CKV_AWS_261
@@ -3872,7 +3648,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_lb_target_group, aws_alb_target_group
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3884,7 +3659,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_kendra_index
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3896,7 +3670,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_appflow_flow
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3908,7 +3681,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_appflow_connector_profile
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3920,7 +3692,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_keyspaces_table
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD 
   tags: []
@@ -3932,7 +3703,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_db_snapshot_copy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3944,7 +3714,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_comprehend_entity_recognizer
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3956,7 +3725,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_comprehend_entity_recognizer
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3968,7 +3736,6 @@ policies:
   levelOfEffort: Medium
   category: ENCRYPTION
   resource: aws_connect_instance_storage_config
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3980,7 +3747,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_connect_instance_storage_config
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -3992,7 +3758,6 @@ policies:
   levelOfEffort: Low
   category: ENCRYPTION
   resource: aws_dynamodb_table_replica
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4004,7 +3769,6 @@ policies:
   levelOfEffort: High
   category: SUPPLY_CHAIN
   resource: aws_lambda_function
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4016,7 +3780,6 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_iam_user
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4028,10 +3791,10 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_role, aws_iam_policy_attachment, aws_iam_role_policy_attachment, aws_iam_user_policy_attachment, aws_iam_group_policy_attachment, aws_ssoadmin_managed_policy_attachment
-  standardMapping: SFSS-003 2.3
   supportPage: https://sfdc.co/CKV_AWS_274
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
-  tags: []
+  tags:
+  - SFSS-003(2.3)
 - names:
   - checkov.ckv_aws_275
   id: CKV_AWS_275
@@ -4040,7 +3803,6 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_policy
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4052,7 +3814,6 @@ policies:
   levelOfEffort: Low
   category: LOGGING
   resource: aws_api_gateway_method_settings
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4064,7 +3825,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_memorydb_snapshot
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4076,7 +3836,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_neptune_cluster_snapshot
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4088,7 +3847,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_neptune_cluster_snapshot
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4100,7 +3858,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_redshift_snapshot_copy_grant
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4112,7 +3869,6 @@ policies:
   levelOfEffort: High
   category: ENCRYPTION
   resource: aws_redshiftserverless_namespace
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4124,7 +3880,6 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_policy_document
-  standardMapping: TBD
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
@@ -4136,10 +3891,10 @@ policies:
   levelOfEffort: High
   category: GENERAL_SECURITY
   resource: aws_ami
-  standardMapping: SFSS-021 1.5
   supportPage: https://sfdc.co/SFDC_CKV_TF_0082
   vulnerabilityCategory: Improper/Broken Authorization
-  tags: []
+  tags:
+  - SFSS-021(1.5)
 - names:
   - checkov.sfdc_ckv_tf_0083
   id: SFDC_CKV_TF_0083
@@ -4148,10 +3903,10 @@ policies:
   levelOfEffort: Low
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping: SFSS-006 (4.10)
   supportPage: https://sfdc.co/SFDC_CKV_TF_0083
   vulnerabilityCategory: TBD
-  tags: []
+  tags:
+  - SFSS-006(4.10)
 - names:
   - checkov.sfdc_ckv_tf_0084
   id: SFDC_CKV_TF_0084
@@ -4160,10 +3915,10 @@ policies:
   levelOfEffort: High
   category: NETWORKING
   resource: aws_network_acl_rule
-  standardMapping: SFSS-021 11.4
   supportPage: https://sfdc.co/SFDC_CKV_TF_0084
   vulnerabilityCategory: Insecure Network Configuration
-  tags: []
+  tags:
+  - SFSS-021(11.4)
 - names:
   - checkov.sfdc_ckv_tf_0086
   id: SFDC_CKV_TF_0086
@@ -4172,7 +3927,6 @@ policies:
   levelOfEffort: Low
   category: GENERAL_SECURITY
   resource: aws_rds_cluster
-  standardMapping: 
   supportPage: https://sfdc.co/SFDC_CKV_TF_0086
   vulnerabilityCategory: 
   tags: []
@@ -4184,10 +3938,10 @@ policies:
   levelOfEffort: TBD
   category: ENCRYPTION
   resource: aws_sns_topic
-  standardMapping: SFSS-070 - 6
   supportPage: https://sfdc.co/SFDC_CKV_TF_0089
   vulnerabilityCategory: Broken Cryptography
-  tags: []
+  tags:
+  - SFSS-070(6)
 - names:
   - checkov.sfdc_ckv_tf_0092
   id: SFDC_CKV_TF_0092
@@ -4196,7 +3950,6 @@ policies:
   levelOfEffort: High
   category: IAM
   resource: aws_iam_account_password_policy
-  standardMapping: 
   supportPage: https://sfdc.co/SFDC_CKV_TF_0092
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   tags: []
@@ -4208,10 +3961,10 @@ policies:
   levelOfEffort: High
   category: SECRETS
   resource: aws_iam_account_password_policy
-  standardMapping: SFSS-019 6.1
   supportPage: https://sfdc.co/SFDC_CKV_TF_0094
   vulnerabilityCategory: Sensitive Data Exposure
-  tags: []
+  tags:
+  - SFSS-019(6.1)
 - names:
   - policy.mandatory.release.helm.tagging.presencecheck
   id: fp0003
@@ -4237,8 +3990,8 @@ policies:
 - names:
   - policy.mandatory.release.helm.tagging.faketagcheck
   id: TBD
-  priority: Check presence of fake platform mandatory tags
-  description: TBD
+  priority: TBD
+  description: Check presence of fake platform mandatory tags
   resource: k8s
   levelOfEffort: TBD
   category: TBD
@@ -5219,6 +4972,61 @@ policies:
   priority: TBD
   description: TBD
   resource: k8s
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_ali_r001
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: ali
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_ali_r002
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: ali
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_govcloud_r001
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: govcloud
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_govcloud_r002
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: govcloud
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_multisubstrate_r001
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: multisubstrate
   levelOfEffort: TBD
   category: TBD
   supportPage: TBD
