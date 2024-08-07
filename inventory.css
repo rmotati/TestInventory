@@ -1,11 +1,11 @@
-/* Updated CSS */
-/* CSS styles for inventory Dashboard */
+/* CSS styles for Falcon-Policies Dashboard */
 
-/* CSS styles for table */
 table {
     border-collapse: collapse;
-    width: 100%;
-    table-layout: auto; /* Allow each column to adjust its width */
+    width: 40%;
+    table-layout: auto;
+    margin-left:auto;
+    margin-right:auto
 }
 
 body {
@@ -21,28 +21,22 @@ th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
-    white-space: nowrap; /* Prevent text wrapping in table cells */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Show ellipsis for overflow text */
-}
-
-th {
-    /* background-color: #f2f2f2; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .container {
-    display: flex; /* Use flexbox for layout */
-    position: relative; /* Positioning context for absolute positioning */
+    display: flex;
+    position: relative;
 }
 
 .search {
-    height: 30px;
+    height: 20px;
 }
 
-/* CSS for sidecar */
 .sidebar {
-    width: 200px; /* Set width for sidecar */
-   /* background-color: ghostwhite; */
+    width: 200px;
     padding: 20px;
     border-right: 1px solid #ccc;
     max-height:100
@@ -55,10 +49,6 @@ th {
 
 .side-tab {
     cursor: pointer;
-    /* padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    background-color: #f2f2f2; */
 }
 
 .side-tab.active {
@@ -67,8 +57,8 @@ th {
 }
 
 #main-content {
-    flex: 1; /* Take up remaining space */
-    padding: 20px; /* Add padding */
+    flex: 1;
+    padding: 20px;
     overflow: auto;
 }
 
@@ -100,9 +90,8 @@ th {
     font-size: 16px;
 }
 
-/* Centering the dashboard heading */
 .dashboard-heading {
-    flex: 1; /* Take up remaining space */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,22 +99,19 @@ th {
 
 #action-buttons {
     position: absolute;
-    top: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+    top: 20px;
+    right: 20px;
     display: flex;
-    align-items: center; /* Center icons vertically */
+    align-items: center;
 }
 
-/* CSS for action buttons */
+
 #action-buttons img {
-    width: 40px; /* Adjust the width as needed */
-    height: 30px; /* Maintain aspect ratio */
+    width: 40px;
+    height: 30px;
 }
 
-
-  
-  /* Style the sidenav links and the dropdown button */
-   .dropdown-btn,.pp-dropdown-btn {
+.dropdown-btn {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 16px;
@@ -137,17 +123,16 @@ th {
     text-align: left;
     cursor: pointer;
     outline: none;
-  }
+}
 
-  .dropdown-btn i, .pp-dropdown-btn i {
+.dropdown-btn i {
     margin-left: 10px;
-  }
+}
 
-  .sidenav a {
+.sidenav a {
     color: #000000;
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 20px;
     font-size: 16px;
     background-color: #eeefef;
     display: block;
@@ -156,27 +141,39 @@ th {
     text-align: left;
     cursor: pointer;
     outline: none;
-  }
-  
- 
+}
 
-  .dropdown-item,.pp-dropdown-item {
+.dropdown-item {
     margin: 10px;
-  }
+}
  
-  
- 
-  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-  .dropdown-container {
+.dropdown-container {
     display: block;
     background-color: #e8f6f5;
     width: 156px
-  }
-  .pp-dropdown-container {
-    display: none;
-    background-color: #e8f6f5;
-    width: 156px
-  }
+}
 
-  
- 
+.team-name {
+    position: fixed;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    background-color: mintcream;
+    color: #721c24;
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid #ccc;
+    font-weight: bold;
+}
+
+.announcementContent {
+    background-color: #d0d2c3;
+    color: #721c24;
+    border: 1px solid #f2eff0;
+    padding: 10px;
+    margin: -15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
