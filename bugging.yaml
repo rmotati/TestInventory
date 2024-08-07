@@ -67,3 +67,9 @@ bugging:
 - namespace: checkov.ckv_aws_142
 - namespace: checkov.ckv_aws_274
 - namespace: checkov.sfdc_ckv_tf_0089
+- namespace: checkov.sfdc_ckv_ali_r001
+- namespace: checkov.sfdc_ckv_ali_r002
+- namespace: checkov.sfdc_ckv_govcloud_r001
+- namespace: checkov.sfdc_ckv_govcloud_r002
+- namespace: checkov.sfdc_ckv_multisubstrate_r001
+
