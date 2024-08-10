@@ -277,6 +277,9 @@ enforced:
   - namespace: policy.mandatory.release.helm.fkp.flowcontrol
   - namespace: checkov.ckv_aws_169
   - namespace: checkov.sfdc_ckv_tf_0081
+  - namespace: checkov.sfdc_ckv_ali_r001
+  - namespace: checkov.sfdc_ckv_govcloud_r001
+  - namespace: checkov.sfdc_ckv_multisubstrate_r001
 unenforced:
   - namespace: policy.mandatory.release.helm.syssec.readOnlyRootFilesystem
     exceptions:
