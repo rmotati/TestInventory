@@ -5032,3 +5032,25 @@ policies:
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
+- names:
+  - checkov.sfdc_ckv_multisubstrate_r002
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: multisubstrate
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.sfdc_ckv_multisubstrate_r003
+  id: TBD
+  priority: TBD
+  description: TBD
+  resource: multisubstrate
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
