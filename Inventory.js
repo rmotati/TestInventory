@@ -35,44 +35,46 @@ function fetcMetadata(policystatus) {
 }
 
 function fetcBuggingEnforcedData(policystatus) {
-    fetch(policystatus)
-      .then((response) => response.text())
-      .then((text) => {
-        let data = jsyaml.load(text);
-        if (data.enforced) {
-          data.enforced.forEach((element) => {
-            buggingEnforcedData.push(element);
-          });
-        } else if (data.bugging) {
-          data.bugging.forEach((element) => {
-            buggingEnforcedData.push(element);
-          });
-        }
-      })
-      .catch((error) => console.error("Error loading YAML file:", error));
-  }
+  fetch(policystatus)
+    .then((response) => response.text())
+    .then((text) => {
+      let data = jsyaml.load(text);
+      if (data.enforced) {
+        data.enforced.forEach((element) => {
+          buggingEnforcedData.push(element);
+        });
+      } else if (data.bugging) {
+        data.bugging.forEach((element) => {
+          buggingEnforcedData.push(element);
+        });
+      }
+    })
+    .catch((error) => console.error("Error loading YAML file:", error));
+}
 
 function getIncubatingData() {
-    const tabs = document.querySelectorAll(".tab");
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", function () {
-        tabs.forEach((tab) => tab.classList.remove("active"));
-        this.classList.add("active");
-      });
+  const tabs = document.querySelectorAll(".tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      this.classList.add("active");
     });
-  
-    incubatingData = [];
-  
-    const obj = policyMetaData.policies.filter(policy =>
-      buggingEnforcedData.every(buggingEnforced => buggingEnforced.namespace !== policy.names[0])
-    );
-    incubatingData = obj;
-    var tabName = document
-      .querySelector(".side-tab.active")
-      .getAttribute("data-table");
-  
-    getDatafromtabs(tabName, "incubating");
-  }
+  });
+
+  incubatingData = [];
+
+  const obj = policyMetaData.policies.filter((policy) =>
+    buggingEnforcedData.every(
+      (buggingEnforced) => buggingEnforced.namespace !== policy.names[0]
+    )
+  );
+  incubatingData = obj;
+  var tabName = document
+    .querySelector(".side-tab.active")
+    .getAttribute("data-table");
+
+  getDatafromtabs(tabName, "incubating");
+}
 
 function fetchyamldata(policystatus) {
   dataTable.innerHTML = "";
@@ -99,46 +101,44 @@ function fetchyamldata(policystatus) {
   }
 }
 function getDatafromtabs(sideTabName, mainTab) {
-    console.log('sideTabName:', sideTabName, 'mainTab:', mainTab);
-  
-    const searchInput = (document.getElementById("searchPolicy").value = "");
-    var mainTabName = document.querySelector(".tab.active").getAttribute("data-table");
-    
-    if (mainTab === 'incubating') {
-      mainTabName = "incubating";
-    }
-  
-    console.log('mainTabName:', mainTabName);
-  
-    const sideTabs = document.querySelectorAll(".side-tab");
-    sideTabs.forEach((tab) => {
-      tab.addEventListener("click", function () {
-        sideTabs.forEach((tab) => tab.classList.remove("active"));
-        this.classList.add("active");
-      });
-    });
-  
-    if (mainTabName === "bugging") {
-      let finalData = data.bugging;
-      let buggingData = prepareFinalData(finalData);
-      renderTableForBugging(buggingData, sideTabName);
-    } else if (mainTabName === "enforce") {
-      let finalData = data.enforced;
-      let enforcedData = prepareFinalData(finalData);
-      console.log('enforcedData:', enforcedData);
-      renderEnforceTable(enforcedData, sideTabName);
-    } else {
-      renderTableForBugging(incubatingData, sideTabName);
-    }
-  }
+  var mainTabName = document
+    .querySelector(".tab.active")
+    .getAttribute("data-table");
 
-function prepareFinalData(finalData) {
+  if (mainTab === "incubating") {
+    mainTabName = "incubating";
+  }
+  const sideTabs = document.querySelectorAll(".side-tab");
+  sideTabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      sideTabs.forEach((tab) => tab.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  if (mainTabName === "bugging") {
+    let finalData = data.bugging;
+    let buggingData = prepareFinalData(finalData);
+    renderTableForBugging(buggingData, sideTabName);
+  } else if (mainTabName === "enforce") {
+    let finalData = data.enforced;
+    console.log("finaldata",finalData)
+    let enforcedData = prepareFinalData(finalData, mainTabName);
+    renderEnforceTable(enforcedData, sideTabName);
+  } else {
+    renderTableForBugging(incubatingData, sideTabName);
+  }
+}
+
+function prepareFinalData(finalData, mainTabName) {
   metaDataArray = [];
   for (var i = 0; i < finalData.length; i++) {
     let namespaces = policyMetaData.policies.find(
       (o) => o.names[0] === finalData[i].namespace
     );
-    namespaces.exceptions = finalData[i].exceptions;
+    if (mainTabName === "enforce") {
+      namespaces.exceptions = finalData[i].exceptions;
+    }
     if (namespaces) {
       metaDataArray.push(namespaces);
     }
@@ -149,13 +149,38 @@ function prepareFinalData(finalData) {
 // Function to render the table based on selected category
 function renderTableForBugging(data, sideTabName) {
   dataTable.innerHTML = "";
-  if (
-    sideTabName !== "checkov" &&
-    sideTabName !== "docker" &&
-    sideTabName !== "helm"
-  )
-    return; // Only render for specified tabs
-  filteredData = data.filter((item) => item.names[0].includes(sideTabName));
+  if (sideTabName === "checkov") {
+    let policyNames = [
+      "checkov.ckv_aws",
+      "checkov.ckv2_aws",
+      "checkov.sfdc_ckv_tf",
+    ];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+    searchData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "ali") {
+    let policyNames = ["checkov.sfdc_ckv_ali"];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "govcloud") {
+    let policyNames = ["checkov.sfdc_ckv_govcloud"];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "multisubstrate") {
+    let policyNames = ["checkov.sfdc_ckv_multisubstrate"];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else {
+    filteredData = data.filter((item) =>
+      item.names[0].includes(`release.${sideTabName}`)
+    );
+  }
   policiesCount = filteredData.length;
   const table = document.createElement("table");
   table.innerHTML = "";
@@ -178,13 +203,17 @@ function renderTableForBugging(data, sideTabName) {
     row.innerHTML = `
             <td>${index + 1}</td>
             <td>${item.names[0]}</td>
-            <td><a href="${item.supportPage}" target="_blank">${item.id}</a></td>
+            <td><a href="${item.supportPage}" target="_blank">${
+      item.id
+    }</a></td>
             <td>${item.priority}</td>
             <td>${item.levelOfEffort}</td>
             <td>${item.category}</td>
             <td>${item.description}</td>
             <td>${item.resource}</td>
-            <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
+            <td><a href="${item.supportPage}" target="_blank">${
+      item.supportPage
+    }</a></td>
             <td>${item.vulnerabilityCategory}</td>
             <td>${item.tags}</td>
         `;
@@ -195,20 +224,46 @@ function renderTableForBugging(data, sideTabName) {
 }
 
 function renderEnforceTable(data, sideTabName) {
-    dataTable.innerHTML = "";
-    
-    if (sideTabName === "checkov") {
-      filteredData = data.filter((item) => item.names[0].includes(sideTabName));
-      searchData = data.filter((item) => item.names[0].includes(sideTabName));
-    } else {
-      filteredData = data.filter((item) => item.names[0].includes(`release.${sideTabName}`));
-    }
-    
-    policiesCount = filteredData.length;
-    
-    const table = document.createElement("table");
-    const headerRow = table.insertRow();
-    headerRow.innerHTML = `
+  dataTable.innerHTML = "";
+
+  if (sideTabName === "checkov") {
+    let policyNames = [
+      "checkov.ckv_aws",
+      "checkov.ckv2_aws",
+      "checkov.sfdc_ckv_tf",
+    ];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+    searchData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "ali") {
+    let policyNames = ["checkov.sfdc_ckv_ali"];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "govcloud") {
+    let policyNames = ["checkov.sfdc_ckv_govcloud"];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "multisubstrate") {
+    let policyNames = ["checkov.sfdc_ckv_multisubstrate"];
+    filteredData = data.filter((item) =>
+      policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else {
+    filteredData = data.filter((item) =>
+      item.names[0].includes(`release.${sideTabName}`)
+    );
+  }
+
+  policiesCount = filteredData.length;
+
+  const table = document.createElement("table");
+  const headerRow = table.insertRow();
+  headerRow.innerHTML = `
       <th>Serial</th>
       <th>Policy Name</th>
       <th>Policy ID</th>
@@ -222,12 +277,14 @@ function renderEnforceTable(data, sideTabName) {
       <th>Tags</th>
       <th>Exceptions</th>
     `;
-    
-    filteredData.forEach((item, index) => {
-      const row = table.insertRow();
-      const exceptions = item.exceptions ? item.exceptions.map(ex => ex.service).join(", ") : "";
-      
-      row.innerHTML = `
+
+  filteredData.forEach((item, index) => {
+    const row = table.insertRow();
+    const exceptions = item.exceptions
+      ? item.exceptions.map((ex) => ex.service).join(", ")
+      : "";
+
+    row.innerHTML = `
         <td>${index + 1}</td>
         <td>${item.names[0]}</td>
         <td><a href="${item.supportPage}" target="_blank">${item.id}</a></td>
@@ -236,16 +293,18 @@ function renderEnforceTable(data, sideTabName) {
         <td>${item.category}</td>
         <td>${item.description}</td>
         <td>${item.resource}</td>
-        <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
+        <td><a href="${item.supportPage}" target="_blank">${
+      item.supportPage
+    }</a></td>
         <td>${item.vulnerabilityCategory}</td>
         <td>${item.tags}</td>
         <td>${exceptions}</td>
       `;
-    });
-    
-    dataTable.appendChild(table);
-    policiesCountEl.innerText = "Total Policies : " + policiesCount;
-  }  
+  });
+
+  dataTable.appendChild(table);
+  policiesCountEl.innerText = "Total Policies : " + policiesCount;
+}
 
 const searchInput = document.getElementById("searchPolicy");
 searchInput.addEventListener("input", function () {
@@ -266,7 +325,8 @@ searchInput.addEventListener("input", function () {
         String(val).toLowerCase().includes(searchText)
       );
     });
-    renderTableForBugging(filteredData, sideTabName);
+    let finalData = prepareFinalData(filteredData, tabName);
+    renderTableForBugging(finalData, sideTabName);
   } else if (tabName === "enforce") {
     var enforcedData = data.enforced
       .filter((item) => item.namespace.includes(sideTabName))
@@ -276,7 +336,8 @@ searchInput.addEventListener("input", function () {
         String(val).toLowerCase().includes(searchText)
       );
     });
-    renderEnforceTable(filteredData, sideTabName);
+    let finalData = prepareFinalData(filteredData, tabName);
+    renderEnforceTable(finalData, sideTabName);
   } else {
     var unEnforcedData = data.unenforced
       .filter((item) => item.namespace.includes(sideTabName))
@@ -324,10 +385,13 @@ for (i = 0; i < ppdropdown.length; i++) {
 }
 
 // Functions to handle clicking on Git and Slack icons
-document.getElementById('git-icon').addEventListener('click', function () {
-    window.open('https://git.soma.salesforce.com/opa/falcon-policies', '_blank');
+document.getElementById("git-icon").addEventListener("click", function () {
+  window.open("https://git.soma.salesforce.com/opa/falcon-policies", "_blank");
 });
 
-document.getElementById('slack-icon').addEventListener('click', function () {
-    window.open('https://salesforce-internal.slack.com/archives/C0299NZBQKF', '_blank');
+document.getElementById("slack-icon").addEventListener("click", function () {
+  window.open(
+    "https://salesforce-internal.slack.com/archives/C0299NZBQKF",
+    "_blank"
+  );
 });
