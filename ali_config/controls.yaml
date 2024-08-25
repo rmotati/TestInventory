@@ -1,5 +1,115 @@
 policies:
 - names:
+  - checkov.ckv_ali_2
+  id: CKV_ALI_2
+  description: Alibaba Cloud Security group allow internet traffic to SSH port (22)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_3
+  id: CKV_ALI_3
+  description: Alibaba Cloud Security group allow internet traffic to RDP port (3389)
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_6
+  id: CKV_ALI_6
+  description: Alibaba Cloud OSS bucket is not encrypted with Customer Master Key
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_7
+  id: CKV_ALI_7
+  description: Alibaba Cloud disk encryption is disabled
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_8
+  id: CKV_ALI_8
+  description: Alibaba Cloud Disk is not encrypted with Customer Master Key
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_9
+  id: CKV_ALI_9
+  description: Alibaba Cloud database instance accessible to public
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_10
+  id: CKV_ALI_10
+  description: Alibaba Cloud OSS bucket has versioning disabled
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_20
+  id: CKV_ALI_20
+  description: Alibaba Cloud RDS instance does not use SSL
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_28
+  id: CKV_ALI_28
+  description: Alibaba Cloud KMS Key is disabled
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - checkov.ckv_ali_33
+  id: CKV_ALI_33
+  description: Alibaba Cloud Cypher Policy is not secured
+  priority: TBD
+  levelOfEffort: Low
+  category: ENCRYPTION
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
   - policy.environments.ali.release.helm.syssec.anyresourcecreate
   id: ali_K8S1000
   priority: TBD
