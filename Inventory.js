@@ -18,6 +18,8 @@ var policiesCount;
 var filteredData;
 var filteredData1;
 var searchData;
+var path2 = "ali_config/"
+var path3 = "mulesoft_config/"
 
 fetcMetadata("controls.yaml");
 fetcBuggingEnforcedData("policies.yaml");
@@ -380,7 +382,6 @@ for (i = 0; i < subdropdown.length; i++) {
     this.childNodes[1].classList.toggle("fa-caret-right");
     this.classList.toggle("active");
     var subdropdownContent = this.nextElementSibling;
-    console.log(subdropdownContent)
     if (subdropdownContent.style.display === "none" || subdropdownContent.style.display === "") {
       subdropdownContent.style.display = "block";
     } else {
@@ -389,21 +390,21 @@ for (i = 0; i < subdropdown.length; i++) {
   });
 }
 
-var ppdropdown = document.getElementsByClassName("pp-dropdown-btn");
-var i;
-for (i = 0; i < ppdropdown.length; i++) {
-  ppdropdown[i].addEventListener("click", function () {
-    this.childNodes[1].classList.toggle("fa-caret-down");
-    this.childNodes[1].classList.toggle("fa-caret-right");
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
+// var ppdropdown = document.getElementsByClassName("pp-dropdown-btn");
+// var i;
+// for (i = 0; i < ppdropdown.length; i++) {
+//   ppdropdown[i].addEventListener("click", function () {
+//     this.childNodes[1].classList.toggle("fa-caret-down");
+//     this.childNodes[1].classList.toggle("fa-caret-right");
+//     this.classList.toggle("active");
+//     var dropdownContent = this.nextElementSibling;
+//     if (dropdownContent.style.display === "block") {
+//       dropdownContent.style.display = "none";
+//     } else {
+//       dropdownContent.style.display = "block";
+//     }
+//   });
+// }
 
 // Functions to handle clicking on Git and Slack icons
 document.getElementById("git-icon").addEventListener("click", function () {
