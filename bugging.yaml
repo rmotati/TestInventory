@@ -57,3 +57,9 @@ bugging:
 - namespace: checkov.ckv_aws_142
 - namespace: checkov.ckv_aws_274
 - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0089
+- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r001
+- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r002
+- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r003
+- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r004
+- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r005
+- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r006
