@@ -152,7 +152,7 @@ function renderTableForBugging(data, sideTabName) {
     let policyNames = [
       "checkov.ckv_aws",
       "checkov.ckv2_aws",
-      "checkov.sfdc_ckv_tf",
+      "sfdc_ckv_tf",
     ];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
@@ -174,6 +174,14 @@ function renderTableForBugging(data, sideTabName) {
     let policyNames = ["sfdc_ckv_multisubstrate"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
+    );
+  } else if (sideTabName === "intake") {
+    filteredData = data.filter((item) =>
+      item.names[0].includes(`mandatory.development`)
+    );
+  } else if (sideTabName === "build") {
+    filteredData = data.filter((item) =>
+      item.names[0].includes(`mandatory.build`)
     );
   } else {
     filteredData = data.filter((item) =>
@@ -202,17 +210,13 @@ function renderTableForBugging(data, sideTabName) {
     row.innerHTML = `
             <td>${index + 1}</td>
             <td>${item.names[0]}</td>
-            <td><a href="${item.supportPage}" target="_blank">${
-      item.id
-    }</a></td>
+            <td><a href="${item.supportPage}" target="_blank">${item.id}</a></td>
             <td>${item.priority}</td>
             <td>${item.levelOfEffort}</td>
             <td>${item.category}</td>
             <td>${item.description}</td>
             <td>${item.resource}</td>
-            <td><a href="${item.supportPage}" target="_blank">${
-      item.supportPage
-    }</a></td>
+            <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
             <td>${item.vulnerabilityCategory}</td>
             <td>${item.tags}</td>
         `;
@@ -229,7 +233,7 @@ function renderEnforceTable(data, sideTabName) {
     let policyNames = [
       "checkov.ckv_aws",
       "checkov.ckv2_aws",
-      "checkov.sfdc_ckv_tf",
+      "sfdc_ckv_tf",
     ];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
@@ -238,12 +242,12 @@ function renderEnforceTable(data, sideTabName) {
       policyNames.some((name) => item.names[0].includes(name))
     );
   } else if (sideTabName === "ali") {
-    let policyNames = ["checkov.sfdc_ckv_ali"];
+    let policyNames = ["sfdc_ckv_ali"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
   } else if (sideTabName === "govcloud") {
-    let policyNames = ["checkov.sfdc_ckv_govcloud"];
+    let policyNames = ["sfdc_ckv_govcloud"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
@@ -252,14 +256,20 @@ function renderEnforceTable(data, sideTabName) {
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
+  } else if (sideTabName === "intake") {
+    filteredData = data.filter((item) =>
+      item.names[0].includes(`mandatory.development`)
+    );
+  } else if (sideTabName === "build") {
+    filteredData = data.filter((item) =>
+      item.names[0].includes(`mandatory.build`)
+    );
   } else {
     filteredData = data.filter((item) =>
       item.names[0].includes(`release.${sideTabName}`)
     );
   }
-
   policiesCount = filteredData.length;
-
   const table = document.createElement("table");
   const headerRow = table.insertRow();
   headerRow.innerHTML = `
@@ -279,9 +289,7 @@ function renderEnforceTable(data, sideTabName) {
 
   filteredData.forEach((item, index) => {
     const row = table.insertRow();
-    const exceptions = item.exceptions
-      ? item.exceptions.map((ex) => ex.service).join(", ")
-      : "";
+    const exceptions = item.exceptions? item.exceptions.map((ex) => ex.service).join(", "): "";
 
     row.innerHTML = `
         <td>${index + 1}</td>
@@ -292,9 +300,7 @@ function renderEnforceTable(data, sideTabName) {
         <td>${item.category}</td>
         <td>${item.description}</td>
         <td>${item.resource}</td>
-        <td><a href="${item.supportPage}" target="_blank">${
-      item.supportPage
-    }</a></td>
+        <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
         <td>${item.vulnerabilityCategory}</td>
         <td>${item.tags}</td>
         <td>${exceptions}</td>
@@ -352,11 +358,8 @@ searchInput.addEventListener("input", function () {
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
-
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function () {
-    console.log("0",this.childNodes[0])
-    console.log("1",this.childNodes[1])
     this.childNodes[1].classList.toggle("fa-caret-down");
     this.childNodes[1].classList.toggle("fa-caret-right");
     this.classList.toggle("active");
@@ -368,14 +371,11 @@ for (i = 0; i < dropdown.length; i++) {
     }
   });
 }
+
 var subdropdown = document.getElementsByClassName("sub-dropdown-btn");
 var i;
-
 for (i = 0; i < subdropdown.length; i++) {
   subdropdown[i].addEventListener("click", function () {
-    console.log("0",this.childNodes[0])
-    console.log("1",this.childNodes[1])
-
     this.childNodes[1].classList.toggle("fa-caret-down");
     this.childNodes[1].classList.toggle("fa-caret-right");
     this.classList.toggle("active");
