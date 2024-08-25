@@ -125,6 +125,20 @@ th, td {
     outline: none;
 }
 
+.sub-dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    background-color: #455a64;
+    display: block;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
 .dropdown-btn i {
     margin-left: 10px;
 }
@@ -146,6 +160,9 @@ th, td {
 .dropdown-item {
     margin: 10px;
 }
+.sub-dropdown-item {
+    margin:5px;
+}
  
 .dropdown-container {
     display: block;
@@ -153,6 +170,11 @@ th, td {
     width: 156px
 }
 
+.sub-dropdown-container {
+    display: none;
+    background-color: #e8f6f5;
+    width: 156px
+}
 .team-name {
     position: fixed;
     bottom: -20px;
