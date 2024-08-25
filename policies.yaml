@@ -1,6 +1,6 @@
 enforced:
-  - namespace: policy.mandatory.release.helm.firefly.main
-  - namespace: policy.mandatory.release.helm.tagging.presencecheck
+  - namespace: policy.environments.falcon.release.helm.firefly.main
+  - namespace: policy.environments.falcon.release.helm.tagging.presencecheck
     exceptions: # The comment format is <git org name>_<git repo name>_<service name as in firebom>_<reason for exception>
       - service: pkiservicewebhook #sam_madkub-helm-charts_pkiservicewebhook_eks_integration_WL
       - service: kaasfirewebhook #kubernetes-integrations_kaas-webhook-helm-charts_kaasfirewebhook_eks_integration_WL
@@ -8,16 +8,16 @@ enforced:
       - service: vaultwebhook #Infrasec-Secrets_vault-helm_vaultwebhook_eks_integration_WL
       - service: meshistio #servicemesh_istio-mesh-helm-charts_meshistio_sub-chart_within_sub-chart
       - service: spinnaker #sfcd_spinnaker-helm-charts_spinnaker_sub-chart_within_sub-chart
-  - namespace: policy.mandatory.release.helm.tagging.nonpresencecheck
+  - namespace: policy.environments.falcon.release.helm.tagging.nonpresencecheck
     exceptions: # The comment format is <git org name>_<git repo name>_<service name as in firebom>_<reason for exception>
       - service: pkiservicewebhook #sam_madkub-helm-charts_pkiservicewebhook_eks_integration_WL
       - service: kaasfirewebhook #kubernetes-integrations_kaas-webhook-helm-charts_kaasfirewebhook_eks_integration_WL
       - service: stampywebhook #kubernetes-integrations_stampy-webhook-helm-charts_stampywebhook_eks_integration_WL
       - service: vaultwebhook #Infrasec-Secrets_vault-helm_vaultwebhook_eks_integration_WL
-  - namespace: policy.mandatory.release.helm.tagging.faketagcheck
-  - namespace: policy.mandatory.release.helm.tagging.jobnonpresencecheck
-  - namespace: policy.mandatory.release.helm.tagging.jobpresencecheck
-  - namespace: policy.mandatory.release.helm.soter.nonnlb
+  - namespace: policy.environments.falcon.release.helm.tagging.faketagcheck
+  - namespace: policy.environments.falcon.release.helm.tagging.jobnonpresencecheck
+  - namespace: policy.environments.falcon.release.helm.tagging.jobpresencecheck
+  - namespace: policy.environments.falcon.release.helm.soter.nonnlb
     exceptions: # The comment format is <git org name>_<git repo name>_<service name as in firebom>_<reason for exception>
       - service: smsapi #Infrastructure-Security_kms-helm_smsapi_smsapi_does_not_use_NLB
       - service: vault #Infrasec-Secrets_vault-helm_vault_vault_does_not_use_NLB
@@ -26,7 +26,7 @@ enforced:
       - service: keyescrow #Infrastructure-Security_k2k-helm_keyescrow_keyescrow_does_not_use_NLB_SA-031869
       - service: k2kkeyescrow #Infrastructure-Security_k2k-helm_k2kkeyescrow_k2kkeyescrow_does_not_use_NLB_SA-031869
       - service: edge #Edge_Application_Delivery_edge-helmchart_edge_use_NLB_IP_mode_SA-003611
-  - namespace: policy.mandatory.release.helm.soter.main
+  - namespace: policy.environments.falcon.release.helm.soter.main
     exceptions: # The comment format is <git org name>_<git repo name>_<service name as in firebom>_<reason for exception>
       - service: sfproxy #frontend-gateway_sfproxy-helm-charts_sfproxy_exposed_to_internet
       - service: ingressgateway #servicemesh_istio-helm-charts_ingressgateway_exposed_to_internet
@@ -39,8 +39,8 @@ enforced:
       - service: griddable-mgmt #griddable_griddable-helmcharts_griddable-mgmt_GRC-approved-for-accepting-corpnet-traffic
       - service: scrtproxy #scrtproxy_scrtproxy-helmcharts_scrtproxy_SA-approved_exposed_to_internet
       - service: edge #edge-ad_edge-helmchart_edge_service-exposed-to-internet
-  - namespace: policy.mandatory.release.helm.soter.serviceports
-  - namespace: policy.mandatory.release.helm.syssec.privileged
+  - namespace: policy.environments.falcon.release.helm.soter.serviceports
+  - namespace: policy.environments.falcon.release.helm.syssec.privileged
     exceptions:
       - service: astworker # Infrastructure-Security_ast-helm-charts_astworker_W-14411774
       - service: diffeo-engine #diffeo_nucleus_diffeo-engine_W-7882152
@@ -51,7 +51,7 @@ enforced:
       - service: cag-firefly-pullrequest # afiniti-sfci-team_firefly-helm_cag-firefly-pullrequest_dind_required_use_of_privileged_containers_W-14795014_grc-case-01019701
       - service: cag-firefly-package # afiniti-sfci-team_firefly-helm_cag-firefly-package_dind_required_use_of_privileged_containers_W-14795014_grc-case-01019701
       - service: mj-mta-inbound # itmta_armada-helm-charts_mj-mta-inbound_W-14708287_00785647 
-  - namespace: policy.mandatory.release.helm.syssec.dropcapabilities
+  - namespace: policy.environments.falcon.release.helm.syssec.dropcapabilities
     exceptions:
       - service: sdb # sdb_exception-for-container-capabilities-due-to-init-container_W-8958890
       - service: sam # sam_sam-helm-charts_sam_creates-hostpath-directories-for-sam-tenants_W-7942024
@@ -69,7 +69,7 @@ enforced:
       - service: steadybit # ChaosEngineering_steadybit-helm-charts_W-8793520
       - service: edge #edge-ad_edge-helmchart_edge_exception-required-to-run-nginx-on-port-80-and-443
       - service: bionic-relay #saftsec-MNA-bionic-pov_grc-case-00960270
-  - namespace: policy.mandatory.release.helm.syssec.dangerouscapabilities
+  - namespace: policy.environments.falcon.release.helm.syssec.dangerouscapabilities
     exceptions:
       - service: strauz #Kuleana_helm-aws-fzero_strauz_Need_heightened_capabilities_for_port_443_W-8005920
       - service: eanalytics #insights_ea_helmcharts_eanalytics_FUSE_libraries_required_use_of_privileged_containers_W-11926509_grc-case-00894718
@@ -78,7 +78,7 @@ enforced:
       - service: pingmesh-agent #armadabox_pingmesh-agent_pingmesh-agent_NET_ADMIN_for_latency_and_loss_calculations_W-9303400
       - service: privateconnect #cni_privateconnect_SA-020508_W-10133351
       - service: steadybit # ChaosEngineering_steadybit-helm-charts_W-11887857
-  - namespace: policy.mandatory.release.helm.syssec.highriskcapabilities
+  - namespace: policy.environments.falcon.release.helm.syssec.highriskcapabilities
     exceptions:
       - service: metadata-concealer #Kuleana_metadata-concealer-helm-charts_metadata-concealer_NET_RAW_for_iptables_W-7953732
       - service: eanalytics #insights_ea_helmcharts_eanalytics_FUSE_libraries_required_use_of_privileged_containers_W-11926509_grc-case-00894718
@@ -86,45 +86,45 @@ enforced:
       - service: pingmesh-agent #armadabox_pingmesh-agent_pingmesh-agent_NET_RAW_for_latency_and_loss_calculations_W-9303400
       - service: privateconnect #cni_privateconnect_SA-020508_W-10133351
       - service: steadybit # ChaosEngineering_steadybit-helm-charts_W-11887857
-  - namespace: policy.mandatory.release.helm.syssec.dockersock
+  - namespace: policy.environments.falcon.release.helm.syssec.dockersock
     exceptions:
       - service: astworker # Infrastructure-Security_ast-helm-charts_astworker_W-14411774
       - service: cccnp-ods #cc-cnp_helm-charts_cccnp-ods_W-8059971
       - service: osqueryagent # Infrastructure-Security_dnr-cloud-helm_osqueryagent_W-8793520
       - service: steadybit # ChaosEngineering_steadybit-helm-charts_W-11887857
-  - namespace: policy.mandatory.release.helm.mesh.istioresource
-  - namespace: policy.mandatory.release.helm.mesh.securitycontext
+  - namespace: policy.environments.falcon.release.helm.mesh.istioresource
+  - namespace: policy.environments.falcon.release.helm.mesh.securitycontext
     exceptions:
       - service: cc-cnp #cc-cnp_helm-charts_cc-cnp_cc_cnp_is_not_a_mesh_customer
       - service: cccnp-ods #cc-cnp_helm-charts_cccnp-ods_is_not_a_managed_mesh_customer
       - service: cccnp-ops #cc-cnp_helm-charts_cccnp-ops_is_not_a_managed_mesh_customer
-  - namespace: policy.mandatory.release.helm.mesh.envoyfilter
-  - namespace: policy.mandatory.release.helm.mesh.ingressgatewayenvoyfilter
-  - namespace: policy.mandatory.release.helm.mesh.sidecarannotations
+  - namespace: policy.environments.falcon.release.helm.mesh.envoyfilter
+  - namespace: policy.environments.falcon.release.helm.mesh.ingressgatewayenvoyfilter
+  - namespace: policy.environments.falcon.release.helm.mesh.sidecarannotations
     exceptions:
       - service: armadaboxsvc #armada_armada_armadaboxsvc_W-9036955
       - service: coreapp #casam_casam-helm-charts_coreapp_W-9036955
-  - namespace: policy.mandatory.release.helm.mesh.meshserviceinstance
-  - namespace: policy.mandatory.release.helm.syssec.listsecrets
-  - namespace: policy.mandatory.release.helm.syssec.impersonategroups
-  - namespace: policy.mandatory.release.helm.syssec.dashboard
-  - namespace: policy.mandatory.release.helm.syssec.anyresourceimpersonate
-  - namespace: policy.mandatory.release.helm.syssec.tiller
-  - namespace: policy.mandatory.release.helm.syssec.procmount
-  - namespace: policy.mandatory.release.helm.syssec.anyverbgroups
-  - namespace: policy.mandatory.release.helm.syssec.anyverbdaemonsets
-  - namespace: policy.mandatory.release.helm.syssec.unsafesysctls
-  - namespace: policy.mandatory.release.helm.syssec.abac
-  - namespace: policy.mandatory.release.helm.syssec.anyverbreplicationcontrollers
-  - namespace: policy.mandatory.release.helm.syssec.anyverbusers
-  - namespace: policy.mandatory.release.helm.syssec.http
-  - namespace: policy.mandatory.release.helm.syssec.hostnetwork
+  - namespace: policy.environments.falcon.release.helm.mesh.meshserviceinstance
+  - namespace: policy.environments.falcon.release.helm.syssec.listsecrets
+  - namespace: policy.environments.falcon.release.helm.syssec.impersonategroups
+  - namespace: policy.environments.falcon.release.helm.syssec.dashboard
+  - namespace: policy.environments.falcon.release.helm.syssec.anyresourceimpersonate
+  - namespace: policy.environments.falcon.release.helm.syssec.tiller
+  - namespace: policy.environments.falcon.release.helm.syssec.procmount
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbgroups
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbdaemonsets
+  - namespace: policy.environments.falcon.release.helm.syssec.unsafesysctls
+  - namespace: policy.environments.falcon.release.helm.syssec.abac
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbreplicationcontrollers
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbusers
+  - namespace: policy.environments.falcon.release.helm.syssec.http
+  - namespace: policy.environments.falcon.release.helm.syssec.hostnetwork
     exceptions:
       - service: metadata-concealer #Kuleana_metadata-concealer-helm-charts_metadata-concealer_iptables_rules_W-7953732
       - service: containersec #tvm_containersec_poc_need_host_network_W-8460625
       - service: steadybit # ChaosEngineering_steadybit-helm-charts_W-11887857
       - service: edge # Edge Gateway_01002009_12012024
-  - namespace: policy.mandatory.release.helm.syssec.shareprocessnamespace
+  - namespace: policy.environments.falcon.release.helm.syssec.shareprocessnamespace
     exceptions:
       - service: sequencer # casam_casam-release-helm-charts_sequencer_kill-sidecar-for-k8s-job-to-exit_W-7849822
       - service: collection # monitoring_collection-helm-charts_collection_monitoring-collecting-logs_W-8204268
@@ -133,16 +133,16 @@ enforced:
       - service: eaasgrpcclnt # eaas_grpc-client-chart_eaas-grpc-client_W-8240458
       - service: l7-kwaf-control-plane-service #Infrastructure-Security_secure7-helm_00765195
       - service: mtagateway # email-infrastructure-ali_ali_mail_charts_mtagateway_00886968
-  - namespace: policy.mandatory.release.helm.syssec.createbind
-  - namespace: policy.mandatory.release.helm.syssec.attachpods
-  - namespace: policy.mandatory.release.helm.syssec.hostport
+  - namespace: policy.environments.falcon.release.helm.syssec.createbind
+  - namespace: policy.environments.falcon.release.helm.syssec.attachpods
+  - namespace: policy.environments.falcon.release.helm.syssec.hostport
     exceptions:
       - service: collection # monitoring_collection-helm-charts_collection_monitoring-collecting-logs_W-8204268
       - service: fwe-o2-update-long # armadabox_fwe-o2-update-long_fwe-o2-update-long_grc-case-00838373
-  - namespace: policy.mandatory.release.helm.syssec.podexec
-  - namespace: policy.mandatory.release.helm.syssec.anyverbjobs
-  - namespace: policy.mandatory.release.helm.syssec.anyverbcronjobs
-  - namespace: policy.mandatory.release.helm.syssec.hostpath
+  - namespace: policy.environments.falcon.release.helm.syssec.podexec
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbjobs
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbcronjobs
+  - namespace: policy.environments.falcon.release.helm.syssec.hostpath
     exceptions:
       - service: coreapp # casam_casam-helm-charts_coreapp_monitoring-cloud-requirements-for-coreapp-logs_W-7850388
       - service: astworker # Infrastructure-Security_ast-helm-charts_astworker_W-7846116
@@ -159,85 +159,77 @@ enforced:
       - service: sdb # SDB_DB_Hostpath_ByDesign_W-10005416_grc_case_00881271
       - service: solr-helm-chart #Solr-Service_Hostpath_ByDesign_GRC_Case_00884192
       - service: tabcld-hyper #Containerization-Core_Containerization_grc_case_00947042
-  - namespace: policy.mandatory.release.helm.syssec.anyresourcedelete
+  - namespace: policy.environments.falcon.release.helm.syssec.anyresourcedelete
     exceptions:
       - service: snykcode # Infrastructure-Security_ast-helm-charts_snykcode_W-11224099
-  - namespace: policy.mandatory.release.helm.syssec.maliciouscreation
-  - namespace: policy.mandatory.release.docker.syssec.automount
+  - namespace: policy.environments.falcon.release.helm.syssec.maliciouscreation
+  - namespace: policy.environments.falcon.release.docker.syssec.automount
     exceptions:
       - service: snykcode # Infrastructure-Security_ast-helm-charts_snykcode_W-11224099
-  - namespace: policy.mandatory.release.helm.syssec.anyverb
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverb
     exceptions:
       - service: snykcode # Infrastructure-Security_ast-helm-charts_snykcode_W-11224099
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.hostnamespace
+  - namespace: policy.environments.falcon.release.helm.syssec.hostnamespace
     exceptions:
       - service: containersec #tvm_containersec_poc_need_host_namespace_W-8460625
-  - namespace: policy.mandatory.release.helm.syssec.anyverbstatefulsets
-  - namespace: policy.mandatory.release.helm.syssec.anyresourcecreate
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbstatefulsets
+  - namespace: policy.environments.falcon.release.helm.syssec.anyresourcecreate
     exceptions:
       - service: snykcode # Infrastructure-Security_ast-helm-charts_snykcode_W-11224099
-  - namespace: policy.mandatory.release.helm.syssec.anyverbdeployments
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbdeployments
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyresourcelist
+  - namespace: policy.environments.falcon.release.helm.syssec.anyresourcelist
     exceptions:
       - service: snykcode # Infrastructure-Security_ast-helm-charts_snykcode_W-11224099
-  - namespace: policy.mandatory.release.helm.syssec.anyverbpods
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbpods
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyverbreplicasets
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbreplicasets
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyverbsecrets
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbsecrets
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyverbclusterrolebindings
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbclusterrolebindings
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyverbclusterroles
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbclusterroles
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyresourceget
+  - namespace: policy.environments.falcon.release.helm.syssec.anyresourceget
     exceptions:
       - service: snykcode # Infrastructure-Security_ast-helm-charts_snykcode_W-11224099
-  - namespace: policy.mandatory.release.helm.syssec.anyverbrolebindings
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbrolebindings
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.anyverbroles
+  - namespace: policy.environments.falcon.release.helm.syssec.anyverbroles
     exceptions:
       - service: meshistio #servicemesh_istio-operator-helm-charts_W-10211843
-  - namespace: policy.mandatory.release.helm.syssec.tlsverify
-  - namespace: policy.mandatory.release.helm.syssec.secrets
+  - namespace: policy.environments.falcon.release.helm.syssec.tlsverify
+  - namespace: policy.environments.falcon.release.helm.syssec.secrets
     exceptions:
       - service: hawking-mongodb #hawking-mongodb_helm-mongodb_W-12686857_GRC-00915760_RemDate-6/23/2023
-  - namespace: policy.mandatory.release.docker.syssec.expose_net_bind_service
-  - namespace: policy.mandatory.release.docker.syssec.entrypoint
-  - namespace: policy.mandatory.release.docker.syssec.valid_ports
-  - namespace: policy.mandatory.release.helm.fkp.deprecations
-  - namespace: checkov.ckv_aws_166
+  - namespace: policy.environments.falcon.release.docker.syssec.expose_net_bind_service
+  - namespace: policy.environments.falcon.release.docker.syssec.entrypoint
+  - namespace: policy.environments.falcon.release.docker.syssec.valid_ports
+  - namespace: policy.environments.falcon.release.helm.fkp.deprecations
   - namespace: checkov.ckv_aws_165
-  - namespace: checkov.ckv_aws_46
   - namespace: checkov.ckv_aws_33
   - namespace: checkov.ckv_aws_62
   - namespace: checkov.ckv_aws_63
   - namespace: checkov.ckv_aws_140
-  - namespace: checkov.ckv_aws_57
   - namespace: checkov.ckv_aws_70
   - namespace: checkov.ckv_aws_17
   - namespace: checkov.ckv_aws_72
   - namespace: checkov.ckv_aws_13
-  - namespace: checkov.ckv2_aws_12
-    exceptions:
-      - service: vault-aws-terraform #Infrasec-Secrets_W-14371345_GRC-01020928_Jun 15 2024
   - namespace: checkov.ckv_aws_19
   - namespace: checkov.ckv_aws_32
   - namespace: checkov.ckv_aws_41
-  - namespace: checkov.ckv_aws_277
   - namespace: checkov.ckv2_aws_2
   - namespace: checkov.ckv_aws_81
   - namespace: checkov.ckv_aws_61
-  - namespace: checkov.ckv_aws_103
   - namespace: checkov.ckv_aws_55
     exceptions:
       - service: deploy-webserver-anypoint #MS-ProdEng-Deploy---Webserver-Anypoint_GRC-01028847_RemDate-4/30/2025
@@ -246,15 +238,10 @@ enforced:
     exceptions:
       - service: deploy-webserver-anypoint #MS-ProdEng-Deploy---Webserver-Anypoint_GRC-01028847_RemDate-4/30/2025
   - namespace: checkov.ckv_aws_20
-  - namespace: checkov.ckv_aws_129
   - namespace: checkov.ckv_aws_53
     exceptions:
       - service: deploy-webserver-anypoint #MS-ProdEng-Deploy---Webserver-Anypoint_GRC-01028847_RemDate-4/30/2025
   - namespace: checkov.ckv_aws_49
-  - namespace: checkov.ckv_aws_24
-  - namespace: checkov.ckv_aws_59
-    exceptions:
-      - service: ucs-content-ingestion #dpae_ucs-content-ingestion_ucs-content-ingestion_apigw_has_ip_restrictions_W-14417846
   - namespace: checkov.sfdc_ckv_tf_0071
   - namespace: checkov.sfdc_ckv_tf_0076
   - namespace: checkov.sfdc_ckv_tf_0077
@@ -274,14 +261,11 @@ enforced:
   - namespace: checkov.ckv_aws_6
   - namespace: checkov.ckv_aws_83
   - namespace: checkov.ckv_aws_228
-  - namespace: policy.mandatory.release.helm.fkp.flowcontrol
+  - namespace: policy.environments.falcon.release.helm.fkp.flowcontrol
   - namespace: checkov.ckv_aws_169
   - namespace: checkov.sfdc_ckv_tf_0081
-  - namespace: checkov.sfdc_ckv_ali_r001
-  - namespace: checkov.sfdc_ckv_govcloud_r001
-  - namespace: checkov.sfdc_ckv_multisubstrate_r001
 unenforced:
-  - namespace: policy.mandatory.release.helm.syssec.readOnlyRootFilesystem
+  - namespace: policy.environments.falcon.release.helm.syssec.readOnlyRootFilesystem
     exceptions:
       - service: kraken #tvm_kraken_gunicorn_pid_readonlyfs_W-9057591
       - service: hlo # monitoring_hyperlocal-observability_hlo_W-10838102
@@ -296,14 +280,14 @@ unenforced:
       - service: bionic-relay #saftsec-MNA-bionic-pov_grc-case-00960270
       - service: sam #FKP Data Plane_W-14400511_01003838_2024-02-29
       - service: scot-mend-renovate #sfci-scot_grc_case_01021811_2024_09_30
-  - namespace: policy.mandatory.release.helm.iac.deprecations
-  - namespace: policy.mandatory.release.docker.syssec.approved_registry
-  - namespace: policy.mandatory.release.docker.syssec.run_sudo
-  - namespace: policy.mandatory.release.docker.syssec.user
-  - namespace: policy.mandatory.release.docker.syssec.run_install_openssh
+  - namespace: policy.environments.falcon.release.helm.iac.deprecations
+  - namespace: policy.environments.falcon.release.docker.syssec.approved_registry
+  - namespace: policy.environments.falcon.release.docker.syssec.run_sudo
+  - namespace: policy.environments.falcon.release.docker.syssec.user
+  - namespace: policy.environments.falcon.release.docker.syssec.run_install_openssh
   - namespace: checkov.ckv2_aws_11
   - namespace: checkov.ckv_aws_133
   - namespace: checkov.ckv2_aws_30
-  - namespace: policy.mandatory.release.helm.syssec.automount
+  - namespace: policy.environments.falcon.release.helm.syssec.automount
     exceptions:
       - service: cdp-infra #CDP Service Delivery_W-13701486_00937671_8-2-2024
