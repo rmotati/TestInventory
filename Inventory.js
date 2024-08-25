@@ -122,7 +122,6 @@ function getDatafromtabs(sideTabName, mainTab) {
     renderTableForBugging(buggingData, sideTabName);
   } else if (mainTabName === "enforce") {
     let finalData = data.enforced;
-    console.log("finaldata",finalData)
     let enforcedData = prepareFinalData(finalData, mainTabName);
     renderEnforceTable(enforcedData, sideTabName);
   } else {
@@ -162,17 +161,17 @@ function renderTableForBugging(data, sideTabName) {
       policyNames.some((name) => item.names[0].includes(name))
     );
   } else if (sideTabName === "ali") {
-    let policyNames = ["checkov.sfdc_ckv_ali"];
+    let policyNames = ["sfdc_ckv_ali"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
   } else if (sideTabName === "govcloud") {
-    let policyNames = ["checkov.sfdc_ckv_govcloud"];
+    let policyNames = ["sfdc_ckv_govcloud"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
   } else if (sideTabName === "multisubstrate") {
-    let policyNames = ["checkov.sfdc_ckv_multisubstrate"];
+    let policyNames = ["sfdc_ckv_multisubstrate"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
@@ -249,7 +248,7 @@ function renderEnforceTable(data, sideTabName) {
       policyNames.some((name) => item.names[0].includes(name))
     );
   } else if (sideTabName === "multisubstrate") {
-    let policyNames = ["checkov.sfdc_ckv_multisubstrate"];
+    let policyNames = ["sfdc_ckv_multisubstrate"];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
     );
@@ -356,6 +355,8 @@ var i;
 
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function () {
+    console.log("0",this.childNodes[0])
+    console.log("1",this.childNodes[1])
     this.childNodes[1].classList.toggle("fa-caret-down");
     this.childNodes[1].classList.toggle("fa-caret-right");
     this.classList.toggle("active");
@@ -364,6 +365,26 @@ for (i = 0; i < dropdown.length; i++) {
       dropdownContent.style.display = "block";
     } else {
       dropdownContent.style.display = "none";
+    }
+  });
+}
+var subdropdown = document.getElementsByClassName("sub-dropdown-btn");
+var i;
+
+for (i = 0; i < subdropdown.length; i++) {
+  subdropdown[i].addEventListener("click", function () {
+    console.log("0",this.childNodes[0])
+    console.log("1",this.childNodes[1])
+
+    this.childNodes[1].classList.toggle("fa-caret-down");
+    this.childNodes[1].classList.toggle("fa-caret-right");
+    this.classList.toggle("active");
+    var subdropdownContent = this.nextElementSibling;
+    console.log(subdropdownContent)
+    if (subdropdownContent.style.display === "none" || subdropdownContent.style.display === "") {
+      subdropdownContent.style.display = "block";
+    } else {
+      subdropdownContent.style.display = "none";
     }
   });
 }
