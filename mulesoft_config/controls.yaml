@@ -43,3 +43,25 @@ policies:
   supportPage: TBD
   vulnerabilityCategory: TBD
   tags: []
+- names:
+  - policy.environments.mulesoft.release.terraform.syssec.sfdc_ckv_mulesoft_0001
+  id: SFDC_CKV_MULESOFT_0001
+  description: Mulesoft Cloud Security group allow internet traffic to SSH port (22)
+  priority: TBD
+  levelOfEffort: Low
+  category: TBD
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.environments.mulesoft.release.terraform.syssec.sfdc_ckv_mulesoft_0002
+  id: SFDC_CKV_MULESOFT_0002
+  description: Mulesoft Cloud Security group allow internet traffic to RDP port (3389)
+  priority: TBD
+  levelOfEffort: Low
+  category: TBD
+  resource: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
