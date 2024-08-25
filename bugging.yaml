@@ -60,6 +60,6 @@ bugging:
 - namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r001
 - namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r002
 - namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r003
-- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r004
-- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r005
-- namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r006
+- namespace: policy.mandatory.development.amg.sbom_vuln_scan.critical_vuln
+- namespace: policy.mandatory.development.amg.sbom_vuln_scan.license
+- namespace: policy.mandatory.build.amg.sbom_vuln_scan.critical_vuln
