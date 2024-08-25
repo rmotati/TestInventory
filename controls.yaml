@@ -5043,3 +5043,91 @@ policies:
   supportPage: https://sfdc.co/Adaptation_Guide
   vulnerabilityCategory: Environment Specific Naming
   tags: []
+- names:
+  - policy.mandatory.development.amg.sbom_vuln_scan.critical_vuln
+  id: amg_001
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.development.amg.sbom_vuln_scan.license
+  id: amg_002
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.development.amg.sbom_vuln_scan.pkg_version_age
+  id: amg_003
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.development.sbom.amg.sbom_vuln_scan_critical_vuln
+  id: amg_004
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.development.sbom.amg.sbom_vuln_scan_license
+  id: amg_005
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.development.sbom.amg.sbom_vuln_scan_pkg_version_age
+  id: amg_006
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.build.amg.sbom_vuln_scan.critical_vuln
+  id: amg_007
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.mandatory.build.sbom.amg.sbom_vuln_scan_critical_vuln
+  id: amg_008
+  priority: P1
+  description: TBD
+  resource: TBD
+  levelOfEffort: Low
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
