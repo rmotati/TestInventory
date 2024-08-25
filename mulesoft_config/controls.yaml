@@ -1,3 +1,45 @@
----
-abc
-
+policies:
+- names:
+  - policy.environments.mulesoft.release.helm.syssec.anyresourcecreate
+  id: mulesoft_K8S1000
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.environments.mulesoft.release.helm.syssec.anyresourcedelete
+  id: mulesoft_K8S1001
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.environments.mulesoft.release.docker.syssec.add_run_http
+  id: mulesoft_DF0001
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
+- names:
+  - policy.environments.mulesoft.release.docker.syssec.approved_registry
+  id: mulesoft_DF0009
+  priority: TBD
+  description: TBD
+  resource: TBD
+  levelOfEffort: TBD
+  category: TBD
+  supportPage: TBD
+  vulnerabilityCategory: TBD
+  tags: []
