@@ -801,7 +801,7 @@ policies:
   tags:
   - SFSS-019(6.1)
 - names:
-  - checkov.sfdc_ckv_tf_0071
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0071
   id: SFDC_CKV_TF_0071
   description: Ensure more restrictive policies on VPC Endpoints
   priority: P2
@@ -813,7 +813,7 @@ policies:
   tags:
   - SFSS-003(2.3)
 - names:
-  - checkov.sfdc_ckv_tf_0072
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0072
   id: SFDC_CKV_TF_0072
   description: S3 WRITE_ACP ACLs
   priority: P0
@@ -825,7 +825,7 @@ policies:
   tags:
   - SFSS-003(2.3)
 - names:
-  - checkov.sfdc_ckv_tf_0073
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0073
   id: SFDC_CKV_TF_0073
   description: S3 READ_ACP ACLs
   priority: P3
@@ -837,7 +837,7 @@ policies:
   tags:
   - SFSS-003(2.3)
 - names:
-  - checkov.sfdc_ckv_tf_0074
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0074
   id: SFDC_CKV_TF_0074
   description: S3 Write ACLs
   priority: P0
@@ -849,7 +849,7 @@ policies:
   tags:
   - SFSS-003(2.7)
 - names:
-  - checkov.sfdc_ckv_tf_0075
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0075
   id: SFDC_CKV_TF_0075
   description: S3 Read ACLs
   priority: P0
@@ -861,7 +861,7 @@ policies:
   tags:
   - SFSS-021(1.3)
 - names:
-  - checkov.sfdc_ckv_tf_0076
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0076
   id: SFDC_CKV_TF_0076
   description: S3 bucket policies do not allow S3:Get* action with any Principal (all (*) principals)
   priority: P0
@@ -873,7 +873,7 @@ policies:
   tags:
   - SFSS-021(3.3)
 - names:
-  - checkov.sfdc_ckv_tf_0077
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0077
   id: SFDC_CKV_TF_0077
   description: Ensure S3 bucket policies do not allow S3:Delete* action with any Principal (all (*) principals)
   priority: P0
@@ -885,7 +885,7 @@ policies:
   tags:
   - SFSS-003(2.7)
 - names:
-  - checkov.sfdc_ckv_tf_0078
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0078
   id: SFDC_CKV_TF_0078
   description: S3 bucket policies do not allow S3:* action with any Principal (all (*) principals)
   priority: P0
@@ -897,7 +897,7 @@ policies:
   tags:
   - SFSS-003(2.7)
 - names:
-  - checkov.sfdc_ckv_tf_0081
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0081
   id: SFDC_CKV_TF_0081
   description: Ensure EMR cluster encryption in transit should be enabled
   priority: P2
@@ -909,7 +909,7 @@ policies:
   tags:
   - SFSS-021(11.1)
 - names:
-  - checkov.sfdc_ckv_tf_0085
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0085
   id: SFDC_CKV_TF_0085
   description: Ensure AWS Lambda functions are not exposed to the public internet
   priority: P0
