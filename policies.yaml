@@ -264,6 +264,13 @@ enforced:
   - namespace: policy.environments.falcon.release.helm.fkp.flowcontrol
   - namespace: checkov.ckv_aws_169
   - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0081
+  - namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r004
+  - namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r005
+  - namespace: policy.mandatory.release.rawtext.syssec.multisubstrate.sfdc_ckv_multisubstrate_r006
+  - namespace: policy.mandatory.development.sbom.amg.sbom_vuln_scan_critical_vuln
+  - namespace: policy.mandatory.development.sbom.amg.sbom_vuln_scan_license
+  - namespace: policy.mandatory.development.sbom.amg.sbom_vuln_scan_pkg_version_age
+  - namespace: policy.mandatory.build.sbom.amg.sbom_vuln_scan_critical_vuln
 unenforced:
   - namespace: policy.environments.falcon.release.helm.syssec.readOnlyRootFilesystem
     exceptions:
