@@ -242,14 +242,14 @@ enforced:
     exceptions:
       - service: deploy-webserver-anypoint #MS-ProdEng-Deploy---Webserver-Anypoint_GRC-01028847_RemDate-4/30/2025
   - namespace: checkov.ckv_aws_49
-  - namespace: checkov.sfdc_ckv_tf_0071
-  - namespace: checkov.sfdc_ckv_tf_0076
-  - namespace: checkov.sfdc_ckv_tf_0077
-  - namespace: checkov.sfdc_ckv_tf_0078
-  - namespace: checkov.sfdc_ckv_tf_0072
-  - namespace: checkov.sfdc_ckv_tf_0074
-  - namespace: checkov.sfdc_ckv_tf_0075
-  - namespace: checkov.sfdc_ckv_tf_0073
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0071
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0076
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0077
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0078
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0072
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0074
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0075
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0073
   - namespace: checkov.ckv_aws_54
     exceptions:
       - service: deploy-webserver-anypoint #MS-ProdEng-Deploy---Webserver-Anypoint_GRC-01028847_RemDate-4/30/2025
@@ -263,7 +263,7 @@ enforced:
   - namespace: checkov.ckv_aws_228
   - namespace: policy.environments.falcon.release.helm.fkp.flowcontrol
   - namespace: checkov.ckv_aws_169
-  - namespace: checkov.sfdc_ckv_tf_0081
+  - namespace: policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0081
 unenforced:
   - namespace: policy.environments.falcon.release.helm.syssec.readOnlyRootFilesystem
     exceptions:
