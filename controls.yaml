@@ -3884,7 +3884,7 @@ policies:
   vulnerabilityCategory: TBD
   tags: []
 - names:
-  - checkov.sfdc_ckv_tf_0082
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0082
   id: SFDC_CKV_TF_0082
   description: Ensure EC2 AMIs are not publicly accessible
   priority: P1
@@ -3896,7 +3896,7 @@ policies:
   tags:
   - SFSS-021(1.5)
 - names:
-  - checkov.sfdc_ckv_tf_0083
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0083
   id: SFDC_CKV_TF_0083
   description: Ensure AWS IAM Password Policy requires to follow the standard.
   priority: TBD
@@ -3908,7 +3908,7 @@ policies:
   tags:
   - SFSS-006(4.10)
 - names:
-  - checkov.sfdc_ckv_tf_0084
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0084
   id: SFDC_CKV_TF_0084
   description: Ensure NACL ingress does not allow all Ports
   priority: P2
@@ -3920,7 +3920,7 @@ policies:
   tags:
   - SFSS-021(11.4)
 - names:
-  - checkov.sfdc_ckv_tf_0086
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0086
   id: SFDC_CKV_TF_0086
   description: Ensure Deletion Protection is enabled in RDS cluster resource
   priority: TBD
@@ -3931,7 +3931,7 @@ policies:
   vulnerabilityCategory: 
   tags: []
 - names:
-  - checkov.sfdc_ckv_tf_0089
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0089
   id: SFDC_CKV_TF_0089
   description: Ensure that appropriate hashing algorithm is enabled for SNS
   priority: TBD
@@ -3943,7 +3943,7 @@ policies:
   tags:
   - SFSS-070(6)
 - names:
-  - checkov.sfdc_ckv_tf_0092
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0092
   id: SFDC_CKV_TF_0092
   description: Ensure IAM password policy prevents password reuse
   priority: P1
@@ -3954,7 +3954,7 @@ policies:
   vulnerabilityCategory: Insecure Configuration of Identity and Access Management Infrastructure
   tags: []
 - names:
-  - checkov.sfdc_ckv_tf_0094
+  - policy.environments.falcon.release.terraform.syssec.aws.sfdc_ckv_tf_0094
   id: SFDC_CKV_TF_0094
   description: VM instance/serverless with a private key of a wildcard domain certificate in cleartext
   priority: P1
