@@ -1,2 +1,4 @@
----
-abc
+bugging:
+- namespace: checkov.ckv_ali_8
+- namespace: checkov.ckv_ali_9
+- namespace: checkov.ckv_ali_10
