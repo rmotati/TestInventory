@@ -1,2 +1,11 @@
----
-abc
+enforced:
+  - namespace: policy.environments.mulesoft.release.helm.firefly.main
+  - namespace: policy.environments.mulesoft.release.helm.tagging.presencecheck
+  - namespace: policy.environments.mulesoft.release.terraform.syssec.sfdc_ckv_mulesoft_0001
+    exceptions: # The comment format is <git org name>_<git repo name>_<service name as in firebom>_<reason for exception>
+      - service: pkiservicewebhook #sam_madkub-helm-charts_pkiservicewebhook_eks_integration_WL
+      - service: kaasfirewebhook #kubernetes-integrations_kaas-webhook-helm-charts_kaasfirewebhook_eks_integration_WL
+      - service: stampywebhook #kubernetes-integrations_stampy-webhook-helm-charts_stampywebhook_eks_integration_WL
+      - service: vaultwebhook #Infrasec-Secrets_vault-helm_vaultwebhook_eks_integration_WL
+      - service: meshistio #servicemesh_istio-mesh-helm-charts_meshistio_sub-chart_within_sub-chart
+      - service: spinnaker #sfcd_spinnaker-helm-charts_spinnaker_sub-chart_within_sub-chart
