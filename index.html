@@ -20,33 +20,33 @@
             </button>
             <div class="sub-dropdown-secion">
               <div class="sub-dropdown-item">
-                <button class="sub-dropdown-btn">AWS
-                  <i class="fa fa-caret-right"></i>
+                <button class="sub-dropdown-btn" onclick="fetcMetadata('controls.yaml')">AWS
+                  <i class="fa fa-caret-down"></i>
                 </button>
-                <div class="sub-dropdown-container">
+                <div class="sub-dropdown-container"  data-submenu="aws">
                   <a href="#" class="side-tab active" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</a>
                   <a href="#" class="side-tab" data-table="docker" onclick="getDatafromtabs('docker')">Dockerfile</a>
                   <a href="#" class="side-tab" data-table="helm" onclick="getDatafromtabs('helm')">Helm</a>
                 </div>
               </div>
               <div class="sub-dropdown-item">
-                <button class="sub-dropdown-btn">ALI
+                <button class="sub-dropdown-btn" onclick="fetcMetadata('ali_config/controls.yaml')">ALI
                   <i class="fa fa-caret-right"></i>
                 </button>
-                <div class="sub-dropdown-container">
-                  <a href="#" class="side-tab" data-table="ali_checkov" onclick="getDatafromtabs('ali_checkov')">Terraform</a>
-                  <a href="#" class="side-tab" data-table="ali_docker" onclick="getDatafromtabs('ali_docker')">Dockerfile</a>
-                  <a href="#" class="side-tab" data-table="ali_helm" onclick="getDatafromtabs('ali_helm')" >Helm</a>
+                <div class="sub-dropdown-container"  data-submenu="ali">
+                  <a href="#" class="side-tab" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</a>
+                  <a href="#" class="side-tab" data-table="docker" onclick="getDatafromtabs('docker')">Dockerfile</a>
+                  <a href="#" class="side-tab" data-table="helm" onclick="getDatafromtabs('helm')" >Helm</a>
                 </div>
               </div>
               <div class="sub-dropdown-item">
-                <button class="sub-dropdown-btn">Mulesoft
+                <button class="sub-dropdown-btn"  onclick="fetcMetadata('mulesoft_config/controls.yaml')">Mulesoft
                   <i class="fa fa-caret-right"></i>
                 </button>
-                <div class="sub-dropdown-container">
-                  <a href="#" class="side-tab" data-table="mule_checkov" onclick="getDatafromtabs('mule_checkov')">Terraform</a>
-                  <a href="#" class="side-tab" data-table="mule_docker" onclick="getDatafromtabs('mule_docker')">Dockerfile</a>
-                  <a href="#" class="side-tab" data-table="mule_helm" onclick="getDatafromtabs('mule_helm')">Helm</a>
+                <div class="sub-dropdown-container" data-submenu="mulesoft">
+                  <a href="#" class="side-tab" data-table="checkov" onclick="getDatafromtabs('checkov')">Terraform</a>
+                  <a href="#" class="side-tab" data-table="docker" onclick="getDatafromtabs('docker')">Dockerfile</a>
+                  <a href="#" class="side-tab" data-table="helm" onclick="getDatafromtabs('helm')">Helm</a>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@
           <h1>Falcon-Policies Inventory</h1>
         </div>
         <div class="tabs">
-          <div class="tab" data-table="unenforce" onclick="getIncubatingData()">Incubating</div>
+          <div class="tab" data-table="incubating" onclick="getIncubatingData()">Incubating</div>
           <div class="tab" data-table="bugging" onclick="fetchyamldata('bugging.yaml')">Warn</div>
           <div class="tab active" data-table="enforce" onclick="fetchyamldata('policies.yaml')">Enforced</div>
         </div>
