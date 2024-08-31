@@ -18,25 +18,14 @@ var policiesCount;
 var filteredData;
 var filteredData1;
 var searchData;
-var path2 = "ali_config/"
-var path3 = "mulesoft_config/"
+var alipath = "ali_config/";
+var mulesoftpath = "mulesoft_config/";
 
 fetcMetadata("controls.yaml");
-fetcBuggingEnforcedData("policies.yaml");
-fetcBuggingEnforcedData("bugging.yaml");
+fetchBuggingEnforcedData("policies.yaml");
+fetchBuggingEnforcedData("bugging.yaml");
 
-function fetcMetadata(policystatus) {
-  // Fetch and process the YAML data
-  fetch(policystatus)
-    .then((response) => response.text())
-    .then((text) => {
-      policyMetaData = jsyaml.load(text);
-      fetchyamldata("policies.yaml");
-    })
-    .catch((error) => console.error("Error loading YAML file:", error));
-}
-
-function fetcBuggingEnforcedData(policystatus) {
+function fetchBuggingEnforcedData(policystatus) {
   fetch(policystatus)
     .then((response) => response.text())
     .then((text) => {
@@ -64,13 +53,15 @@ function getIncubatingData() {
   });
 
   incubatingData = [];
+  console.log(policyMetaData.policies);
 
-  const obj = policyMetaData.policies.filter((policy) =>
+  const filteredData = policyMetaData.policies.filter((policy) =>
     buggingEnforcedData.every(
       (buggingEnforced) => buggingEnforced.namespace !== policy.names[0]
     )
   );
-  incubatingData = obj;
+  incubatingData = filteredData;
+  console.log("incubating", incubatingData);
   var tabName = document
     .querySelector(".side-tab.active")
     .getAttribute("data-table");
@@ -78,7 +69,38 @@ function getIncubatingData() {
   getDatafromtabs(tabName, "incubating");
 }
 
+function fetcMetadata(policystatus) {
+  // Fetch and process the YAML data
+  fetch(policystatus)
+    .then((response) => response.text())
+    .then((text) => {
+      policyMetaData = jsyaml.load(text);
+      fetchyamldata("policies.yaml");
+    })
+    .catch((error) => console.error("Error loading YAML file:", error));
+  buggingEnforcedData = [];
+  if (policystatus.includes("ali")) {
+    fetchBuggingEnforcedData(alipath + "policies.yaml");
+    fetchBuggingEnforcedData(alipath + "bugging.yaml");
+  } else if (policystatus.includes("mulesoft")) {
+    fetchBuggingEnforcedData(mulesoftpath + "policies.yaml");
+    fetchBuggingEnforcedData(mulesoftpath + "bugging.yaml");
+  } else {
+    fetchBuggingEnforcedData("policies.yaml");
+    fetchBuggingEnforcedData("bugging.yaml");
+  }
+}
+
 function fetchyamldata(policystatus) {
+  var sideTab = document.querySelector(".side-tab.active");
+  if (sideTab.parentElement.getAttribute("data-submenu") === "ali") {
+    policystatus = alipath + policystatus;
+  } else if (
+    sideTab.parentElement.getAttribute("data-submenu") === "mulesoft"
+  ) {
+    policystatus = mulesoftpath + policystatus;
+  }
+
   dataTable.innerHTML = "";
 
   const tabs = document.querySelectorAll(".tab");
@@ -89,7 +111,7 @@ function fetchyamldata(policystatus) {
     });
   });
   if (policystatus) {
-    var tabName = document
+    var sideTabName = document
       .querySelector(".side-tab.active")
       .getAttribute("data-table");
     // Fetch and process the YAML data
@@ -97,11 +119,12 @@ function fetchyamldata(policystatus) {
       .then((response) => response.text())
       .then((text) => {
         data = jsyaml.load(text);
-        getDatafromtabs(tabName);
+        getDatafromtabs(sideTabName);
       })
       .catch((error) => console.error("Error loading YAML file:", error));
   }
 }
+
 function getDatafromtabs(sideTabName, mainTab) {
   var mainTabName = document
     .querySelector(".tab.active")
@@ -137,7 +160,7 @@ function prepareFinalData(finalData, mainTabName) {
     let namespaces = policyMetaData.policies.find(
       (o) => o.names[0] === finalData[i].namespace
     );
-    if (mainTabName === "enforce") {
+    if (mainTabName === "enforce" && finalData[i].exceptions && namespaces) {
       namespaces.exceptions = finalData[i].exceptions;
     }
     if (namespaces) {
@@ -150,11 +173,14 @@ function prepareFinalData(finalData, mainTabName) {
 // Function to render the table based on selected category
 function renderTableForBugging(data, sideTabName) {
   dataTable.innerHTML = "";
-  if (sideTabName === "checkov") {
+  if (sideTabName === "checkov" || sideTabName === "ali_checkov") {
     let policyNames = [
       "checkov.ckv_aws",
       "checkov.ckv2_aws",
       "sfdc_ckv_tf",
+      "checkov.ckv_ali",
+      "checkov.ckv_mulesoft",
+      "sfdc_ckv_mulesoft",
     ];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
@@ -212,13 +238,17 @@ function renderTableForBugging(data, sideTabName) {
     row.innerHTML = `
             <td>${index + 1}</td>
             <td>${item.names[0]}</td>
-            <td><a href="${item.supportPage}" target="_blank">${item.id}</a></td>
+            <td><a href="${item.supportPage}" target="_blank">${
+      item.id
+    }</a></td>
             <td>${item.priority}</td>
             <td>${item.levelOfEffort}</td>
             <td>${item.category}</td>
             <td>${item.description}</td>
             <td>${item.resource}</td>
-            <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
+            <td><a href="${item.supportPage}" target="_blank">${
+      item.supportPage
+    }</a></td>
             <td>${item.vulnerabilityCategory}</td>
             <td>${item.tags}</td>
         `;
@@ -236,6 +266,9 @@ function renderEnforceTable(data, sideTabName) {
       "checkov.ckv_aws",
       "checkov.ckv2_aws",
       "sfdc_ckv_tf",
+      "checkov.ckv_ali",
+      "checkov.ckv_mulesoft",
+      "sfdc_ckv_mulesoft",
     ];
     filteredData = data.filter((item) =>
       policyNames.some((name) => item.names[0].includes(name))
@@ -291,7 +324,9 @@ function renderEnforceTable(data, sideTabName) {
 
   filteredData.forEach((item, index) => {
     const row = table.insertRow();
-    const exceptions = item.exceptions? item.exceptions.map((ex) => ex.service).join(", "): "";
+    const exceptions = item.exceptions
+      ? item.exceptions.map((ex) => ex.service).join(", ")
+      : "";
 
     row.innerHTML = `
         <td>${index + 1}</td>
@@ -302,7 +337,9 @@ function renderEnforceTable(data, sideTabName) {
         <td>${item.category}</td>
         <td>${item.description}</td>
         <td>${item.resource}</td>
-        <td><a href="${item.supportPage}" target="_blank">${item.supportPage}</a></td>
+        <td><a href="${item.supportPage}" target="_blank">${
+      item.supportPage
+    }</a></td>
         <td>${item.vulnerabilityCategory}</td>
         <td>${item.tags}</td>
         <td>${exceptions}</td>
@@ -377,12 +414,17 @@ for (i = 0; i < dropdown.length; i++) {
 var subdropdown = document.getElementsByClassName("sub-dropdown-btn");
 var i;
 for (i = 0; i < subdropdown.length; i++) {
+  // display first dropdown as expanded
+  let firstsubmenu = subdropdown[0];
+  var subdropdownContent = firstsubmenu.nextElementSibling;
+  subdropdownContent.style.display = "block";
+
   subdropdown[i].addEventListener("click", function () {
-    this.childNodes[1].classList.toggle("fa-caret-down");
-    this.childNodes[1].classList.toggle("fa-caret-right");
-    this.classList.toggle("active");
     var subdropdownContent = this.nextElementSibling;
-    if (subdropdownContent.style.display === "none" || subdropdownContent.style.display === "") {
+    if (
+      subdropdownContent.style.display === "none" ||
+      subdropdownContent.style.display === ""
+    ) {
       subdropdownContent.style.display = "block";
     } else {
       subdropdownContent.style.display = "none";
@@ -390,21 +432,35 @@ for (i = 0; i < subdropdown.length; i++) {
   });
 }
 
-// var ppdropdown = document.getElementsByClassName("pp-dropdown-btn");
-// var i;
-// for (i = 0; i < ppdropdown.length; i++) {
-//   ppdropdown[i].addEventListener("click", function () {
-//     this.childNodes[1].classList.toggle("fa-caret-down");
-//     this.childNodes[1].classList.toggle("fa-caret-right");
-//     this.classList.toggle("active");
-//     var dropdownContent = this.nextElementSibling;
-//     if (dropdownContent.style.display === "block") {
-//       dropdownContent.style.display = "none";
-//     } else {
-//       dropdownContent.style.display = "block";
-//     }
-//   });
-// }
+document.querySelectorAll(".sub-dropdown-btn").forEach((header) => {
+  header.addEventListener("click", function () {
+    // Close all open menus
+    document.querySelectorAll(".sub-dropdown-container").forEach((submenu) => {
+      for (let item of submenu.children) {
+        item.classList.remove("active");
+      }
+      submenu.parentElement.childNodes[1].childNodes[1].classList.remove(
+        "fa-caret-down"
+      );
+      submenu.parentElement.childNodes[1].childNodes[1].classList.add(
+        "fa-caret-right"
+      );
+      submenu.style.display = "none";
+    });
+
+    // Get the corresponding submenu and toggle its visibility
+    const menu = this.parentElement.querySelector(".sub-dropdown-container");
+
+    menu.childNodes[1].classList.add("active");
+    menu.parentElement.childNodes[1].childNodes[1].classList.remove(
+      "fa-caret-right"
+    );
+    menu.parentElement.childNodes[1].childNodes[1].classList.add(
+      "fa-caret-down"
+    );
+    menu.style.display = "block";
+  });
+});
 
 // Functions to handle clicking on Git and Slack icons
 document.getElementById("git-icon").addEventListener("click", function () {
