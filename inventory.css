@@ -36,7 +36,7 @@ th, td {
 }
 
 .sidebar {
-    width: 200px;
+    width: 205px;
     padding: 20px;
     border-right: 1px solid #ccc;
     max-height:100
@@ -128,28 +128,24 @@ th, td {
 .sub-dropdown-btn {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     background-color: #455a64;
     display: block;
     border: none;
-    width: 100%;
+    width: 167px;
     text-align: left;
     cursor: pointer;
     outline: none;
 }
 
 .dropdown-btn i {
-    margin-left: 5px;
-}
-
-.sub-dropdown-btn i {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .sidenav a {
     color: #000000;
-    padding: 6px 8px 6px 16px;
+    padding: 5px;
     text-decoration: none;
     font-size: 16px;
     background-color: #eeefef;
