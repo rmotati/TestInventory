@@ -1,2 +1,4 @@
----
-abc
+bugging:
+- namespace: checkov.ckv_mulesoft_165
+- namespace: checkov.ckv_mulesoft_33
+- namespace: sfdc_ckv_mulesoft_62
